@@ -5,8 +5,8 @@
                 <p><i class="fa-sharp fa-solid fa-location-dot"></i> Địa chỉ nhận hàng</p>
             </div>
             <div class="location_ship d-flex">
-                <b>Phạm Văn Hùng (+0333026322)</b>
-                <p class="ms-5">Thanh Lâm-An Thịnh-Lương Tài-Bắc Ninh</p>
+                <b> <small class="textFullname">Phạm Văn Hùng</small> (+<small class="textTel">0333026322</small>)</b>
+                <p class="ms-5 textAddress">Thanh Lâm-An Thịnh-Lương Tài-Bắc Ninh</p>
                 <span class="mx-4">Mặc định</span>
                 <input type="button" class="ms-5" id="click_location" value="Thay đổi">
             </div>
@@ -20,9 +20,9 @@
                     <hr>
                     <!-- list voucher -->
                     <div class="voucher_content-main py-4 px-4 border my-4">
-                        <input class="border my-2 py-2" type="text" value="Phạm Văn Hùng" name="fullname" placeholder="Họ và tên người nhận" id=""><br>
-                        <input class="border my-2 py-2" type="text" value="Số 2a, Thanh Lâm-An Thịnh-Lương Tài-Bắc Ninh" name="tel" placeholder="Số điện thoại" id=""><br>
-                        <input class="border my-2 py-2" type="text" value="0333026322" name="address" placeholder="Địa chỉ" id=""><br>
+                        <input class="border my-2 py-2" type="text" value="Phạm Văn Hùng" name="fullname" placeholder="Họ và tên người nhận" id="fullname"><br>
+                        <input class="border my-2 py-2" type="text" value="Số 2a, Thanh Lâm-An Thịnh-Lương Tài-Bắc Ninh" placeholder="Địa chỉ"  name="address" id="address"><br>
+                        <input class="border my-2 py-2" type="text" value="0333026322" name="tel"  placeholder="Số điện thoại" id="tel" ><br>
                     </div>
                     <div class="footer_voucher d-flex justify-content-end align-items-center">
                         <input type="button" id="location_back" value="Xác nhận" class="px-5 btn btn-outline-danger">
@@ -164,7 +164,7 @@
                 </div>
             </div>
         </div>
-        <div class="cart_footer mt-5 px-4 pb-4 position-sticky">
+        <div class="cart_footer mt-5 px-4 pb-4">
             <div class="cart_voucher d-flex align-items-center justify-content-between mb-3">
                 <div class="pttt_cart d-flex align-items-center">
                     <div class="pttt_cart-title">
@@ -295,6 +295,13 @@
             locationShip.classList.add("d-none");
         }
     }
+
+        // load textinput
+    function loadText(input,text){
+        input.addEventListener('input',function(){
+        text.innerText = input.value;
+        })
+    }
     blockIn("#location_ship", "click_location", "location_back");
     blockIn("#vorcher", "click_voucher", "voucher_back");
     blockIn("#pttt", "pttt_click", "pttt_back");
@@ -324,4 +331,16 @@
             }
         });
     }
+
+    // Thông tin
+    let fullname = document.getElementById('fullname');
+    let tel = document.getElementById('tel');
+    let address = document.getElementById('address');
+    let textFullname = document.querySelector('.textFullname');
+    let textAddress = document.querySelector('.textAddress');
+    let textTel = document.querySelector('.textTel');
+    loadText(fullname,textFullname);
+    loadText(address,textAddress);
+    loadText(tel,textTel);
+
 </script>
