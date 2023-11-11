@@ -14,7 +14,7 @@
           </tr>
           <tr>
             <td>Email</td>
-            <td><input type="text" name="email" value="azhien@gmail.com" /></td>
+            <td>azhien@gmail.com</td>
           </tr>
           <tr>
             <td>Họ và tên</td>
@@ -30,7 +30,7 @@
           </tr>
           <tr>
             <td>Mật khẩu</td>
-            <td class="position-relative"><input type="password" name="pass" id="pass" class="background-color: transparent;"  value="cacancau" disabled/></td>
+            <td class="position-relative"><input type="password" name="pass" id="pass" style="background-color: transparent;"  value="cacancau" disabled/></td>
           </tr>
         </table>
         <button type="submit" name="btnInfo" class="btn btn-success">Thay đổi thông tin</button>
