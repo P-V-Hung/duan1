@@ -35,5 +35,4 @@ inkfz    </div>
     validate(username,errUser);
 
     
-    
 </script>
