@@ -5,7 +5,7 @@
         <p class="errUser">Chỉ chữ và số dài 8 kí tự</p>    
     </div>
         <div><input type="text" placeholder="Email" id="email" class="mb20">
-    </div>
+inkfz    </div>
         <div><input type="password" id="pass" placeholder="Mật khẩu"><div class="icon"><i class="fa-solid fa-eye"></i></div></div>
         <div><input type="password" id="repass" placeholder="Nhập lại mật khẩu"><div class="icon"><i class="fa-solid fa-eye"></i></div></div>
         <input type="submit" name="btn_signUp" value="Đăng ký">
