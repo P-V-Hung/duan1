@@ -9,5 +9,6 @@
     // require "./client/cart.php";
     // require "./client/formSignin.php";
     // require "./client/formSignup.php";
-    // require "./client/footer.php";
+    require "./client/footer.php";
+
 ?>
