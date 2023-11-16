@@ -36,7 +36,7 @@ li {
 
 .sidebar {
   height: 100vh;
-  width: 200px;
+  width: 300px;
   background-color: #001529;
   overflow-y: auto;
   display: flex;
@@ -112,6 +112,45 @@ li {
   text-decoration: none;
 }
 
+.textDanhMuc_error{
+  color: #cb4343;
+  font-weight: 500;
+}
 .sidebar-menu-header:hover {
   background-color: rgba(241, 241, 241, 0.588);
+}
+
+/* content */
+.title-admin{
+  text-align: center;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.188);
+  margin-bottom: 30px;
+}
+.listdanhmuc{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 0 10px;
+}
+.danhmuc-admin {
+  user-select: none;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.danhmuc-admin a{
+  font-weight: 500;
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  transition: all 0.2s linear;
+  color: #000000;
+}
+.danhmuc-thaotac a{
+  color: blue;
+  text-decoration: underline;
+}
+.danhmuc-admin a:hover {
+  color: rgb(36, 36, 111);
+  text-decoration: underline;
 }
