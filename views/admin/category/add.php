@@ -3,7 +3,7 @@
     <div class="listdanhmuc d-flex justify-content-center align-items-center p2-5">
         <form action="" method="post">
             <label for="">Nằm trong danh mục: </label>
-            <select name="cat_idparent" id="">
+            <select class="form-select mb-3" aria-label="Default select example" name="cat_idparent" id="">
                 <option value="0">Danh mục gốc</option>
                 <?php foreach($listCategory as $cat): ?>
                 <option value="<?=$cat['id']?>"><?=$cat['cat_name']?></option>

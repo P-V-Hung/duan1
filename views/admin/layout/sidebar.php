@@ -161,7 +161,7 @@
         </div>
         <div class="sidebar-end">
           <ul>
-            <li><a href=""><- Trang web</a></li>
+            <li><a href="/duan1/"><- Trang web</a></li>
           </ul>
         </div>
       </div>
