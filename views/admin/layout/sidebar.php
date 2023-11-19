@@ -73,8 +73,9 @@
                 >
                   <div class="accordion-body">
                     <ul>
-                      <li><a href="">Danh sách sản phẩm</a></li>
-                      <li><a href="">Thêm sản phẩm</a></li>
+                      <li><a href="<?=$adminUrl."product/list"?>">Danh sách sản phẩm</a></li>
+                      <li><a href="<?=$adminUrl."product/add"?>">Thêm sản phẩm</a></li>
+                      <li><a href="<?=$adminUrl."product/property/list"?>">Danh sách thuộc tính SP</a></li>
                     </ul>
                   </div>
                 </div>

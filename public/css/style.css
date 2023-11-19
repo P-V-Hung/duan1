@@ -153,8 +153,6 @@ nav {
   gap: 10px;
 }
 .new-product .card-body .card-views {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 10px;
 }
 .new-product .card-body .card-views p {

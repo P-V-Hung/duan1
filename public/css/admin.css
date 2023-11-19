@@ -154,3 +154,154 @@ li {
   color: rgb(36, 36, 111);
   text-decoration: underline;
 }
+/* card */
+.box-product-right-content  {
+  border-radius: 10px;
+  padding: 10px 0;
+  display: grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap: 64px;
+}
+.new-product .card {
+  padding-top: 10px;
+}
+.new-product .card-body .card-views {
+  margin-bottom: 10px;
+}
+.new-product .card-body p {
+  font-size: 0.9rem ;
+  color: red;
+  margin: 0;
+}
+.new-product .card-body .card-views span {
+  color: #0d6efd;
+  font-size: 12px;
+}
+.new-product .card-body a {
+  text-align: center;
+}
+.card-img-top{
+  max-height: 250px;
+  width: auto;
+}
+.card-body .card-title {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* conlec */
+.collections-img {
+  justify-content: center;
+}
+.collections-img img {
+  width: 530px;
+  height: 600px;
+}
+
+/*  */
+.collections-product-show {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 100px !important;
+}
+.collections-product .title h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.collections-product .title p {
+  font-size: 18px;
+  font-weight: 500;
+}
+p {
+  margin: 0;
+}
+.collections-product-show .cate {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.collections-product-show .cate .cate-color {
+  margin: 10px 0;
+}
+.collections-product-show .cate .cate-color img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+.collections-product-show .cate .cate-size button {
+  width: 100px;
+}
+
+/* text mota */
+#text-mota{
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+}
+.cate-checkbox{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 10px;
+}
+.cate-checkbox input{
+  cursor: pointer;
+}
+.card_add{
+  border: 1px #333 dashed;
+  height: 250px;
+}
+.card_add a{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: #333;
+}
+.card_add a:hover .card-botron{
+  transition: 0.25s linear all;
+  background-color: rgb(188, 126, 126);
+  color: #ffffff;
+}
+.card-botron{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 5rem;
+  width: 80%;
+  height: 80%;
+  border: 1px #333 dashed;
+}
+.card-botron p{
+  color: #ffffff;
+  font-size: 1rem;
+}
+.card-botron span{
+  transform: translateY(-10px);
+}
+
+/* table hug */
+.table-hung{
+  margin: auto;
+  box-shadow: 0 0 10px 8px rgba(0,0,0,0.2);
+}
+.table-hung tr th{
+  text-align: center;
+  padding: 7px 30px;
+  border-bottom:3px solid brown ;
+}
+.table-hung tr td{
+  text-align: center;
+  padding: 7px 20px;
+  border-bottom:1px solid #333 ;
+}

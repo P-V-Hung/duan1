@@ -17,4 +17,14 @@
     function CategoryDelete($id = 0){
         return delete("categories",$id);
     }
+// Procat
+    function ProCatAll($select = ['*'], $where = 1){
+        return all("pro_cats",$select,$where);
+    }
+    function ProCatDelete($id = 0){
+        return delete("pro_cats",$id);
+    }
+    function ProCatInsert($data = []){
+        return insert("pro_cats",$data);
+    }
 ?>

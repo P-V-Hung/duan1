@@ -102,21 +102,54 @@
                 </div>
 
                 <div class="description border p-3">
-                    <h5>Thông số kĩ thuật: </h5>
-                    <p>
-                        Màn hình: 6.7 inch, OLED, Super Retina XDR, 2796 x 1290 Pixels <br>
-                        Camera sau: 48.0 MP + 12.0 MP + 12.0 MP <br>
-                        Camera Selfie: 12.0 MP <br>
-                        RAM 8: GB <br>
-                        Bộ nhớ trong: 256 GB <br>
-                        CPU Apple: A17 Pro <br>
-                        Dung lượng: pin 29 Giờ <br>
-                        Thẻ sim: 1 - 1 eSIM, 1 Nano SIM <br>
-                        Hệ điều: hành iOS 17 <br>
-                        Xuất xứ: Trung Quốc <br>
-                        Thời gian ra mắt: 09/2023
-                    </p>
-                </div>
+                        <h5>Thông số kĩ thuật: </h5>
+                        <table class="table table-striped">
+                            <tr>
+                                <td>Màn hình:</td>
+                                <td>6.7 inch, OLED, Super Retina XDR, 2796 x 1290 Pixels</td>
+                            </tr>
+                            <tr>
+                                <td>Camera sau:</td>
+                                <td>48.0 MP + 12.0 MP + 12.0 MP </td>
+                            </tr>
+                            <tr>
+                                <td> Camera Selfie:</td>
+                                <td>12.0 MP</td>
+                            </tr>
+                            <tr>
+                                <td>RAM :</td>
+                                <td> 8 GB </td>
+                            </tr>
+                            <tr>
+                                <td>Bộ nhớ trong:</td>
+                                <td>256 GB </td>
+                            </tr>
+                            <tr>
+                                <td>CPU Apple:</td>
+                                <td>A17 Pro </td>
+                            </tr>
+                            <tr>
+                                <td>Hệ điều hành:</td>
+                                <td>iOS 17 </td>
+                            </tr>
+                            <tr>
+                                <td>Dung lượng pin:</td>
+                                <td> 29 Giờ</td>
+                            </tr>
+                            <tr>
+                                <td>Thời gian ra mắt:</td>
+                                <td> 09/2023</td>
+                            </tr>
+                            <tr>
+                                <td>Thẻ sim:</td>
+                                <td> 1 - 1 eSIM, 1 Nano SIM</td>
+                            </tr>
+                            <tr>
+                                <td>Xuất xứ: </td>
+                                <td>Trung Quốc</td>
+                            </tr>
+                        </table>
+                    </div>
 
             </div>
 

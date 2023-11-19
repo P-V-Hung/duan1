@@ -67,6 +67,18 @@
         $stmt->execute();
     }
 
+    function lastInsertId($table,$data = []){
+        $conn = connect();
+        $values = array_values($data);
+        $value = implode("','",$values);
+        $keys = array_keys($data);
+        $key = implode('`,`',$keys);
+        $sql = "INSERT INTO `$table` (`$key`) VALUES ('$value')";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $conn->lastInsertId();
+    }
+
 
     function delete($table,$id){
         $conn = connect();
@@ -74,6 +86,4 @@
         $stmt = $conn->prepare($sql);
         $stmt->execute();
     }
-
-    
 ?>
