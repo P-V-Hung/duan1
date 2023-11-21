@@ -6,22 +6,17 @@ if ($idpp) {
     $pro = ProductFind('id = ' . $proPP['pp_proid']);
     if (isset($_POST['btn_update-pp'])) {
 
-        $img = $_FILES['img'];
-        $imgPath = $proPP['pp_img'];
-
-        if (move_uploaded_file($img['tmp_name'], $pathUpload . $img['name'])) {
-            $imgPath = basename($img['name']);
-        }
-
         $data = [
             'pp_price' => $_POST['pp_price'],
             'pp_color' => $_POST['pp_color'],
             'pp_memory' => $_POST['pp_memory'],
-            'pp_img' => $imgPath,
             'pp_count' => $_POST['pp_count']
         ];
 
         PPUpdate($idpp, $data);
+
+        reUrl("product/chitiet&id=".$pro['id']);
+
     }
     require $views . "product/updatepp.php";
 }
@@ -30,6 +25,7 @@ if ($id) {
     $properties = PropertyAll();
     $proCat = ProCatAll(['*'], "pc_idpro = $id");
     $pro = ProductFind("id = $id");
+    $listImg = ProImgAll(['*'],"proid = $id");
     $listCategory = CategoryAll();
 
     if (isset($_POST['btn_update-pro'])) {
@@ -97,6 +93,9 @@ if ($id) {
             ];
             TypeProInsert($data);
         }
+        
+        reUrl('product/list');
+        die();
     }
 
     require $views . "product/updatepro.php";

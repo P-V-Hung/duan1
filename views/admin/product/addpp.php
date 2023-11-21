@@ -11,7 +11,6 @@
                 <div class="mb-img d-flex justify-content-center ">
                     <img src="<?=$pathUpload.$pro['pro_img']?>" style="max-width: 150px;" alt="">
                 </div>
-                <input type="file" class="form-control" name="img">
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Giá: </label>

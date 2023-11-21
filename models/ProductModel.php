@@ -34,6 +34,16 @@
     function PPDelete($id){
         return delete("pro_properties",$id);
     }
+    // Pro Img
+    function ProImgAll($select = ['*'], $where = 1){
+        return all("pro_img",$select,$where);
+    }
+    function ProImgDelete($id){
+        return delete("pro_img",$id);
+    }
+    function ProImgInsert($data = []){
+        return insert("pro_img",$data);
+    }
 
     // Properties
     function PropertyAll($select = ['*'], $where = 1){

@@ -6,7 +6,7 @@
             foreach ($proPP as $pp) :
         ?>
                 <div class="card" style="width: 17rem">
-                    <img src="<?= $pathUpload . $pp['pp_img'] ?>" class="card-img-top" alt="..." />
+                    <img src="<?= $pathUpload . $pro['pro_img'] ?>" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title product-title-name-all"><?= $pro['pro_name'] ?></h5>
                         <p class="card-text">Giá: <?= $pp['pp_price'] ?></p>

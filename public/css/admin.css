@@ -305,3 +305,26 @@ p {
   padding: 7px 20px;
   border-bottom:1px solid #333 ;
 }
+.img_child{
+  overflow: hidden;
+}
+.delete-img-child{
+  bottom: -40%;
+  left: 50%;
+  background-color: red;
+  border-radius:50%;
+  padding:5px 10px;
+  color: white;
+  transition: all 0.2s linear;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  visibility: hidden;
+}
+
+.img_child:hover .delete-img-child{
+  bottom: 0;
+  visibility: unset;
+}
+.list-img-child{
+  gap: 11px;
+}
