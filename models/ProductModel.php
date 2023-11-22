@@ -44,6 +44,20 @@
     function ProImgInsert($data = []){
         return insert("pro_img",$data);
     }
+    
+    // Hot Product
+    function ProductHotAll($select = ['*'], $where = 1){
+        return all("hot_products",$select,$where);
+    }
+    function ProductHotFind($select = ['*'], $where = 1){
+        return find("hot_products",$select,$where);
+    }
+    function ProductHotDelete($id){
+        return delete("hot_products",$id);
+    }
+    function ProductHotInsert($data = []){
+        return insert("hot_products",$data);
+    }
 
     // Properties
     function PropertyAll($select = ['*'], $where = 1){
@@ -61,6 +75,9 @@
     // TypeProperties
     function TypeProAll($select = ['*'], $where = 1){
         return all("type_properties",$select,$where);
+    }
+    function TypeProFind($select = ['*'], $where = 1){
+        return find("type_properties",$select,$where);
     }
     function TypeProDelete($id = 0){
         return delete("type_properties", $id);

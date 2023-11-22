@@ -15,7 +15,7 @@
 
   // Điều hướng
   $pathUpload = "./public/uploads/";
-  $adminUrl = "/admin.php?url=";
+  $adminUrl = "/duan1/admin.php?url=";
   $views = "./views/admin/";
   $controller = "./controllers/admin/";
 
@@ -82,6 +82,18 @@
       }
     case "product/property/update": {
         require_once $controller . "product/property/update.php";
+        break;
+      }
+    case "product/hotproduct": {
+        require_once $controller . "product/hotProduct/listProduct.php";
+        break;
+      }
+    case "product/hotproduct/add": {
+        require_once $controller . "product/hotProduct/add.php";
+        break;
+      }
+    case "product/hotproduct/delete": {
+        require_once $controller . "product/hotProduct/delete.php";
         break;
       }
     default: {
