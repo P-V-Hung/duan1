@@ -76,6 +76,7 @@
                       <li><a href="<?=$adminUrl."product/list"?>">Danh sách sản phẩm</a></li>
                       <li><a href="<?=$adminUrl."product/add"?>">Thêm sản phẩm</a></li>
                       <li><a href="<?=$adminUrl."product/property/list"?>">Danh sách thuộc tính SP</a></li>
+                      <li><a href="<?=$adminUrl."product/hotproduct"?>">Sản phẩm bán chạy</a></li>
                     </ul>
                   </div>
                 </div>

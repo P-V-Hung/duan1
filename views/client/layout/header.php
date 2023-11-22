@@ -55,7 +55,7 @@
           </form>
           <div class="menu">
             <ul>
-              <li><a href="#">Trang chủ</a></li>
+              <li><a href="<?=$clientUrl."/"?>">Trang chủ</a></li>
               <li><a href="#">Sản phẩm</a></li>
             </ul>
             <div>
@@ -75,7 +75,7 @@
                 
                 <ul class="dropdown-menu gap-2">
                   <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
-                  <li><a class="dropdown-item" href="#">Trang quản trị</a></li>
+                  <li><a class="dropdown-item" href="admin.php">Trang quản trị</a></li>
                   <li>
                     <form action="" method="post">
                       <button type="submit" name="btnlogout" class="btn btn-danger" style="width:100%;">Đăng xuất</button>
