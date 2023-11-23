@@ -86,4 +86,11 @@
         $stmt = $conn->prepare($sql);
         $stmt->execute();
     }
+
+    function updateUp($table,$id,$truong){
+        $conn = connect();
+        $sql = "UPDATE `$table` SET `$truong` = `$truong` + 1 WHERE `$table`.`id` = $id";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+    }
 ?>

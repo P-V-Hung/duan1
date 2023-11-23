@@ -79,7 +79,6 @@
 
   <div class="hot-product">
     <h1>Sản phẩm hot</h1>
-    <h4>Top 10 sản phẩm nhiều view nhất</h4>
     <div class="list">
 
 

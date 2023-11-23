@@ -18,6 +18,9 @@
     function ProductInsertId($data = []){
         return lastInsertId("products",$data);
     }
+    function ProductUpdateUp($id,$truong){
+        return updateUp("products",$id,$truong);
+    }
     // Pro_Properties
     function PPAll($select = ['*'], $where = 1){
         return all("pro_properties",$select,$where);
