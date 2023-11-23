@@ -18,7 +18,6 @@ if (isset($_POST['btn_add-pro'])) {
         'pp_price' => $_POST['pp_price'],
         'pp_color' => $_POST['pp_color'],
         'pp_memory' => $_POST['pp_memory'],
-        'pp_img' => $imgPath,
         'pp_count' => $_POST['pp_count']
     ];
     PPInsert($dataPP);
@@ -65,5 +64,6 @@ if (isset($_POST['btn_add-pro'])) {
         ];
         TypeProInsert($data);
     }
+    reUrl('product/list');
 }
 require $views . "product/addpro.php";

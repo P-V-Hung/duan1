@@ -3,9 +3,22 @@
     <form action="" method="post" enctype="multipart/form-data">
         <div class="collections row mt-5 px-5">
             <div class="col-7 collections-img">
-                <div><img src="<?=$pathUpload.$pro['pro_img']?>" alt="" class="width:100%;"></div>
+                <div><img src="<?= $pathUpload . $pro['pro_img'] ?>" id="img-update-pro" alt="" class="width:100%;"></div>
                 <div class="my-3">
-                    <input class="form-control" type="file" name="img" id="formFile">
+                    <input class="form-control" type="file" name="img" onchange="chooseFile(this,'img-update-pro')" id="formFile">
+                </div>
+                <hr>
+                <h4>Danh sách ảnh con</h4>
+                <a href="<?=$adminUrl."product/img/add&idpro=".$id?>">Thêm ảnh?</a>
+                <div class="border px-2 pb-2 d-flex flex-wrap list-img-child">
+                    <?php foreach ($listImg as $img) : ?>
+
+                        <div class="img_child border mt-2 position-relative">
+                            <img src="<?= $pathUpload.$img['img']?>" alt="" style="width:100px;height: auto;">
+                            <a href="<?=$adminUrl."product/img/delete&idpro=".$id."&idimg=".$img['id']?>" class="position-absolute delete-img-child"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+
+                    <?php endforeach ?>
                 </div>
                 <div class="comment">
                     <div class="comment-title">
@@ -14,7 +27,6 @@
                             <?= $pro['pro_desc'] ?>
                         </textarea>
                     </div>
-
                 </div>
             </div>
             <div class="col-5 collections-product">
@@ -34,7 +46,7 @@
                                 <?php
                                 foreach ($listCategory as $cat) :
                                     $checkbox = '';
-                                    if(!empty($proCat)){
+                                    if (!empty($proCat)) {
                                         foreach ($proCat as $pc) :
                                             $checkbox = $cat['id'] == $pc['pc_idcat'] ? 'checked' : '';
                                             if ($checkbox) break;
@@ -43,7 +55,7 @@
                                 ?>
                                     <div class="input-group">
                                         <div class="input-group-text">
-                                            <input class="form-check-input mt-0"  name="checkCat<?=$cat['id']?>" value="<?=$cat['id']?>" <?= $checkbox ?> type="checkbox" name="<?= $cat['id'] ?>">
+                                            <input class="form-check-input mt-0" name="checkCat<?= $cat['id'] ?>" value="<?= $cat['id'] ?>" <?= $checkbox ?> type="checkbox" name="<?= $cat['id'] ?>">
                                         </div>
                                         <label class="form-control"><?= $cat['cat_name'] ?></label>
                                     </div>
@@ -70,10 +82,10 @@
                             foreach ($properties as $proper) :
                                 $checkbox = '';
                                 $value = '';
-                                if(!empty($typePro)){
+                                if (!empty($typePro)) {
                                     foreach ($typePro as $tp) :
                                         $checkbox = $tp['tp_pid'] == $proper['id'] ? 'checked' : '';
-                                        if($checkbox){
+                                        if ($checkbox) {
                                             $value = $tp['tp_name'];
                                             break;
                                         }
@@ -81,10 +93,10 @@
                                 }
                             ?>
                                 <tr>
-                                    <td><input class="form-check-input mt-0" name="checkProperty<?=$proper['id']?>" value="<?=$proper['id']?>" <?=$checkbox?> type="checkbox"></td>
+                                    <td><input class="form-check-input mt-0" name="checkProperty<?= $proper['id'] ?>" value="<?= $proper['id'] ?>" <?= $checkbox ?> type="checkbox"></td>
                                     <td><label><?= $proper['p_name'] ?>:</label></td>
                                     <td class="iput_properted">
-                                        <input type="text" class="form-control" name="checkValue<?=$proper['id']?>" value="<?=$value?>" id="basic-url" aria-describedby="basic-addon3">
+                                        <input type="text" class="form-control" name="checkValue<?= $proper['id'] ?>" value="<?= $value ?>" id="basic-url" aria-describedby="basic-addon3">
                                     </td>
                                 </tr>
                             <?php

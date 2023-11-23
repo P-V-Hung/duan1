@@ -3,9 +3,9 @@
     <form action="" method="post" enctype="multipart/form-data">
         <div class="collections row mt-5 px-5">
             <div class="col-7 collections-img">
-                <div><img src="" alt="" class="width:100%;"></div>
+                <div><img src="" id="img-add-pro" alt="" class="width:100%;"></div>
                 <div class="my-3">
-                    <input class="form-control" type="file" name="img" id="formFile">
+                    <input class="form-control" type="file" name="img" onchange="chooseFile(this,'img-add-pro')" id="formFile">
                 </div>
                 <div class="comment">
                     <div class="comment-title">
