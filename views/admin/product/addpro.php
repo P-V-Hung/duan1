@@ -1,9 +1,11 @@
-<div class="container-xxl">
+<div class="right-sitebar container-xxl">
     <h2 class="py-4 title-admin">Thêm sản phẩm</h2>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="collections row mt-5 px-5">
             <div class="col-7 collections-img">
-                <div><img src="" id="img-add-pro" alt="" class="width:100%;"></div>
+                <div>
+                    <img id="img-add-pro" alt="" class="width:100%;">
+                </div>
                 <div class="my-3">
                     <input class="form-control" type="file" name="img" onchange="chooseFile(this,'img-add-pro')" id="formFile">
                 </div>
@@ -27,11 +29,18 @@
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">Giá</span>
-                            <input type="number" class="form-control" placeholder="Giá sản phẩm" require name="pp_price" id="basic-url" aria-describedby="basic-addon3">
+                            <input type="text" class="form-control" placeholder="Giá sản phẩm" oninput="formatNumber(this)" require name="pp_price" id="basic-url" aria-describedby="basic-addon3">
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">Phân loại</span>
-                            <input type="text" class="form-control" placeholder="Màu sắc" require name="pp_color" id="basic-url" aria-describedby="basic-addon3">
+                            <input type="text" class="form-control" placeholder="Màu sắc" require name="pp_color" id="basic-url" aria-describedby="basic-addon3" list="colors">
+                            <datalist id="colors">
+                            <option value="Đỏ">
+                            <option value="Vàng">
+                            <option value="Xanh">
+                            <option value="Đen">
+                            <option value="Trắng">
+                            </datalist>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">Cấu hình</span>
@@ -39,7 +48,7 @@
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">Số lượng</span>
-                            <input type="number" class="form-control" placeholder="Số lượng hiện có" require name="pp_count" id="basic-url" aria-describedby="basic-addon3">
+                            <input type="number" class="form-control" min="0" step="5" placeholder="Số lượng hiện có" require name="pp_count" id="basic-url" aria-describedby="basic-addon3">
                         </div>
                         <p>Danh mục sản phẩm:</p>
                     </div>

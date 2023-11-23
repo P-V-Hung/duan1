@@ -1,4 +1,4 @@
-<div class="container-xxl">
+<div class="right-sitebar container-xxl">
     <h2 class="py-4 title-admin">Sửa sản phẩm</h2>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="collections row mt-5 px-5">
