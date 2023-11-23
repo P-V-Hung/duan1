@@ -152,7 +152,7 @@
                 >
                   <div class="accordion-body">
                     <ul>
-                      <li><a href="">Danh sách tài khoản</a></li>
+                      <li><a href="<?=$adminUrl."account/list"?>">Danh sách tài khoản</a></li>
                       <li><a href="">Thêm tài khoản</a></li>
                     </ul>
                   </div>
