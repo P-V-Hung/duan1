@@ -35,6 +35,7 @@ li {
 }
 
 .sidebar {
+  position: fixed;
   height: 100vh;
   width: 300px;
   background-color: #001529;
@@ -42,6 +43,9 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.right-sitebar {
+  margin-left:300px ;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -293,12 +297,22 @@ p {
 /* table hug */
 .table-hung{
   margin: auto;
+  position: relative;
   box-shadow: 0 0 10px 8px rgba(0,0,0,0.2);
+}
+.table-hung .table-hung-th{
+  position: sticky;
+  top:0;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 1px #333;
+}
+.table-hung tr:last-child td{
+  border-bottom: none;
 }
 .table-hung tr th{
   text-align: center;
-  padding: 7px 30px;
-  border-bottom:3px solid brown ;
+  padding: 7px 14px;
+  border-bottom:3px solid brown ; 
 }
 .table-hung tr td{
   text-align: center;
@@ -331,3 +345,71 @@ p {
 .listSp{
   gap: 18px
 }
+
+/* Add Vouchers */
+.formAddVou{
+  width: 40%;
+  min-width: 300px;
+}
+
+.formAddVou table tr td{
+  border: none;
+}
+
+.formAddVou table tr td input{
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.342);
+}
+
+.formAddVou table tr {
+  border-bottom: 10px solid rgba(0, 0, 0, 0);
+}
+
+.formAddVou table tr input::placeholder{
+  text-transform: none;
+}
+
+.formAddVou table tr td:first-child{
+  min-width: 110px;
+}
+
+.formAddVou table tr td:last-child{
+  min-width: 150px;
+  width: 100%;
+}
+
+.formAddVou table tr td:last-child input{
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.formAddVou table tr:nth-child(1) td,
+.formAddVou table tr:nth-child(2) td{
+  position: relative;
+}
+
+.formAddVou table tr:nth-child(1) td span,
+.formAddVou table tr:nth-child(2) td span{
+  position: absolute;
+  font-size: large;
+  right: 10px;
+  top: 5px;
+}
+
+.formAddVou table tr:nth-child(1) td input,
+.formAddVou table tr:nth-child(4) td input{
+  text-transform: uppercase;
+}
+
+
+.formAddVou input[type="submit"]{
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.formAddVou input[type="submit"]:hover{
+opacity: 0.7;}

@@ -142,7 +142,7 @@
                     aria-expanded="false"
                     aria-controls="flush-four"
                   >
-                    Quản lí màu sắc
+                    Quản lí tài khoản
                   </button>
                 </h2>
                 <div
@@ -152,7 +152,8 @@
                 >
                   <div class="accordion-body">
                     <ul>
-                      <li><a href="">Danh sách màu sắc</a></li>
+                      <li><a href="">Danh sách tài khoản</a></li>
+                      <li><a href="">Thêm tài khoản</a></li>
                     </ul>
                   </div>
                 </div>
@@ -179,7 +180,7 @@
                   <div class="accordion-body">
                     <ul>
                       <li><a href="<?=$adminUrl."voucher/list"?>">Danh sách mã giảm giá</a></li>
-                      <li><a href="">Thêm mã giảm giá</a></li>
+                      <li><a href="<?=$adminUrl."voucher/add"?>">Thêm mã giảm giá</a></li>
                     </ul>
                   </div>
                 </div>

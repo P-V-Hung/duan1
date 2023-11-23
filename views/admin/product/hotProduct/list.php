@@ -1,4 +1,4 @@
-<div class="container content-admin">
+<div class="right-sitebar container content-admin">
     <h2 class="py-4 title-admin">Danh sách sản phẩm bán chạy</h2>
     <div class="container mb-5">
         <h3>Sản phẩm bán chạy</h3>

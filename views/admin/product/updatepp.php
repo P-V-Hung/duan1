@@ -1,4 +1,4 @@
-<div class="container content-admin">
+<div class="right-sitebar container content-admin">
     <h2 class="py-4 title-admin">Sửa biến thể sản phẩm</h2>
     <div class="container">
         <form method="POST" enctype="multipart/form-data" style="width: 500px;margin: auto;">

@@ -2,18 +2,14 @@
   session_start();
   // Config
   require_once "./config/pdo.php";
+  require_once "./config/function.php";
 
     // Models
     require_once "./models/CategoryModel.php";
     require_once "./models/ProductModel.php";
     require_once "./models/VoucherModel.php";
 
-  // function 
-  function reUrl($url)
-  {
-    echo '<script> window.location.href = "admin.php?url=' . $url . '"; </script>';
-  }
-
+  
   // Điều hướng
   $pathUpload = "./public/uploads/";
   $adminUrl = "/duan1/admin.php?url=";
@@ -106,10 +102,10 @@
         require_once $controller."voucher/delete.php";
         break;
       }
-      // case "voucher/add":{
-      //   require_once $controller."voucher/add.php";
-      //   break;
-      // }
+      case "voucher/add":{
+        require_once $controller."voucher/add.php";
+        break;
+      }
       
 
     default: {

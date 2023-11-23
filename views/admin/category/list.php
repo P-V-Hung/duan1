@@ -1,4 +1,4 @@
-<div class="container content-admin">
+<div class="right-sitebar container content-admin">
   <h2 class="py-4 title-admin">Danh sách danh mục</h2>
   <p class="textDanhMuc fs-5 ps-3 pb-3">
     <a href="<?= $adminUrl . "category/list&recat=0" ?>">Danh mục gốc</a>

@@ -5,4 +5,7 @@
     function VoucherDelete($id = 0){
         return delete("vouchers",$id);
     }
+    function VoucherInsert($data = []){
+        return insert("vouchers",$data);
+    }
 ?>

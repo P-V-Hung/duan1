@@ -1,4 +1,4 @@
-<div class="container content-admin">
+<div class="right-sitebar container content-admin">
     <h2 class="py-4 title-admin">Sửa danh mục "<?= $category['cat_name'] ?>"</h2>
 
     <div class="listdanhmuc d-flex justify-content-center align-items-center p2-5">

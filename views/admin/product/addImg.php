@@ -1,9 +1,9 @@
-<div class="container-xxl">
+<div class="right-sitebar container-xxl">
     <h2 class="py-4 title-admin">Thêm hình ảnh cho sản phẩm "<?= $pro['pro_name'] ?>"</h2>
 
     <form class="mb-5" method="post" enctype="multipart/form-data">
         <label for="formFile" class="form-label">Chọn ảnh muốn thêm</label>
-        <input class="form-control" type="file" name="img" onchange="chooseFile(this,'img')" id="formFile">
+        <input class="form-control" type="file" name="img" onchange="chooseFile(this,'img')" id="formFile" multiple>
         <img class="border border-dark mt-3" style="max-width: 200px;" src="" id="img" alt=""><br>
         <input class="btn btn-outline-dark mt-3" type="submit" name="btn-add-imgpro" value="Thêm">
     </form>

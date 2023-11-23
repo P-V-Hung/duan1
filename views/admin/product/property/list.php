@@ -1,4 +1,4 @@
-<div class="container content-admin">
+<div class="right-sitebar container content-admin">
     <h2 class="py-4 title-admin">Danh sách thuộc tính sản phẩm</h2>
     <form action="" method="post">
         <table class="table-hung">

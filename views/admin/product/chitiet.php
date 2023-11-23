@@ -1,4 +1,4 @@
-<div class="container content-admin">
+<div class="right-sitebar container content-admin">
     <h2 class="py-4 title-admin">Biến thể sản phẩm "<?= $pro['pro_name'] ?>"</h2>
     <div class="box-product-right-content new-product">
         <?php
