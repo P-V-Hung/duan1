@@ -157,6 +157,33 @@
                   </div>
                 </div>
               </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-five"
+                    aria-expanded="false"
+                    aria-controls="flush-five"
+                  >
+                    Quản lí mã giảm giá
+                  </button>
+                </h2>
+                <div
+                  id="flush-five"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <div class="accordion-body">
+                    <ul>
+                      <li><a href="<?=$adminUrl."voucher/list"?>">Danh sách mã giảm giá</a></li>
+                      <li><a href="">Thêm mã giảm giá</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
               
             </div>
           </div>

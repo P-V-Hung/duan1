@@ -3,15 +3,16 @@
   // Config
   require_once "./config/pdo.php";
 
+    // Models
+    require_once "./models/CategoryModel.php";
+    require_once "./models/ProductModel.php";
+    require_once "./models/VoucherModel.php";
+
   // function 
   function reUrl($url)
   {
     echo '<script> window.location.href = "admin.php?url=' . $url . '"; </script>';
   }
-
-  // Models
-  require_once "./models/CategoryModel.php";
-  require_once "./models/ProductModel.php";
 
   // Điều hướng
   $pathUpload = "./public/uploads/";
@@ -96,6 +97,21 @@
         require_once $controller . "product/hotProduct/delete.php";
         break;
       }
+      // Voucher
+      case "voucher/list":{
+        require_once $controller."voucher/list.php";
+        break;
+      }
+      case "voucher/delete":{
+        require_once $controller."voucher/delete.php";
+        break;
+      }
+      // case "voucher/add":{
+      //   require_once $controller."voucher/add.php";
+      //   break;
+      // }
+      
+
     default: {
         echo "Loại";
         break;
