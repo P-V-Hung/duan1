@@ -145,7 +145,6 @@ nav {
   font-weight: bold;
 }
 .new-product .list {
-  border: 1px solid #000;
   border-radius: 10px;
   padding: 10px 0;
   display: grid;
@@ -1042,4 +1041,21 @@ p {
   background-color: #ddd;
   color: #000;
   cursor: not-allowed;
+}
+.slick-next:before, .slick-prev:before{
+  color: #1d1717;
+}
+.img-child-client{
+  margin: auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.img-child-client .img-con{
+  display: flex;
+  align-items: center;
+  padding:10px ;
+}
+.img-child-client .img-con img{
+  border: 1px solid #333;
 }

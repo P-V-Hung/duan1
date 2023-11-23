@@ -11,7 +11,7 @@
 
 
     // router
-    $clientUrl = '/?url=';
+    $clientUrl = '/duan1/?url=';
     $pathUpload = "./public/uploads/";
     $views = "./views/client/";
     $controllers = "./controllers/client/";
@@ -26,6 +26,7 @@
         }
         case 'chitietsp' : {
             require_once $controllers."product/chitietsp.php";
+            // require_once $views."thanhtoan.php";
             break;
         }
     }
@@ -33,7 +34,6 @@
     // require_once "./client/product.php";
     // require_once "./client/userInfo.php";
     // require_once "./client/editInfor.php";
-    // require_once "./views/client/thanhtoan.php";
     // require_once "./client/cart.php";
     // require_once "./client/formSignin.php";
     // require_once "./client/formSignup.php";

@@ -1,7 +1,4 @@
 
-
-
-
     <div class="container">
       <div class="box-product">
         <form action="" method="post">
