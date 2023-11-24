@@ -14,7 +14,7 @@
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Giá: </label>
-                <input type="text" class="form-control" name="pp_price" value="<?=$proPP['pp_price']?>" id="price">
+                <input type="text" class="form-control" oninput="formatNumber(this)" name="pp_price" value="<?=$proPP['pp_price']?>" id="price">
             </div>
             <div class="mb-3">
                 <label for="color" class="form-label">Phân loại: </label>

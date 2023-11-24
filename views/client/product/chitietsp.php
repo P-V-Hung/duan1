@@ -100,7 +100,7 @@
                             <a href="<?= $clientUrl . "chitietsp&id=" . $pro['id'] . "&color=" . $color . "&memory=" . $ch['pp_memory'] ?>" class="btn btn-outline-dark <?= $memory == $ch['pp_memory'] ? 'togger' : '' ?>"><?= $ch['pp_memory'] ?></a>
                         <?php endforeach ?>
                     </div>
-                    <form action="" class="form_count my-3">
+                    <form action="<?=$clientUrl."cart"?>" class="form_count my-3" method="post">
                         <div class="cate-count">
                             <p>Số lượng : <b class="soluongsanpham"><?= $proOne['pp_count'] ?? $proPP['total_count'] ?></b></p>
                             <div class="range">
@@ -108,14 +108,16 @@
                                     <div class=" value left">
                                         1
                                     </div>
-                                    <input type="range" class="span-input" min="1" max="<?= $proOne['pp_count'] ?? $proPP['total_count'] ?>" value="1" steps="1">
+                                    <input type="range" name="count" class="span-input" min="1" max="<?= $proOne['pp_count'] ?? $proPP['total_count'] ?>" value="1" steps="1">
                                     <div class=" value right">
                                         <?= $proOne['pp_count'] ?? $proPP['total_count'] ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-lg btn-dark <?= isset($proOne['id']) ? '' : 'nonclick' ?>">Thêm vào giỏ hàng</button>
+                        <input type="hidden" name="idpp" value="<?=$proOne['id']?>">
+                        <input type="hidden" name="idpro" value="<?=$pro['id']?>">
+                        <button type="submit" name="btn-add-cart" class="btn btn-lg btn-dark <?= isset($proOne['id']) ? '' : 'nonclick' ?>">Thêm vào giỏ hàng</button>
                     </form>
                 </div>
 
