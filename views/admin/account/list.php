@@ -1,16 +1,39 @@
 <div class="right-sitebar container content-admin">
     <h2 class="py-4 title-admin">Danh sách tài khoản</h2>
+    <form class="input-group mb-3" method="post">
+        <input type="text" class="form-control" name="keyword" placeholder="Nhập tên sản phẩm muốn tìm" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="submit" name="btn-all" id="button-addon2">Tất cả sản phẩm</button>
+        <button class="btn btn-outline-secondary" type="submit" name="btn-search" id="button-addon2">Tìm kiếm</button>
+    </form>
     <form action="" method="post">
-        <table class="table-hung">
+        <table class="table-hung table_account">
             <tr class="table-hung-th">
-                <th></th>
+                <th><input type="checkbox" id="checkAll"></th>
                 <th>STT</th>
                 <th>ID</th>
                 <th>Tên đăng nhập</th>
                 <th>Email</th>
-                <th>Chức vụ</th>
-                <th>Trạng thái</th>
+                <!-- <th>Vai trò <label for="role"><i class="fa-solid fa-caret-down"></i></label></th> -->
+                <th> 
+                    Chức vụ 
+                    <i class="fa-solid fa-caret-down"></i>
+                    <select style="position: absolute;right:390px;opacity: 0;" name="">
+                        <option value="0">Tất cả</option>
+                        <option value="1">Quản trị viên</option>
+                        <option value="2">Khách hàng</option>
+                    </select>
+                </th>
+                <th>
+                    Trạng thái
+                    <i class="fa-solid fa-caret-down"></i>
+                    <select style="position: absolute;right:240px;opacity: 0;" name="">
+                        <option value="0">Tất cả</option>
+                        <option value="1">Hoạt động</option>
+                        <option value="2">Đã khóa</option>
+                    </select>
+                </th>
                 <th>Thao tác</th>
+                <th></th>
             </tr>
             <?php $i=1; foreach ($listAccount as $acc) : ?>
                 <tr>
@@ -19,32 +42,45 @@
                     <td><?php echo $acc['id'] ?></td>
                     <td><?php echo $acc['u_username'] ?></td>
                     <td><?php echo $acc['u_email'] ?></td>
-                    <td><?php echo $acc['u_role'] ?></td>
-                    <td><?php echo $acc['u_status'] ?></td>
+                    <td>
+                        <?php
+                        if($acc['u_role']==1) echo "<span style='color:blue;'>Quản trị viên</span>";
+                        else if($acc['u_role']== 2) echo "Khách hàng";
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                         if($acc['u_status']==1) echo "<span style='color:green;'>Hoạt động</span>";
+                         else if($acc['u_status']== 2) echo "<span style='color:red;'>Đã khóa</span>";
+                         ?>
+                    </td>
                     <td>
                         <a href="<?=$adminUrl."account/update&id=".$acc['id']?>">Sửa</a> | 
                         <a onclick="return confirm('Bạn chắc chắn muốn xóa chứ ?')" href="<?= $adminUrl . "account/delete&id=" . $acc['id'] ?>">Xóa</a>
                     </td>
+                    <td><a href=""><i class="fa-solid fa-circle-info"></i></a></td>
                 </tr>
             <?php endforeach; ?>
         </table>
-        <div class="btn_property d-flex justify-content-center mt-3">
-            <input type="button" id="btnClick" class="btn btn-outline-dark" value="Chọn tất cả">
-            <input type="button" id="btnNo" class="btn btn-outline-dark mx-2" value="Bỏ chọn tất cả">
-            <input type="submit" name="btn-deletes-v" class="btn btn-outline-dark" value="Xóa tất cả ô đã chọn">
+        <div class="btn_property d-flex justify-content-center mt-3 mb-4">
+            <input type="submit" name="btn-unlock-a" class="btn btn-outline-dark mx-2" value="Mở khóa tất cả tài khoản đã chọn">
+            <input type="submit" name="btn-lock-a" class="btn btn-outline-dark me-2" value="Khóa các tài khoản đã chọn">
+            <input type="submit" name="btn-deletes-a" class="btn btn-outline-dark" value="Xóa tất cả ô đã chọn" onclick="return confirm('Bạn chắc chắn muốn xóa các tài khoản đã chọn ?')">
         </div>
     </form>
-</div>
 <script>
-    let listCheck = document.querySelectorAll('.checkbtn');
-    document.getElementById('btnClick').onclick = function(){
-        for(let i =0; i< listCheck.length; i++){
-            listCheck[i].checked = true;
+    // Chọn tất cả ô check
+    let listInput = document.querySelectorAll(".checkbtn");
+    let inputAll = document.getElementById("checkAll");
+    inputAll.addEventListener("change",function(){
+        if(inputAll.checked){
+            for(let i = 0; i < listInput.length; i++){
+                listInput[i].checked = true;
+            }
+        }else{
+            for(let i = 0; i < listInput.length; i++){
+                listInput[i].checked = false;
+            }
         }
-    }
-    document.getElementById('btnNo').onclick = function(){
-        for(let i =0; i< listCheck.length; i++){
-            listCheck[i].checked = false;
-        }
-    }
+    });
 </script>

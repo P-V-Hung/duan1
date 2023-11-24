@@ -23,7 +23,7 @@
           <div class="sidebar-menu">
             <a href="">
               <div class="sidebar-menu-header">
-                <p>Home</p>
+                <p>Trang chủ</p>
               </div>
             </a>
             <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -153,7 +153,7 @@
                   <div class="accordion-body">
                     <ul>
                       <li><a href="<?=$adminUrl."account/list"?>">Danh sách tài khoản</a></li>
-                      <li><a href="">Thêm tài khoản</a></li>
+                      <li><a href="<?=$adminUrl."account/add"?>">Thêm tài khoản</a></li>
                     </ul>
                   </div>
                 </div>
