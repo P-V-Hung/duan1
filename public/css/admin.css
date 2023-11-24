@@ -294,6 +294,11 @@ p {
   transform: translateY(-10px);
 }
 
+/* table account */
+.table_account{
+  width: 100%;
+}
+
 /* table hug */
 .table-hung{
   margin: auto;
@@ -413,3 +418,40 @@ p {
 
 .formAddVou input[type="submit"]:hover{
 opacity: 0.7;}
+
+
+/* Form thêm tài khoản */
+.img-add-acc{
+  width: 300px; height: 350px;
+}
+.addAcc-img {
+  justify-content: center;
+}
+.addAcc-img img {
+  width: 330px;
+  height: 350px;
+}
+
+.addAcc-acc-show {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 100px !important;
+}
+.addAcc-acc .title h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.addAcc-acc .title p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.addAcc-img input{
+  width: 330px;
+}
+.addAcc-img{
+  position: relative;
+  top: 60px;
+  left: 50px;
+}

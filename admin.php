@@ -113,6 +113,18 @@
         require_once $controller."account/list.php";
         break;
       }
+      case "account/add":{
+        require_once $controller."account/add.php";
+        break;
+      }
+      case "account/delete":{
+        require_once $controller."account/delete.php";
+        break;
+      }
+      case "account/update":{
+        require_once $controller."account/update.php";
+        break;
+      }
       
 
     default: {

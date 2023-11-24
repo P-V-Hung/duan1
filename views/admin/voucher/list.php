@@ -29,10 +29,10 @@
                 </tr>
             <?php endforeach; ?>
         </table>
-        <div class="btn_property d-flex justify-content-center mt-3">
+        <div class="btn_property d-flex justify-content-center mt-3 mb-4">
             <input type="button" id="btnClick" class="btn btn-outline-dark" value="Chọn tất cả">
             <input type="button" id="btnNo" class="btn btn-outline-dark mx-2" value="Bỏ chọn tất cả">
-            <input type="submit" name="btn-deletes-v" class="btn btn-outline-dark" value="Xóa tất cả ô đã chọn">
+            <input type="submit" name="btn-deletes-v" class="btn btn-outline-dark" value="Xóa tất cả ô đã chọn" onclick="return confirm('Bạn chắc chắn muốn xóa chứ ?')">
         </div>
     </form>
 </div>
