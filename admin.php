@@ -8,6 +8,7 @@
     require_once "./models/CategoryModel.php";
     require_once "./models/ProductModel.php";
     require_once "./models/VoucherModel.php";
+    require_once "./models/AccountModel.php";
 
   
   // Điều hướng
@@ -104,6 +105,12 @@
       }
       case "voucher/add":{
         require_once $controller."voucher/add.php";
+        break;
+      }
+
+      // Account
+      case "account/list":{
+        require_once $controller."account/list.php";
         break;
       }
       
