@@ -32,24 +32,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-      $('.filtering').slick({
-        slidesToShow: 4,
-        slidesToScroll: 4
-    });
+  $('.filtering').slick({
+    slidesToShow: 4,
+    slidesToScroll: 4
+  });
 
-    var filtered = false;
+  var filtered = false;
 
-    $('.js-filter').on('click', function() {
-        if (filtered === false) {
-            $('.filtering').slick('slickFilter', ':even');
-            $(this).text('Unfilter Slides');
-            filtered = true;
-        } else {
-            $('.filtering').slick('slickUnfilter');
-            $(this).text('Filter Slides');
-            filtered = false;
-        }
-    });
+  $('.js-filter').on('click', function() {
+    if (filtered === false) {
+      $('.filtering').slick('slickFilter', ':even');
+      $(this).text('Unfilter Slides');
+      filtered = true;
+    } else {
+      $('.filtering').slick('slickUnfilter');
+      $(this).text('Filter Slides');
+      filtered = false;
+    }
+  });
 </script>
 </body>
 

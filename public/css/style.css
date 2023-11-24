@@ -1059,3 +1059,74 @@ p {
 .img-child-client .img-con img{
   border: 1px solid #333;
 }
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(120%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+@keyframes fadeOut {
+  to{
+    opacity: 0;
+  }
+}
+
+.message {
+  position: fixed;
+  z-index: 999;
+  background-color:#fff;
+  border-radius: 2px;
+  bottom: 60px;
+  right: 40px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 5px solid green;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+  animation: slideInLeft ease 0.3s, fadeOut linear 1s 3s forwards;
+}
+.message + .message{
+  margin-top: 20px;
+}
+.message-icon{
+  font-size: 24px;
+}
+.message-icon,.message-close{
+  padding: 0 16px;
+}
+.message-close{
+  font-size: 20px;
+}
+.message-title h3{
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+}
+.message-title{
+  min-width: 250px;
+  max-width: 300px;
+}
+.message-title p{
+  font-size: 14px;
+  color: #888;
+}
+
+.message-success{
+  border-color: #47d864;
+}
+.message-success .message-icon{
+  color: #47d864;
+}
+.message-error{
+  border-color: #ff623d;
+}
+.message-error .message-icon{
+  color: #ff623d;
+}

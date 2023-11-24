@@ -1,14 +1,6 @@
 <?php
     session_start();
-
-    $_SESSION['user'] = [
-        'id' => 1,
-        'u_username' => 'hung2004',
-        'u_email' => 'azhung@gmail.com',
-        'u_password' => 'hung2004',
-        'u_role' => 'hung2004',
-    ];
-
+    
     // pdo
     require_once "./config/pdo.php";
     require_once "./config/function.php";
@@ -44,6 +36,7 @@
         }
         case 'cart/delete' : {
             require_once $controllers."cart/delete.php";
+        }
         case 'login' : {
             require_once $controllers."account/login.php";
             break;

@@ -1,3 +1,8 @@
+<?php
+  if(isset($_COOKIE['login'])){
+    logSuccess("Đăng nhập thành công!");
+  }
+?>
 <div class="container-xxl">
   <div class="banner">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">

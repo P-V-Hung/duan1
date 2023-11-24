@@ -18,4 +18,37 @@
             echo "<span style='color:green'>Khả dụng</span>";
         }
     }
+
+    function logSuccess($message,$type = "Success"){
+        echo "
+        <div class='message message-success'>
+        <div class='message-icon'>
+        <i class='fa-solid fa-circle-check'></i>
+        </div>
+        <div class='message-title'>
+          <h3>$type</h3>
+          <p>$message </p>
+        </div>
+        <div class='message-close'>
+        <i class='fa-solid fa-x'></i>
+        </div>
+      </div>
+      ";
+    }
+    function logError($message,$type = "Error"){
+        echo "
+        <div class='message message-error'>
+        <div class='message-icon'>
+        <i class='fa-solid fa-circle-check'></i>
+        </div>
+        <div class='message-title'>
+          <h3>$type</h3>
+          <p>$message </p>
+        </div>
+        <div class='message-close'>
+        <i class='fa-solid fa-x'></i>
+        </div>
+      </div>
+      ";
+    }
 ?>

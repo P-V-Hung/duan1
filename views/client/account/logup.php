@@ -24,7 +24,7 @@
     </form>
     <div class="more">
         Bạn đã có có tài khoản?
-        <a href="<?=$clientUrl."login"?>">Đăng nhập</a>
+        <a href="<?= $clientUrl . "login" ?>">Đăng nhập</a>
     </div>
 </div>
 <script>
@@ -93,7 +93,4 @@
             formSignUp.submit();
         }
     }
-</script>
-=======
-
 </script>
