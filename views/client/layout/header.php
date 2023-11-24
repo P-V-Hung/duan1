@@ -43,6 +43,7 @@
               <ul class="dropdown-menu gap-2">
                 <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
                 <li><a class="dropdown-item" href="admin.php">Trang quản trị</a></li>
+                <li><a class="dropdown-item" href="<?=$clientUrl."cart"?>">Giỏ hàng</a></li>
                 <li><a class="dropdown-item" href="<?=$clientUrl."logup"?>">Đăng kí</a></li>
                 <li><a class="dropdown-item" href="<?=$clientUrl."login"?>">Đăng nhập</a></li>
                 <li>

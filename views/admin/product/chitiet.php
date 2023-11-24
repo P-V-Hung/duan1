@@ -9,7 +9,7 @@
                     <img src="<?= $pathUpload . $pro['pro_img'] ?>" class="card-img-top" alt="..." />
                     <div class="card-body">
                         <h5 class="card-title product-title-name-all"><?= $pro['pro_name'] ?></h5>
-                        <p class="card-text">Giá: <?= $pp['pp_price'] ?></p>
+                        <p class="card-text">Giá: <?= number_format($pp['pp_price']) ?></p>
                         <div class="card-views d-flex justify-content-between">
                             <span>Lượt mua : <?= $pp['pp_buys'] ?></span>
                             <span>Tồn kho : <?= $pp['pp_count'] ?></span>

@@ -19,7 +19,7 @@
                         <div class="card-body">
                             <h5 class="card-title product-title-name-all"><?= $pro['pro_name'] ?></h5>
                             <div class="card-views">
-                                <p class="card-text ">Giá: <?= $pp['minprice'] . " -> " . $pp['maxprice'] . "(vnđ)" ?></p>
+                                <p class="card-text ">Giá: <?= number_format($pp['minprice']) . " -> " . number_format($pp['maxprice']) . "(vnđ)" ?></p>
                                 <span>Lượt mua : <?= $pp['total_buys'] ?></span>
                             </div>
                             <div class="card-views d-flex justify-content-between">

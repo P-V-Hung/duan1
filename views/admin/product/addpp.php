@@ -14,7 +14,7 @@
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Giá: </label>
-                <input type="number" class="form-control" name="pp_price" id="price">
+                <input type="text" oninput="formatNumber(this)" class="form-control" name="pp_price" id="price">
             </div>
             <div class="mb-3">
                 <label for="color" class="form-label">Phân loại: </label>
@@ -26,7 +26,7 @@
             </div>
             <div class="mb-3">
                 <label for="count" class="form-label">Số lượng: </label>
-                <input type="number" class="form-control" name="pp_count" id="count">
+                <input type="number" min="0" class="form-control" name="pp_count" id="count">
             </div>
             <button type="submit" name="btn_add-pp" class="btn btn-primary">Thêm</button>
         </form>
