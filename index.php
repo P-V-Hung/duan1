@@ -17,6 +17,7 @@
     //model 
     require_once "./models/CategoryModel.php";
     require_once "./models/ProductModel.php";
+    require_once "./models/AccountModel.php";
 
 
     // router
@@ -43,6 +44,12 @@
         }
         case 'cart/delete' : {
             require_once $controllers."cart/delete.php";
+        case 'login' : {
+            require_once $controllers."account/login.php";
+            break;
+        }
+        case 'logup' : {
+            require_once $controllers."account/logup.php";
             break;
         }
     }

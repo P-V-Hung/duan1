@@ -44,6 +44,8 @@
                 <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
                 <li><a class="dropdown-item" href="admin.php">Trang quản trị</a></li>
                 <li><a class="dropdown-item" href="<?=$clientUrl."cart"?>">Giỏ hàng</a></li>
+                <li><a class="dropdown-item" href="<?=$clientUrl."logup"?>">Đăng kí</a></li>
+                <li><a class="dropdown-item" href="<?=$clientUrl."login"?>">Đăng nhập</a></li>
                 <li>
                   <form action="" method="post">
                     <button type="submit" name="btnlogout" class="btn btn-danger" style="width:100%;">Đăng xuất</button>
