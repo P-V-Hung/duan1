@@ -13,7 +13,7 @@
                 <tr>
                     <td>Mức ưu đãi</td>
                     <td>
-                        <input class="form-control" list="price" type="text" oninput="formatNumber(this)" name="v_price" placeholder="Số tiền giảm">
+                        <input class="form-control" list="price" type="text" name="v_price" placeholder="Số tiền giảm">
                         <datalist id="price">
                         <option value="10000">
                         <option value="20000">

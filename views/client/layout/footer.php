@@ -81,6 +81,12 @@
   closeMessage.onclick = function(){
     closeMessage.parentNode.remove()
   }
+
+  function formatNumber(input) {
+      let value = input.value.replace(/\D/g, '');
+      value = new Intl.NumberFormat().format(value);
+      input.value = value;
+    }
 </script>
 </body>
 

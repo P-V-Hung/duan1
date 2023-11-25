@@ -1,10 +1,14 @@
 <?php
-  if(isset($_COOKIE['login'])){
-    logSuccess("Đăng nhập thành công!");
+if (isset($_COOKIE['login'])) {
+  if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address']) || empty($_SESSION['user']['u_tel'])) {
+    logInfo("Vui lòng cập nhật thông tin tài khoản! <a href='".$clientUrl."userInfor'>tại đây</a>");
+  }else{
+    logSuccess('Chào mừng quay trở lại!','Xin chào');
   }
-  if(isset($_COOKIE['addcart'])){
-    logSuccess("Đã thêm vào giỏ hàng!");
-  }
+}
+if (isset($_COOKIE['addcart'])) {
+  logSuccess("Đã thêm vào giỏ hàng!");
+}
 ?>
 <div class="container-xxl">
   <div class="banner">
@@ -93,25 +97,25 @@
       <?php
       foreach ($listHostProduct as $pro) :
         foreach ($listProPP as $pp) :
-          if($pp['pp_proid'] == $pro['id']):
+          if ($pp['pp_proid'] == $pro['id']) :
       ?>
-          <div class="card" style="width: 15rem">
-            <img src="<?= $pathUpload . $pro['pro_img'] ?>" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <a href="<?=$clientUrl."chitietsp&id=".$pro['id']?>">
-                <h5 class="card-title product-title-name-all"><?= $pro['pro_name'] ?></h5>
-              </a>
-              <div class="card-views">
-                <p class="card-text"><?=number_format($pp['minprice'])." -> ".number_format($pp['maxprice'])." (vnđ)"?> </p>
-                <span>Lượt mua : <?=$pp['total_buys']?></span>
+            <div class="card" style="width: 15rem">
+              <img src="<?= $pathUpload . $pro['pro_img'] ?>" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <a href="<?= $clientUrl . "chitietsp&id=" . $pro['id'] ?>">
+                  <h5 class="card-title product-title-name-all"><?= $pro['pro_name'] ?></h5>
+                </a>
+                <div class="card-views">
+                  <p class="card-text"><?= number_format($pp['minprice']) . " -> " . number_format($pp['maxprice']) . " (vnđ)" ?> </p>
+                  <span>Lượt mua : <?= $pp['total_buys'] ?></span>
+                </div>
+                <div class="card-views d-flex justify-content-between">
+                  <span>Lượt xem: <?= $pro['pro_views'] ?></span>
+                  <span>Số lượng: <?= $pp['total_count'] ?></span>
+                </div>
+                <a href="<?= $clientUrl . "chitietsp&id=" . $pro['id'] ?>" class="btn btn-outline-primary">Mua ngay</a>
               </div>
-              <div class="card-views d-flex justify-content-between">
-                <span>Lượt xem: <?=$pro['pro_views']?></span>
-                <span>Số lượng: <?=$pp['total_count']?></span>
-              </div>
-              <a href="<?=$clientUrl."chitietsp&id=".$pro['id']?>" class="btn btn-outline-primary">Mua ngay</a>
             </div>
-          </div>
       <?php
           endif;
         endforeach;

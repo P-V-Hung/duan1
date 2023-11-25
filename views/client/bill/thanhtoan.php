@@ -1,12 +1,17 @@
+<?php
+if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address']) || empty($_SESSION['user']['u_tel'])) {
+    logInfo("Vui lòng cập nhật thông tin tài khoản! <a href='" . $clientUrl . "userInfor'>tại đây</a>");
+}
+?>
 <main class="container-xxl mt-5">
-    <form action="" method="post">
+    <form action="<?=$clientUrl."bill/add"?>" method="post">
         <div class="location border p-3">
             <div class="title_ship mb-1">
                 <p><i class="fa-sharp fa-solid fa-location-dot"></i> Địa chỉ nhận hàng</p>
             </div>
             <div class="location_ship d-flex">
-                <b> <small class="textFullname">Phạm Văn Hùng</small> (+<small class="textTel">0333026322</small>)</b>
-                <p class="ms-5 textAddress">Thanh Lâm-An Thịnh-Lương Tài-Bắc Ninh</p>
+                <b> <small class="textFullname"><?= $_SESSION['user']['u_fullname'] ?></small> (+<small class="textTel"><?= $_SESSION['user']['u_tel'] ?></small>)</b>
+                <p class="ms-5 textAddress"><?= $_SESSION['user']['u_address'] ?></p>
                 <span class="mx-4">Mặc định</span>
                 <input type="button" class="ms-5" id="click_location" value="Thay đổi">
             </div>
@@ -20,9 +25,9 @@
                     <hr>
                     <!-- list voucher -->
                     <div class="voucher_content-main py-4 px-4 border my-4">
-                        <input class="border my-2 py-2" type="text" value="Phạm Văn Hùng" name="fullname" placeholder="Họ và tên người nhận" id="fullname"><br>
-                        <input class="border my-2 py-2" type="text" value="Số 2a, Thanh Lâm-An Thịnh-Lương Tài-Bắc Ninh" placeholder="Địa chỉ"  name="address" id="address"><br>
-                        <input class="border my-2 py-2" type="text" value="0333026322" name="tel"  placeholder="Số điện thoại" id="tel" ><br>
+                        <input class="border my-2 py-2" type="text" value="<?= $_SESSION['user']['u_fullname'] ?>" name="fullname" placeholder="Họ và tên người nhận" id="fullname"><br>
+                        <input class="border my-2 py-2" type="text" value="<?= $_SESSION['user']['u_address'] ?>" placeholder="Địa chỉ" name="address" id="address"><br>
+                        <input class="border my-2 py-2" type="text" value="<?= $_SESSION['user']['u_tel'] ?>" name="tel" placeholder="Số điện thoại" id="tel"><br>
                     </div>
                     <div class="footer_voucher d-flex justify-content-end align-items-center">
                         <input type="button" id="location_back" value="Xác nhận" class="px-5 btn btn-outline-danger">
@@ -31,15 +36,13 @@
             </div>
         </div>
         <!-- Danh sách sản phẩm -->
-        <div class="listcart border mt-4 pt-3">
+        <div class="listcart border mt-4 pt-3 ">
             <div class="cart d-flex align-items-center justify-content-between ps-2">
-                <div class="cart_sp ms-4">
+                <div class="cart_sp">
                     <p>Sản phẩm</p>
                 </div>
-                <div class="ps-5 ms-2">Tên sản phẩm</div>
-                <div></div>
+                <div class="ps-5">Tên sản phẩm</div>
                 <div class="ps-3">Cấu hình</div>
-                <div></div>
                 <div class="cart_price pe-4">
                     <p>Đơn giá</p>
                 </div>
@@ -52,71 +55,31 @@
             </div>
             <hr>
             <!-- Danh sách -->
-            <div class="cart d-flex align-items-center justify-content-between px-3">
-                <div class="cart_image">
-                    <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ln7cadeymy8o51" width="100px" alt="">
+            <?php foreach ($dataBill as $key => $bill) : ?>
+                <input type="hidden" name="idCart<?=$listCatId[$key]?>" value="<?=$listCatId[$key]?>">
+                <div class="cart d-flex align-items-center justify-content-between px-3">
+                    <div class="cart_image">
+                        <img src="<?= $pathUpload . $bill['img'] ?>" width="100px" alt="">
+                    </div>
+                    <div class="cart_title">
+                        <h6><?= $bill['name'] ?></h6>
+                    </div>
+                    <div class="cart_proinfor">
+                        <p>Phân loại: <?= $bill['color'] ?></p>
+                        <p>Cấu hình: <?= $bill['memory'] ?></p>
+                    </div>
+                    <div class="cart_price">
+                        <p><?= number_format($bill['price']) ?> vnđ</p>
+                    </div>
+                    <div class="cart_count">
+                        <p><?= $bill['count'] ?></p>
+                    </div>
+                    <div class="cart_total">
+                        <p><?= number_format($bill['total']) ?> vnđ</p>
+                    </div>
                 </div>
-                <div class="cart_title">
-                    <h6>Điện thoại IPhone 14Promax</h6>
-                </div>
-                <div class="cart_proinfor">
-                    <p>Màu : Đỏ</p>
-                    <p>Cấu hình: 64GB</p>
-                </div>
-                <div class="cart_price">
-                    <p>55.000 đ</p>
-                </div>
-                <div class="cart_count">
-                    <p>2</p>
-                </div>
-                <div class="cart_total">
-                    <p>110.000 đ</p>
-                </div>
-            </div>
-            <hr>
-            <div class="cart d-flex align-items-center justify-content-between px-3">
-                <div class="cart_image">
-                    <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ln7cadeymy8o51" width="100px" alt="">
-                </div>
-                <div class="cart_title">
-                    <h6>Điện thoại IPhone 14Promax</h6>
-                </div>
-                <div class="cart_proinfor">
-                    <p>Màu : Đỏ</p>
-                    <p>Cấu hình: 64GB</p>
-                </div>
-                <div class="cart_price">
-                    <p>55.000 đ</p>
-                </div>
-                <div class="cart_count">
-                    <p>2</p>
-                </div>
-                <div class="cart_total">
-                    <p>110.000 đ</p>
-                </div>
-            </div>
-            <hr>
-            <div class="cart d-flex align-items-center justify-content-between px-3">
-                <div class="cart_image">
-                    <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ln7cadeymy8o51" width="100px" alt="">
-                </div>
-                <div class="cart_title">
-                    <h6>Điện thoại IPhone 14Promax</h6>
-                </div>
-                <div class="cart_proinfor">
-                    <p>Màu : Đỏ</p>
-                    <p>Cấu hình: 64GB</p>
-                </div>
-                <div class="cart_price">
-                    <p>55.000 đ</p>
-                </div>
-                <div class="cart_count">
-                    <p>2</p>
-                </div>
-                <div class="cart_total">
-                    <p>110.000 đ</p>
-                </div>
-            </div>
+                <hr>
+            <?php endforeach ?>
         </div>
         <!-- PTTT -->
         <div id="pttt" class="vorcher d-none position-fixed">
@@ -188,11 +151,11 @@
                 <table>
                     <tr>
                         <td>Tổng tiền hàng:</td>
-                        <td class="p-2 ps-5 d-flex justify-content-end"> <span class="total_pro">2000000</span> vnđ </td>
+                        <td class="p-2 ps-5 d-flex justify-content-end"> <span class="total_pro"><?= number_format($totalAll) ?></span> vnđ </td>
                     </tr>
                     <tr>
                         <td>Phí vận chuyển: </td>
-                        <td class="p-2 ps-5 d-flex justify-content-end"> <span class="total_ship">100000</span> vnđ</td>
+                        <td class="p-2 ps-5 d-flex justify-content-end"> <span class="total_ship"><?= number_format("100000") ?></span> vnđ</td>
                     </tr>
                     <tr>
                         <td>Voucher: </td>
@@ -200,87 +163,53 @@
                     </tr>
                     <tr>
                         <td>Tổng thanh toán:</td>
-                        <td class="p-2 ps-5 d-flex justify-content-end"> <input name="total_bill" class="text-end" id="total_cart" value="2075000">vnđ</td>
+                        <td class="p-2 ps-5 d-flex justify-content-end"> <input name="total_bill" class="text-end" id="total_cart" value="">vnđ</td>
                     </tr>
                 </table>
             </div>
             <hr>
             <div class="cart_btn d-flex justify-content-end">
-                <button name="btn_muahang" class="btn btn-outline-danger">Đặt hàng</button>
+                <button type="submit" name="btn_muahang" class="btn btn-outline-danger">Đặt hàng</button>
+            </div>
+        </div>
+        <div id="vorcher" class="vorcher d-none position-fixed">
+            <div class="voucher_bong d-flex justify-content-center align-items-center">
+                <div class="voucher_content border p-4">
+                    <div class="header_voucher d-flex justify-content-between mb-3 align-items-center">
+                        <span>Chọn Voucher</span>
+                        <a href="#">Hỗ trợ <i class="fa-solid fa-headphones-simple"></i></a>
+                    </div>
+                    <!-- list voucher -->
+                    <div class="div-list-voucher">
+                        <?php foreach ($listVoucher as $vou) : ?>
+                            <div class="voucher_content-main d-flex py-2 px-4 justify-content-between align-items-center border my-4">
+                                <div class="img d-flex justify-content-center align-items-center">Voucher</div>
+                                <div class="title">
+                                    Giảm: <span class="priceVoucher"><?= number_format($vou['v_price']) ?></span>
+                                    <br>
+                                    <span class="free">
+                                        #giảm trên toàn bộ đơn hàng
+                                    </span>
+                                    <br>
+                                    Số lượng còn lại: <?= $vou['v_count'] - $vou['v_used'] ?>
+                                </div>
+                                <div class="voucher_content-time">
+                                    <p>Từ: <?= $vou['v_create'] ?></p>
+                                    <p>Đến: <?= $vou['v_arrtive'] ?></p>
+                                </div>
+                                <div class="voucher_content-btn">
+                                    <input type="radio" name="voucher" value="<?=$vou['id']?>" id="">
+                                </div>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+                    <div class="footer_voucher d-flex justify-content-end align-items-center">
+                        <input type="button" id="voucher_back" value="Xác Nhận" class="px-5 btn btn-outline-danger">
+                    </div>
+                </div>
             </div>
         </div>
     </form>
-    <div id="vorcher" class="vorcher d-none position-fixed">
-        <div class="voucher_bong d-flex justify-content-center align-items-center">
-            <div class="voucher_content border p-4">
-                <div class="header_voucher d-flex justify-content-between mb-3 align-items-center">
-                    <span>Chọn Voucher</span>
-                    <a href="#">Hỗ trợ <i class="fa-solid fa-headphones-simple"></i></a>
-                </div>
-                <!-- list voucher -->
-                <div class="voucher_content-main d-flex py-2 px-4 justify-content-between align-items-center border my-4">
-                    <div class="img d-flex justify-content-center align-items-center">Voucher</div>
-                    <div class="title">
-                        Giảm: 75.000
-                        <br>
-                        <span class="free">
-                            Freeship toàn quốc
-                        </span>
-                        <br>
-                        Số lượng còn lại: 10
-                    </div>
-                    <div class="voucher_content-time">
-                        <p>Từ: 18-10-2004</p>
-                        <p>Đến: 28-10-2004</p>
-                    </div>
-                    <div class="voucher_content-btn">
-                        <input type="radio" name="voucher" value="75000" id="">
-                    </div>
-                </div>
-                <div class="voucher_content-main d-flex py-2 px-4 justify-content-between align-items-center border my-4">
-                    <div class="img d-flex justify-content-center align-items-center">Voucher</div>
-                    <div class="title">
-                        Giảm: 25.000
-                        <br>
-                        <span class="free">
-                            Freeship toàn quốc
-                        </span>
-                        <br>
-                        Số lượng còn lại: 10
-                    </div>
-                    <div class="voucher_content-time">
-                        <p>Từ: 18-10-2004</p>
-                        <p>Đến: 28-10-2004</p>
-                    </div>
-                    <div class="voucher_content-btn">
-                        <input type="radio" name="voucher" value="25000" id="">
-                    </div>
-                </div>
-                <div class="voucher_content-main d-flex py-2 px-4 justify-content-between align-items-center border my-4">
-                    <div class="img d-flex justify-content-center align-items-center">Voucher</div>
-                    <div class="title">
-                        Giảm: 50.000
-                        <br>
-                        <span class="free">
-                            Freeship toàn quốc
-                        </span>
-                        <br>
-                        Số lượng còn lại: 10
-                    </div>
-                    <div class="voucher_content-time">
-                        <p>Từ: 18-10-2004</p>
-                        <p>Đến: 28-10-2004</p>
-                    </div>
-                    <div class="voucher_content-btn">
-                        <input type="radio" name="voucher" value="50000" id="">
-                    </div>
-                </div>
-                <div class="footer_voucher d-flex justify-content-end align-items-center">
-                    <input type="button" id="voucher_back" value="Xác Nhận" class="px-5 btn btn-outline-danger">
-                </div>
-            </div>
-        </div>
-    </div>
 </main>
 <script>
     function blockIn(idForm, block, none) {
@@ -296,10 +225,10 @@
         }
     }
 
-        // load textinput
-    function loadText(input,text){
-        input.addEventListener('input',function(){
-        text.innerText = input.value;
+    // load textinput
+    function loadText(input, text) {
+        input.addEventListener('input', function() {
+            text.innerText = input.value;
         })
     }
     blockIn("#location_ship", "click_location", "location_back");
@@ -317,17 +246,22 @@
     }
 
     let totalCart = document.querySelector("#total_cart");
-    let totalPro = document.querySelector(".total_pro");
-    let priceShip = document.querySelector(".total_ship");
+    let totalPro = document.querySelector(".total_pro").innerText;
+    totalPro = totalPro.replace(/,/g, '');
+    let priceShip = document.querySelector(".total_ship").innerText;
+    priceShip = priceShip.replace(/,/g, '');
     let voucherDown = document.querySelector(".voucher_down");
+    let tongBill = parseFloat(totalPro) + parseFloat(priceShip);
     let voucher = document.getElementsByName("voucher");
-    let tongBill = parseFloat(totalPro.innerText) + parseFloat(priceShip.innerText);
-    totalCart.value = tongBill;
+    let priceVouchers = document.querySelectorAll(".priceVoucher");
+    totalCart.value = tongBill.toLocaleString();
     for (let i = 0; i < voucher.length; i++) {
         voucher[i].addEventListener('change', function() {
             if (voucher[i].checked) {
-                totalCart.value = tongBill - voucher[i].value;
-                voucherDown.innerText = voucher[i].value;
+                priceVoucher = priceVouchers[i].innerText;
+                voucherDown.innerText = priceVoucher;
+                priceVoucher = priceVoucher.replace(/,/g, '');
+                totalCart.value = (tongBill - priceVoucher).toLocaleString();
             }
         });
     }
@@ -339,8 +273,7 @@
     let textFullname = document.querySelector('.textFullname');
     let textAddress = document.querySelector('.textAddress');
     let textTel = document.querySelector('.textTel');
-    loadText(fullname,textFullname);
-    loadText(address,textAddress);
-    loadText(tel,textTel);
-
+    loadText(fullname, textFullname);
+    loadText(address, textAddress);
+    loadText(tel, textTel);
 </script>

@@ -164,7 +164,7 @@ li {
   padding: 10px 0;
   display: grid;
   grid-template-columns:repeat(4, 1fr);
-  gap: 64px;
+  gap: 50px;
 }
 .new-product .card {
   padding-top: 10px;

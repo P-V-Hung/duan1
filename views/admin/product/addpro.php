@@ -29,7 +29,7 @@
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">Giá</span>
-                            <input type="text" class="form-control" placeholder="Giá sản phẩm" oninput="formatNumber(this)" require name="pp_price" id="basic-url" aria-describedby="basic-addon3">
+                            <input type="text" class="form-control" placeholder="Giá sản phẩm"  require name="pp_price" id="basic-url" aria-describedby="basic-addon3">
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">Phân loại</span>

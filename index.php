@@ -11,6 +11,7 @@
     require_once "./models/ProductModel.php";
     require_once "./models/AccountModel.php";
     require_once "./models/BillModel.php";
+    require_once "./models/VoucherModel.php";
     require_once "./models/CommentModel.php";
 
 
@@ -65,6 +66,14 @@
         }
         case 'changePass' : {
             require_once $controllers."account/changePass.php";
+            break;
+        }
+        case 'bill/add' : {
+            require_once $controllers."bill/addbill.php";
+            break;
+        }
+        case 'bill/list' : {
+            require_once $controllers."bill/listbill.php";
             break;
         }
     }
