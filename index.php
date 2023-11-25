@@ -55,6 +55,18 @@
             require_once $controllers."account/logup.php";
             break;
         }
+        case 'userInfor' : {
+            require_once $controllers."account/userInfor.php";
+            break;
+        }
+        case 'editInfor' : {
+            require_once $controllers."account/editInfor.php";
+            break;
+        }
+        case 'changePass' : {
+            require_once $controllers."account/changePass.php";
+            break;
+        }
     }
     // require_once "./client/chitietsp.php";
     // require_once "./client/product.php";

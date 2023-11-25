@@ -37,11 +37,11 @@
           <div>
             <div class="dropdown">
               <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="" class="avatar-user" alt="" />
+                <img src="https://tse4.mm.bing.net/th?id=OIP.w105elCPL6VfL7OJqHcmjgHaE8&pid=Api&P=0&h=220" class="avatar-user" alt="" />
               </button>
 
               <ul class="dropdown-menu gap-2">
-                <li><a class="dropdown-item" href="#">Thông tin cá nhân</a></li>
+                <li><a class="dropdown-item" href="<?=$clientUrl."userInfor"?>">Thông tin cá nhân</a></li>
                 <li><a class="dropdown-item" href="admin.php">Trang quản trị</a></li>
                 <li><a class="dropdown-item" href="<?=$clientUrl."cart"?>">Giỏ hàng</a></li>
                 <li><a class="dropdown-item" href="<?=$clientUrl."logup"?>">Đăng kí</a></li>

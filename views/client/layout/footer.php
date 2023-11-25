@@ -51,6 +51,16 @@
     }
   });
 
+  function chooseFile(fileInput, idImg) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById(idImg).setAttribute('src', e.target.result);
+        }
+        reader.readAsDataURL(fileInput.files[0]);
+
+    }
+  }
   // Lưu vị trí cuộn khi trang bị đóng
   window.addEventListener('beforeunload', function() {
     localStorage.setItem('scrollPosition', window.scrollY);
