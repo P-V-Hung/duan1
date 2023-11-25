@@ -18,7 +18,7 @@
         <div>
             <input type="password" name="repass" id="repass" placeholder="Nhập lại mật khẩu">
             <div class="icon icon2"><i class="fa-solid fa-eye"></i></div>
-            <p class="err errRePass">Mật khẩu không trùng khớp</p>
+            <p class="err errRePass">Mật khẩu trùng khớp</p>
         </div>
         <input type="submit" id="btn_sub" name="btn_signUp" value="Đăng ký">
     </form>
