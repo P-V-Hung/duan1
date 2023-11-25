@@ -50,6 +50,21 @@
       filtered = false;
     }
   });
+
+  // Lưu vị trí cuộn khi trang bị đóng
+  window.addEventListener('beforeunload', function() {
+    localStorage.setItem('scrollPosition', window.scrollY);
+  });
+
+  // Kiểm tra xem có vị trí cuộn đã lưu trữ hay không
+  document.addEventListener('DOMContentLoaded', function() {
+    var savedScrollPosition = localStorage.getItem('scrollPosition');
+
+    // Nếu có vị trí cuộn được lưu trữ, thì đặt lại vị trí cuộn
+    if (savedScrollPosition !== null) {
+      window.scrollTo(0, savedScrollPosition);
+    }
+  });
 </script>
 </body>
 
