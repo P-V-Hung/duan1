@@ -53,11 +53,11 @@
 
   function chooseFile(fileInput, idImg) {
     if (fileInput.files && fileInput.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById(idImg).setAttribute('src', e.target.result);
-        }
-        reader.readAsDataURL(fileInput.files[0]);
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById(idImg).setAttribute('src', e.target.result);
+      }
+      reader.readAsDataURL(fileInput.files[0]);
 
     }
   }
@@ -75,6 +75,12 @@
       window.scrollTo(0, savedScrollPosition);
     }
   });
+
+  // closs mesage
+  let closeMessage = document.querySelector(".message-close");
+  closeMessage.onclick = function(){
+    closeMessage.parentNode.remove()
+  }
 </script>
 </body>
 

@@ -1,3 +1,8 @@
+<?php
+  if(isset($_POST['btnlogout'])){
+    unset($_SESSION['user']);
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,14 +16,14 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./public/css/style.css"/>
+  <link rel="stylesheet" href="./public/css/style.css" />
 </head>
 
 <body>
   <header>
     <div class="container">
       <nav>
-        <a href="/duanmau/">
+        <a href="<?=$clientUrl."/"?>">
           <div class="logo">
             <svg aria-hidden="true" class="pre-logo-svg" focusable="false" viewBox="0 0 24 24" role="img" width="60px" height="60px" fill="none">
               <path fill="currentColor" fill-rule="evenodd" d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z" clip-rule="evenodd"></path>
@@ -35,26 +40,41 @@
             <li><a href="<?= $clientUrl . "product" ?>"">Sản phẩm</a></li>
           </ul>
           <div>
-            <div class="dropdown">
-              <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://tse4.mm.bing.net/th?id=OIP.w105elCPL6VfL7OJqHcmjgHaE8&pid=Api&P=0&h=220" class="avatar-user" alt="" />
-              </button>
+            <div class=" dropdown">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="https://tse4.mm.bing.net/th?id=OIP.w105elCPL6VfL7OJqHcmjgHaE8&pid=Api&P=0&h=220" class="avatar-user" alt="" />
+                </button>
 
-              <ul class="dropdown-menu gap-2">
-                <li><a class="dropdown-item" href="<?=$clientUrl."userInfor"?>">Thông tin cá nhân</a></li>
-                <li><a class="dropdown-item" href="admin.php">Trang quản trị</a></li>
-                <li><a class="dropdown-item" href="<?=$clientUrl."cart"?>">Giỏ hàng</a></li>
-                <li><a class="dropdown-item" href="<?=$clientUrl."logup"?>">Đăng kí</a></li>
-                <li><a class="dropdown-item" href="<?=$clientUrl."login"?>">Đăng nhập</a></li>
-                <li>
-                  <form action="" method="post">
-                    <button type="submit" name="btnlogout" class="btn btn-danger" style="width:100%;">Đăng xuất</button>
-                  </form>
-                </li>
-              </ul>
-            </div>
-          </div>
+                <ul class="dropdown-menu gap-2">
+                  <?php
+                  if (isset($_SESSION['user'])) {
+                  ?>
+                    <li><a class="dropdown-item" href="<?= $clientUrl . "userInfor" ?>">Thông tin cá nhân</a></li>
+                    <?php 
+                      if($_SESSION['user']['u_role'] == 1){
+                    ?>
+                    <li><a class="dropdown-item" href="admin.php">Trang quản trị</a></li>
+                    <?php 
+                    }
+                    ?>
+                    <li><a class="dropdown-item" href="<?= $clientUrl . "cart" ?>">Giỏ hàng</a></li>
+                    <li>
+                      <form action="" method="post">
+                        <button type="submit" name="btnlogout" class="btn btn-danger" style="width:100%;">Đăng xuất</button>
+                      </form>
+                    </li>
+                  <?php
+                  } else {
+                  ?>
+                    <li><a class="dropdown-item" href="<?= $clientUrl . "logup" ?>">Đăng kí</a></li>
+                    <li><a class="dropdown-item" href="<?= $clientUrl . "login" ?>">Đăng nhập</a></li>
+                  <?php
+                  }
+                  ?>
+                </ul>
         </div>
-      </nav>
+    </div>
+    </div>
+    </nav>
     </div>
   </header>

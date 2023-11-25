@@ -1107,6 +1107,10 @@ p {
 }
 .message-close{
   font-size: 20px;
+  cursor: pointer;
+}
+.message-close:hover{
+  color: rgba(0, 0, 0, 0.3);
 }
 .message-title h3{
   font-size: 16px;
