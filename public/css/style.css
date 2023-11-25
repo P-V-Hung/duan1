@@ -858,6 +858,10 @@ p {
   border: 1px solid #EE5341;
   border-radius: 3px;
 }
+/* Form thay đổi mật khẩu */
+.changePass{
+  height: 440px!important;
+}
 
 /* Form sign */
 /* Sign in */
@@ -1130,4 +1134,11 @@ p {
 }
 .message-error .message-icon{
   color: #ff623d;
+}
+.comment-show-item-text div a{
+
+  color: #2914a3;
+}
+.comment-show-item-text div a:hover{
+  text-decoration: underline;
 }

@@ -50,6 +50,31 @@
       filtered = false;
     }
   });
+
+  function chooseFile(fileInput, idImg) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById(idImg).setAttribute('src', e.target.result);
+        }
+        reader.readAsDataURL(fileInput.files[0]);
+
+    }
+  }
+  // Lưu vị trí cuộn khi trang bị đóng
+  window.addEventListener('beforeunload', function() {
+    localStorage.setItem('scrollPosition', window.scrollY);
+  });
+
+  // Kiểm tra xem có vị trí cuộn đã lưu trữ hay không
+  document.addEventListener('DOMContentLoaded', function() {
+    var savedScrollPosition = localStorage.getItem('scrollPosition');
+
+    // Nếu có vị trí cuộn được lưu trữ, thì đặt lại vị trí cuộn
+    if (savedScrollPosition !== null) {
+      window.scrollTo(0, savedScrollPosition);
+    }
+  });
 </script>
 </body>
 
