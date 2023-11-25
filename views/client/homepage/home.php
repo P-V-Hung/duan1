@@ -2,6 +2,9 @@
   if(isset($_COOKIE['login'])){
     logSuccess("Đăng nhập thành công!");
   }
+  if(isset($_COOKIE['addcart'])){
+    logSuccess("Đã thêm vào giỏ hàng!");
+  }
 ?>
 <div class="container-xxl">
   <div class="banner">
