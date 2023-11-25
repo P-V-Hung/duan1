@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION['user'])) {
-    reUrlClient('/');
+    reUrlClient('login');
 }
 $dataCart = [];
 if (!isset($_SESSION['cart'])) {
@@ -14,6 +14,8 @@ if (isset($_POST['btn-add-cart'])) {
         'userid' => $_SESSION['user']['id'],
         'count' => $_POST['count'],
     ];
+    setcookie('addcart',true,time() + 1);
+    reUrlClient("/");
 }
 foreach ($_SESSION['cart'] as $cart) {
     $pro = ProductFind("id = " . $cart['proid'], ['pro_name', 'pro_img']);

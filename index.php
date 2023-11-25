@@ -10,6 +10,8 @@
     require_once "./models/CategoryModel.php";
     require_once "./models/ProductModel.php";
     require_once "./models/AccountModel.php";
+    require_once "./models/BillModel.php";
+    require_once "./models/CommentModel.php";
 
 
     // router
@@ -26,8 +28,16 @@
             require_once $controllers."homepage/home.php";
             break;
         }
+        case 'product' : {
+            require_once $controllers."product/product.php";
+            break;
+        }
         case 'chitietsp' : {
             require_once $controllers."product/chitietsp.php";
+            break;
+        }
+        case 'comment/delete' : {
+            require_once $controllers."product/comdelete.php";
             break;
         }
         case 'cart' : {

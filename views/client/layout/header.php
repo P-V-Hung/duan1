@@ -32,7 +32,7 @@
         <div class="menu">
           <ul>
             <li><a href="<?= $clientUrl . "/" ?>">Trang chủ</a></li>
-            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="<?= $clientUrl . "product" ?>"">Sản phẩm</a></li>
           </ul>
           <div>
             <div class="dropdown">
