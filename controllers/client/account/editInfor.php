@@ -9,14 +9,17 @@ $account = AccountFind("id = ".$id);
             $imgPath=basename($img['name']);
         }
         $data = [
+            'id' => $id,
             'u_username' => $_POST['u_username'],
             'u_fullname' => $_POST['u_fullname'],
             'u_img' => $imgPath,
             'u_email' => $_POST['u_email'],
             'u_address' => $_POST['u_address'],
-            'u_tel' => $_POST['u_tel']
+            'u_tel' => $_POST['u_tel'],
+            'u_role' => $account['u_role']
         ];
         AccountUpdate(''.$id, $data);
+        $_SESSION['user'] = $data;
         setcookie('editInfor',true,time()+ 1);
         reUrlClient('userInfor');
     }

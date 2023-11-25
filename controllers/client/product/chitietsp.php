@@ -64,11 +64,13 @@ if (isset($_SESSION['user'])) {
     $bilId = BillInfoFind(['bill_id'], "userid = " . $_SESSION['user']['id'] . " and proid = " . $pro['id']);
     if (!empty($bilId)) {
         $billStatus = BillFind(['bill_status'], "id = " . $bilId['bill_id']);
-        if ($billStatus['bill_status'] == 5) {
-            $mua = true;
-            $userComment = CommentFind(['*'], "com_userid = " . $_SESSION['user']['id'] . " and com_proid = " . $pro['id']);
-            if(!empty($userComment)){
-                $comment = true;
+        if(!empty($billStatus)){
+            if ($billStatus['bill_status'] == 5) {
+                $mua = true;
+                $userComment = CommentFind(['*'], "com_userid = " . $_SESSION['user']['id'] . " and com_proid = " . $pro['id']);
+                if(!empty($userComment)){
+                    $comment = true;
+                }
             }
         }
     }

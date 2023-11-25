@@ -40,4 +40,9 @@ if(isset($_POST['btn_deletes-cart'])){
     }
     reUrlClient('cart');
 }
+if(isset($_POST['btn_buy'])){
+    require_once $controllers."bill/thanhtoan.php";
+    die();
+}
+
 require_once $views . "cart/cart.php";

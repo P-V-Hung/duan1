@@ -86,8 +86,7 @@
                                     <img style="width:100px;height:auto" src="<?=$pathUpload.$userComment['com_img']?>" alt="">
                                 </div>
                                 <div>
-                                    <a class="mx-3" href="">sửa</a>
-                                    <a href="<?=$clientUrl."comment/delete&idpro=".$pro['id']."&id=".$userComment['id']?>">xóa</a>
+                                    <a class="mx-3" href="<?=$clientUrl."comment/delete&idpro=".$pro['id']."&id=".$userComment['id']?>">xóa</a>
                                 </div>
                             </div>
                         </div>

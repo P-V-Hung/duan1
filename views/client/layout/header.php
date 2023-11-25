@@ -1,6 +1,7 @@
 <?php
   if(isset($_POST['btnlogout'])){
     unset($_SESSION['user']);
+    reUrlClient('/');
   }
 ?>
 <!DOCTYPE html>
@@ -42,7 +43,7 @@
           <div>
             <div class=" dropdown">
                 <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="https://tse4.mm.bing.net/th?id=OIP.w105elCPL6VfL7OJqHcmjgHaE8&pid=Api&P=0&h=220" class="avatar-user" alt="" />
+                  <img src="<?=(empty($_SESSION['user']['u_img']))?$pathUpload.'user.jpg':$pathUpload.$_SESSION['user']['u_img']?>" class="avatar-user" alt="" />
                 </button>
 
                 <ul class="dropdown-menu gap-2">

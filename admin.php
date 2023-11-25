@@ -1,5 +1,10 @@
   <?php
   session_start();
+
+  if(!isset($_SESSION['user']) || $_SESSION['user']['u_role']!=1){
+    header('Location: index.php');
+  }
+
   // Config
   require_once "./config/pdo.php";
   require_once "./config/function.php";
