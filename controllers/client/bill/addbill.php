@@ -25,14 +25,16 @@
         $idVoucher = $_POST['voucher'] ?? 0;
         VoucherUpdateUp($idVoucher,"v_used");
 
-        $id = BillInsertId($dataBill);
+        $idBill = BillInsertId($dataBill);
 
         foreach($listCartId as $idCart){
+            $proPP = PPFind(['*'],"id = ".$_SESSION['cart'][$idCart]['ppid']);
             $dataBillInfor = [
-                'bill_id' => $idCart,
+                'bill_id' => $idBill,
                 'proid' => $_SESSION['cart'][$idCart]['proid'],
                 'userid' => $_SESSION['user']['id'],
                 'pp_id' => $_SESSION['cart'][$idCart]['ppid'],
+                'pro_price' => $proPP['pp_price'],
                 'pro_count' => $_SESSION['cart'][$idCart]['count']
             ];
             BillInfoInsert($dataBillInfor);

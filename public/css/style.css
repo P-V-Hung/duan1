@@ -27,6 +27,7 @@ body {
   color: #111;
   scroll-behavior: smooth;
   transition: 0.5s;
+  padding-top: 60px;
 }
 
 :root {
@@ -1139,6 +1140,12 @@ p {
   font-size: 14px;
   color: #888;
 }
+.header-web{
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+}
 
 .message-success{
   border-color: #47d864;
@@ -1172,4 +1179,32 @@ p {
 }
 .comment-show-item-text div a:hover{
   text-decoration: underline;
+}
+
+.table-hung{
+  margin: auto;
+  position: relative;
+  box-shadow: 0 0 10px 8px rgba(0,0,0,0.2);
+}
+.table-hung .table-hung-th{
+  position: sticky;
+  top:0;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 1px #333;
+}
+.table-hung tr:last-child td{
+  border-bottom: none;
+}
+.table-hung tr th{
+  text-align: center;
+  padding: 7px 7px;
+  border-bottom:3px solid brown ; 
+}
+.table-hung tr td{
+  text-align: center;
+  padding: 7px 14px;
+  border-bottom:1px solid #333 ;
+}
+.table-hung a{
+  color: blue;
 }

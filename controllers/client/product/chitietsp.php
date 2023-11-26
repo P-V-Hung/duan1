@@ -61,7 +61,7 @@ foreach ($listType as $key => $type) {
 $mua = false;
 $comment = false;
 if (isset($_SESSION['user'])) {
-    $bilId = BillInfoFind(['bill_id'], "userid = " . $_SESSION['user']['id'] . " and proid = " . $pro['id']);
+    $bilId = BillInfoFind(['bill_id'], "userid = " . $_SESSION['user']['id'] . " and proid = " . $pro['id']." order by id desc");
     if (!empty($bilId)) {
         $billStatus = BillFind(['bill_status'], "id = " . $bilId['bill_id']);
         if(!empty($billStatus)){

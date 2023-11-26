@@ -15,7 +15,7 @@ if (isset($_POST['btn-add-cart'])) {
         'count' => $_POST['count'],
     ];
     setcookie('addcart',true,time() + 1);
-    reUrlClient("/");
+    reUrlClient("cart");
 }
 foreach ($_SESSION['cart'] as $cart) {
     $pro = ProductFind("id = " . $cart['proid'], ['pro_name', 'pro_img']);

@@ -76,6 +76,14 @@
             require_once $controllers."bill/listbill.php";
             break;
         }
+        case 'bill/delete' : {
+            require_once $controllers."bill/deletebill.php";
+            break;
+        }
+        case 'billinfo' : {
+            require_once $controllers."bill/billInfo.php";
+            break;
+        }
     }
     // require_once "./client/chitietsp.php";
     // require_once "./client/product.php";
