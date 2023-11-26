@@ -116,7 +116,7 @@
                     aria-expanded="false"
                     aria-controls="flush-collapseThree"
                   >
-                    Quản lí loại hàng
+                    Quản lí đơn hàng
                   </button>
                 </h2>
                 <div
@@ -126,8 +126,8 @@
                 >
                   <div class="accordion-body">
                     <ul>
-                      <li><a href="">Danh sách loại hàng</a></li>
-                      <li><a href="">Thêm loại hàng</a></li>
+                      <li><a href="<?=$adminUrl."bill/list"?>">Danh sách đơn hàng</a></li>
+                      <!-- <li><a href="">Thêm loại hàng</a></li> -->
                     </ul>
                   </div>
                 </div>

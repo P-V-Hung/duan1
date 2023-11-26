@@ -21,7 +21,7 @@
 </head>
 
 <body>
-  <header>
+  <header class="header-web">
     <div class="container">
       <nav>
         <a href="<?=$clientUrl."/"?>">
@@ -59,6 +59,7 @@
                     }
                     ?>
                     <li><a class="dropdown-item" href="<?= $clientUrl . "cart" ?>">Giỏ hàng</a></li>
+                    <li><a class="dropdown-item" href="<?= $clientUrl . "bill/list" ?>">Đơn hàng của bạn</a></li>
                     <li>
                       <form action="" method="post">
                         <button type="submit" name="btnlogout" class="btn btn-danger" style="width:100%;">Đăng xuất</button>

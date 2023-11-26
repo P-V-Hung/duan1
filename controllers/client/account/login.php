@@ -3,8 +3,11 @@ if(isset($_POST['btn_signIn'])&&($_POST['btn_signIn'])){
     $tendn=$_POST['tendn'];
     $pass=$_POST['pass'];
      
-    $user=AccountFind("u_username like '%$tendn%' and u_password like '%$pass%'");
-    if($user['u_status'] == 2){
+    $user=AccountFind("u_username = '$tendn' and u_password = '$pass'");
+    if(empty($user)){
+        logWarning("Tài khoản hoặc mật khẩu không chính xác!");
+    }
+    else if($user['u_status'] == 2){
         logError("Tài khoản này đã bị khóa");
     }else{
         $_SESSION['user'] = $user;
