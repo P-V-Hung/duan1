@@ -28,7 +28,7 @@
   $url = $_GET['url'] ?? '/';
   switch ($url) {
     case "/": {
-        require_once $views . "homepage/home.php";
+        require_once $controller . "homepage/home.php";
         break;
       }
       // category

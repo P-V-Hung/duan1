@@ -37,6 +37,11 @@
     slidesToScroll: 4
   });
 
+  $('.hotProductHome').slick({
+    slidesToShow: 5,
+    slidesToScroll: 5
+  });
+
   var filtered = false;
 
   $('.js-filter').on('click', function() {

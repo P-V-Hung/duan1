@@ -145,7 +145,7 @@
                     </div>
                     <form action="<?= $clientUrl . "cart" ?>" class="form_count my-3" method="post">
                         <div class="cate-count">
-                            <p>Số lượng : <b class="soluongsanpham"><?= $proOne['pp_count'] ?? $proPP['total_count'] ?></b></p>
+                            <p>Số lượng : <b class="soluongsanpham"><?= $soluongOne ?? $proPP['total_count'] ?></b></p>
                             <div class="range">
                                 <div class="field">
                                     <div class=" value left">
@@ -160,7 +160,7 @@
                         </div>
                         <input type="hidden" name="idpp" value="<?= $proOne['id'] ?>">
                         <input type="hidden" name="idpro" value="<?= $pro['id'] ?>">
-                        <button type="submit" name="btn-add-cart" class="btn btn-lg btn-dark <?= isset($proOne['id']) ? '' : 'nonclick' ?>">Thêm vào giỏ hàng</button>
+                        <button type="submit" name="btn-add-cart" class="btn btn-lg btn-dark <?= isset($proOne['id'])&&$soluongOne!='Hết hàng' ? '' : 'nonclick' ?>">Thêm vào giỏ hàng</button>
                     </form>
                 </div>
 

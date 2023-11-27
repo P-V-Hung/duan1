@@ -93,4 +93,10 @@
         $stmt = $conn->prepare($sql);
         $stmt->execute();
     }
+    function updateDown($table,$id,$truong,$count){
+        $conn = connect();
+        $sql = "UPDATE `$table` SET `$truong` = `$truong` - $count WHERE `$table`.`id` = $id";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+    }
 ?>
