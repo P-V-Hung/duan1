@@ -68,7 +68,13 @@
                     </div>
                     <input type="submit" class="btn btn-outline-dark" value="Xóa tất cả mục đã chọn" name="btn_deletes-cart">
                 </div>
-                <button name="btn_buy" class="btn btn-outline-danger">Mua hàng</button>
+                <?php
+                if (!empty($_SESSION['cart'])) {
+                ?>
+                    <button name="btn_buy" type="submit" class="btn btn-outline-danger">Mua hàng</button>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </form>

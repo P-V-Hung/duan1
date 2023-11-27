@@ -15,7 +15,7 @@ if (isset($_POST['btn-add-cart'])) {
         'count' => $_POST['count'],
     ];
     setcookie('addcart',true,time() + 1);
-    reUrlClient("/");
+    reUrlClient("cart");
 }
 foreach ($_SESSION['cart'] as $cart) {
     $pro = ProductFind("id = " . $cart['proid'], ['pro_name', 'pro_img']);
@@ -40,4 +40,9 @@ if(isset($_POST['btn_deletes-cart'])){
     }
     reUrlClient('cart');
 }
+if(isset($_POST['btn_buy'])){
+    require_once $controllers."bill/thanhtoan.php";
+    die();
+}
+
 require_once $views . "cart/cart.php";

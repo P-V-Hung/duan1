@@ -27,6 +27,7 @@ body {
   color: #111;
   scroll-behavior: smooth;
   transition: 0.5s;
+  padding-top: 60px;
 }
 
 :root {
@@ -201,8 +202,6 @@ nav {
   row-gap: 15px;
 }
 .hot-product .card-body .card-views {
-  /* display: flex;
-  justify-content: space-between; */
   margin-bottom: 10px;
 }
 .hot-product .card-body .card-views p {
@@ -299,7 +298,10 @@ nav {
   border-radius: 50%;
   border: 1px solid #ccc;
 }
-
+.list-group{
+  height: 250px;
+  overflow: auto;
+}
 /* box right */
 
 .box-product-right {
@@ -317,6 +319,8 @@ nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 15px;
+  max-height:700px;
+  overflow: auto;
 }
 /* footer */
 
@@ -716,7 +720,6 @@ p {
   right: -43px;
 }
 .range input{
-  -webkit-appearance: none;
   width: 100%;
   height: 3px;
   background: #ddd;
@@ -736,7 +739,6 @@ p {
   cursor: pointer;
 }
 .range input::-moz-range-thumb{
-  -webkit-appearance: none;
   width: 20px;
   height: 20px;
   background: red;
@@ -807,6 +809,15 @@ p {
   background-color: #fff;
   width: 700px;
   animation: row 0.2s linear;
+}
+.div-list-voucher{
+  max-height: 70vh;
+  overflow: auto;
+  border-top:1px solid rgba(0, 0, 0, 0.1) ;
+  border-bottom:1px solid rgba(0, 0, 0, 0.1) ;
+}
+.footer_voucher{
+  padding-top:10px ;
 }
 @keyframes row{
   from{
@@ -1099,6 +1110,12 @@ p {
 .message + .message{
   margin-top: 20px;
 }
+.message a{
+  color: blue;
+}
+.message a:hover{
+  text-decoration: underline !important;
+}
 .message-icon{
   font-size: 24px;
 }
@@ -1107,6 +1124,10 @@ p {
 }
 .message-close{
   font-size: 20px;
+  cursor: pointer;
+}
+.message-close:hover{
+  color: rgba(0, 0, 0, 0.3);
 }
 .message-title h3{
   font-size: 16px;
@@ -1122,6 +1143,12 @@ p {
   font-size: 14px;
   color: #888;
 }
+.header-web{
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+}
 
 .message-success{
   border-color: #47d864;
@@ -1135,10 +1162,64 @@ p {
 .message-error .message-icon{
   color: #ff623d;
 }
+.message-info{
+  border-color: #2f86eb;
+}
+.message-info .message-icon{
+  color: #2f86eb;
+}
+.message-warning{
+  border-color: #ffc021;
+}
+.message-warning .message-icon{
+  color: #ffc021;
+}
+
+
 .comment-show-item-text div a{
 
   color: #2914a3;
 }
 .comment-show-item-text div a:hover{
   text-decoration: underline;
+}
+
+.table-hung{
+  margin: auto;
+  position: relative;
+  box-shadow: 0 0 10px 8px rgba(0,0,0,0.2);
+}
+.table-hung .table-hung-th{
+  position: sticky;
+  top:0;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 1px #333;
+}
+.table-hung tr:last-child td{
+  border-bottom: none;
+}
+.table-hung tr th{
+  text-align: center;
+  padding: 7px 7px;
+  border-bottom:3px solid brown ; 
+}
+.table-hung tr td{
+  text-align: center;
+  padding: 7px 14px;
+  border-bottom:1px solid #333 ;
+}
+.table-hung a{
+  color: blue;
+}
+
+.card-views p{
+  color: red;
+}
+.card-views span{
+  color: blue;
+  font-size: 0.8rem;
+}
+.card{
+  width: 90% !important;
+  min-height: 450px;
 }

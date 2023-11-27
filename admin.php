@@ -1,5 +1,10 @@
   <?php
   session_start();
+
+  if(!isset($_SESSION['user']) || $_SESSION['user']['u_role']!=1){
+    header('Location: index.php');
+  }
+
   // Config
   require_once "./config/pdo.php";
   require_once "./config/function.php";
@@ -9,6 +14,8 @@
     require_once "./models/ProductModel.php";
     require_once "./models/VoucherModel.php";
     require_once "./models/AccountModel.php";
+    require_once "./models/BillModel.php";
+    require_once "./models/CommentModel.php";
 
   
   // Điều hướng
@@ -21,7 +28,7 @@
   $url = $_GET['url'] ?? '/';
   switch ($url) {
     case "/": {
-        require_once $views . "homepage/home.php";
+        require_once $controller . "homepage/home.php";
         break;
       }
       // category
@@ -125,7 +132,19 @@
         require_once $controller."account/update.php";
         break;
       }
-      
+      // Bill
+      case "bill/list":{
+        require_once $controller."bill/list.php";
+        break;
+      }
+      case "billinfo":{
+        require_once $controller."bill/billinfo.php";
+        break;
+      }
+      case "bill/delete":{
+        require_once $controller."bill/deletebill.php";
+        break;
+      }
 
     default: {
         echo "Loại";
