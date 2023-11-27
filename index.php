@@ -11,6 +11,7 @@
     require_once "./models/ProductModel.php";
     require_once "./models/AccountModel.php";
     require_once "./models/BillModel.php";
+    require_once "./models/VoucherModel.php";
     require_once "./models/CommentModel.php";
 
 
@@ -21,7 +22,7 @@
     $controllers = "./controllers/client/";
     
 
-    require_once "./views/client/layout/header.php";
+    require_once $views . "layout/header.php";
     $url = $_GET['url'] ?? '/';
     switch($url){
         case '/' : {
@@ -67,13 +68,22 @@
             require_once $controllers."account/changePass.php";
             break;
         }
+        case 'bill/add' : {
+            require_once $controllers."bill/addbill.php";
+            break;
+        }
+        case 'bill/list' : {
+            require_once $controllers."bill/listbill.php";
+            break;
+        }
+        case 'bill/delete' : {
+            require_once $controllers."bill/deletebill.php";
+            break;
+        }
+        case 'billinfo' : {
+            require_once $controllers."bill/billInfo.php";
+            break;
+        }
     }
-    // require_once "./client/chitietsp.php";
-    // require_once "./client/product.php";
-    // require_once "./client/userInfo.php";
-    // require_once "./client/editInfor.php";
-    // require_once "./client/cart.php";
-    // require_once "./client/formSignin.php";
-    // require_once "./client/formSignup.php";
     require_once "./views/client/layout/footer.php";
 ?>

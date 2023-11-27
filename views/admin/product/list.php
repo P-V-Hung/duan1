@@ -14,7 +14,7 @@
             foreach ($listPP as $pp) :
                 if ($pro['id'] == $pp['pp_proid']) :
         ?>
-                    <div class="card" style="width: 17rem">
+                    <div class="card" style="width: 16rem">
                         <img src="<?= $pathUpload . $pro['pro_img'] ?>" class="card-img-top" alt="..." />
                         <div class="card-body">
                             <h5 class="card-title product-title-name-all"><?= $pro['pro_name'] ?></h5>

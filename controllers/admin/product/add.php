@@ -20,6 +20,7 @@ if (isset($_POST['btn_add-pro'])) {
         'pp_memory' => $_POST['pp_memory'],
         'pp_count' => $_POST['pp_count']
     ];
+    
     PPInsert($dataPP);
 
     $idCat = [];

@@ -43,8 +43,13 @@ if ($color) {
 if ($color == '' && $memory) {
     $phanloai = PPAll(['pp_color'], "pp_proid = $idpro and pp_memory like '%$memory%' group by pp_color");
 }
+
 if ($color && $memory) {
     $proOne = PPFind(['*'], "pp_proid = $idpro and pp_color like '%$color%' and pp_memory like '%$memory%'");
+    $soluongOne = 'Hết hàng';
+    if($proOne['pp_count']!=0){
+        $soluongOne = $proOne['pp_count'];
+    }
 }
 
 $listType = TypeProAll(['*'], "tp_proid = $idpro");
@@ -61,14 +66,16 @@ foreach ($listType as $key => $type) {
 $mua = false;
 $comment = false;
 if (isset($_SESSION['user'])) {
-    $bilId = BillInfoFind(['bill_id'], "userid = " . $_SESSION['user']['id'] . " and proid = " . $pro['id']);
+    $bilId = BillInfoFind(['bill_id'], "userid = " . $_SESSION['user']['id'] . " and proid = " . $pro['id']." order by id desc");
     if (!empty($bilId)) {
         $billStatus = BillFind(['bill_status'], "id = " . $bilId['bill_id']);
-        if ($billStatus['bill_status'] == 5) {
-            $mua = true;
-            $userComment = CommentFind(['*'], "com_userid = " . $_SESSION['user']['id'] . " and com_proid = " . $pro['id']);
-            if(!empty($userComment)){
-                $comment = true;
+        if(!empty($billStatus)){
+            if ($billStatus['bill_status'] == 5) {
+                $mua = true;
+                $userComment = CommentFind(['*'], "com_userid = " . $_SESSION['user']['id'] . " and com_proid = " . $pro['id']);
+                if(!empty($userComment)){
+                    $comment = true;
+                }
             }
         }
     }
@@ -110,4 +117,5 @@ if(isset($_POST['btn-add-comment'])){
     setcookie('addComment',true, time() + 1);
     reUrlClient('chitietsp&id='.$pro['id']);
 }
+
 require_once $views . "product/chitietsp.php";
