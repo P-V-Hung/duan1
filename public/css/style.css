@@ -202,8 +202,6 @@ nav {
   row-gap: 15px;
 }
 .hot-product .card-body .card-views {
-  /* display: flex;
-  justify-content: space-between; */
   margin-bottom: 10px;
 }
 .hot-product .card-body .card-views p {
@@ -300,7 +298,10 @@ nav {
   border-radius: 50%;
   border: 1px solid #ccc;
 }
-
+.list-group{
+  height: 250px;
+  overflow: auto;
+}
 /* box right */
 
 .box-product-right {
@@ -318,6 +319,8 @@ nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 15px;
+  max-height:700px;
+  overflow: auto;
 }
 /* footer */
 
@@ -1207,4 +1210,16 @@ p {
 }
 .table-hung a{
   color: blue;
+}
+
+.card-views p{
+  color: red;
+}
+.card-views span{
+  color: blue;
+  font-size: 0.8rem;
+}
+.card{
+  width: 90% !important;
+  min-height: 450px;
 }

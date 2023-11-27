@@ -22,6 +22,11 @@
     $listStatus = BillStatusAll();
 
     if(isset($_POST['btn-update-sb'])){
+        if($_POST['status']==5){
+            foreach($listBillInfo as $bi){
+                PPUpdateDown($bi['pp_id'], "pp_count",$bi["pro_count"]);
+            }
+        }
         if($bill['bill_status'] == 5){
             logWarning("Người dùng đã nhận hàng");
         }

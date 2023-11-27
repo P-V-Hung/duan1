@@ -43,8 +43,13 @@ if ($color) {
 if ($color == '' && $memory) {
     $phanloai = PPAll(['pp_color'], "pp_proid = $idpro and pp_memory like '%$memory%' group by pp_color");
 }
+
 if ($color && $memory) {
     $proOne = PPFind(['*'], "pp_proid = $idpro and pp_color like '%$color%' and pp_memory like '%$memory%'");
+    $soluongOne = 'Hết hàng';
+    if($proOne['pp_count']!=0){
+        $soluongOne = $proOne['pp_count'];
+    }
 }
 
 $listType = TypeProAll(['*'], "tp_proid = $idpro");
@@ -112,4 +117,5 @@ if(isset($_POST['btn-add-comment'])){
     setcookie('addComment',true, time() + 1);
     reUrlClient('chitietsp&id='.$pro['id']);
 }
+
 require_once $views . "product/chitietsp.php";

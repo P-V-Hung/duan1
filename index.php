@@ -22,7 +22,7 @@
     $controllers = "./controllers/client/";
     
 
-    require_once "./views/client/layout/header.php";
+    require_once $views . "layout/header.php";
     $url = $_GET['url'] ?? '/';
     switch($url){
         case '/' : {
@@ -85,12 +85,5 @@
             break;
         }
     }
-    // require_once "./client/chitietsp.php";
-    // require_once "./client/product.php";
-    // require_once "./client/userInfo.php";
-    // require_once "./client/editInfor.php";
-    // require_once "./client/cart.php";
-    // require_once "./client/formSignin.php";
-    // require_once "./client/formSignup.php";
     require_once "./views/client/layout/footer.php";
 ?>

@@ -25,6 +25,9 @@
     function PPAll($select = ['*'], $where = 1){
         return all("pro_properties",$select,$where);
     }
+    function PPUpdateDown($id = 0, $truong = '',$count=1){
+        return updateDown("pro_properties",$id,$truong,$count);
+    }
     function PPFind($select = ['*'], $where = 1){
         return find("pro_properties",$select,$where);
     }
