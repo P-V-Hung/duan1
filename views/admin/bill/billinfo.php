@@ -2,42 +2,42 @@
     <h2 class="py-4 title-admin">Chi tiết đơn hàng</h2>
     <h5 class="pt-5" style="text-align: center;">Thông tin vận chuyển</h5>
     <form action="" method="post">
-        <table class="table-hung2">
+        <table class="table-hung2" style="margin: auto;">
             <tr>
                 <td>Username:
-                <td><?= $bill['bill_username'] ?></td>
+                <td style="text-align: end;padding:7px 14px;"><?= $bill['bill_username'] ?></td>
             </tr>
             <tr>
                 <td>Họ và tên: </td>
-                <td><?= $bill['bill_fullname'] ?></td>
+                <td style="text-align: end;padding:7px 14px;"><?= $bill['bill_fullname'] ?></td>
             </tr>
             <tr>
                 <td>SĐT</td>
-                <td><?= $bill['bill_tel'] ?></td>
+                <td style="text-align: end;padding:7px 14px;"><?= $bill['bill_tel'] ?></td>
             </tr>
             <tr>
                 <td>Địa chỉ: </td>
-                <td><?= $bill['bill_address'] ?></td>
+                <td style="text-align: end;padding:7px 14px;"><?= $bill['bill_address'] ?></td>
             </tr>
             <tr>
                 <td>Số lượng: </td>
-                <td><?= $bill['bill_count'] ?></td>
+                <td style="text-align: end;padding:7px 14px;"><?= $bill['bill_count'] ?></td>
             </tr>
             <tr>
                 <td>Thanh toán: </td>
-                <td><?= number_format($bill['bill_price']) ?></td>
+                <td style="text-align: end;padding:7px 14px;"><?= number_format($bill['bill_price']) ?></td>
             </tr>
             <tr>
                 <td>PTTT: </td>
-                <td><?= $bill['bill_pttt'] ?></td>
+                <td style="text-align: end;padding:7px 14px;"><?= $bill['bill_pttt'] ?></td>
             </tr>
             <tr>
                 <td>Ngày đặt: </td>
-                <td><?= date('d-m-Y', strtotime($bill['bill_create'])) ?></td>
+                <td style="text-align: end;padding:7px 14px;"><?= date('d-m-Y', strtotime($bill['bill_create'])) ?></td>
             </tr>
             <tr>
                 <td>Trạng thái: </td>
-                <td>
+                <td style="text-align: end;padding:7px 14px;">
                     <select name="status" id="">
                         <?php foreach($listStatus as $status): ?>
                             <option <?=$status['id']==$bill['bill_status']?'selected':''?> value="<?=$status['id']?>"><?=$status['sb_name']?></option>

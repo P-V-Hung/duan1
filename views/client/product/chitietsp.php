@@ -69,13 +69,14 @@
                     if ($comment) {
                     ?>
                         <p>Bình luận của bạn</p>
+                        
                         <div class="comment-show-item">
                             <div class="comment-show-item-user">
                                 <div>
                                     <img src="<?=$pathUpload.$_SESSION['user']['u_img']?>" alt="">
                                 </div>
                                 <div class="comment-show-item-user-name">
-                                    <p><?=$_SESSION['user']['u_fullname']==""?$_SESSION['user']['u_username']:$_SESSION['user']['u_fullname']?></p>
+                                    <p><?=$_SESSION['user']['u_fullname']==""?$_SESSION['user']['u_username']:$_SESSION['user']['u_fullname']?> <span style="color: blue;font-weight: 500;"><?=$userComment['com_status']!=1?"  (comment đã bị ẩn)":''?></span></p>
                                     <span><?=$userComment['com_date']?></span>
                                 </div>
                             </div>
