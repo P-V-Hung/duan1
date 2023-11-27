@@ -94,12 +94,4 @@
         else inReNewPass.type = "password";
     }
 
-    let formChangePass = document.querySelector("#formChangePass");
-    formChangePass.onsubmit = function(e) {
-        e.preventDefault();
-        if (checkOldPass && checkNewPass1 && checkNewPass2 && checkReNewPass) {
-            formChangePass.submit();
-        }
-    }
-
 </script>

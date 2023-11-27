@@ -86,11 +86,4 @@
         else inRePass.type = "password";
     }
 
-    // let formSignUp = document.querySelector("#formSignUp");
-    // formSignUp.onsubmit = function(e) {
-    //     e.preventDefault();
-    //     if (checkUser && checkEmail && checkPass && checkRepass) {
-    //         formSignUp.submit();
-    //     }
-    // }
 </script>
