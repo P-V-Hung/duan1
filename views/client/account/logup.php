@@ -47,7 +47,7 @@
     let checkRepass = false;
 
     validate(document.querySelector("#user"), document.querySelector(".errUser"), function(value) {
-        return /^[a-zA-Z0-9]{6,}$/.test(value);
+        return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(value);
     }, function(check) {
         checkUser = check;
     });
@@ -86,11 +86,11 @@
         else inRePass.type = "password";
     }
 
-    // let formSignUp = document.querySelector("#formSignUp");
-    // formSignUp.onsubmit = function(e) {
-    //     e.preventDefault();
-    //     if (checkUser && checkEmail && checkPass && checkRepass) {
-    //         formSignUp.submit();
-    //     }
-    // }
+    let formSignUp = document.querySelector("#formSignUp");
+    formSignUp.onsubmit = function(e) {
+        e.preventDefault();
+        if (checkUser && checkEmail && checkPass && checkRepass) {
+            formSignUp.submit();
+        }
+    }
 </script>

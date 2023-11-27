@@ -16,19 +16,19 @@
                     <th>Email</th>
                     <th hidden>Mã cv</th>
                     <!-- <th>Vai trò <label for="role"><i class="fa-solid fa-caret-down"></i></label></th> -->
-                    <th>
+                    <th style="position: relative;">
                         Chức vụ
                         <i class="fa-solid fa-caret-down"></i>
-                        <select id="selectRole" style="position: absolute;right:390px;opacity: 0;" name="">
+                        <select id="selectRole" style="position: absolute;right: 25px;opacity: 0;" name="">
                             <option value="0">Tất cả</option>
                             <option value="1">Quản trị viên</option>
                             <option value="2">Khách hàng</option>
                         </select>
                     </th>
-                    <th>
+                    <th style="position: relative;">
                         Trạng thái
                         <i class="fa-solid fa-caret-down"></i>
-                        <select id="selectStatus" style="position: absolute;right:240px;opacity: 0;" name="">
+                        <select id="selectStatus" style="position: absolute;right:25px;opacity: 0;" name="">
                             <option value="0">Tất cả</option>
                             <option value="1">Hoạt động</option>
                             <option value="2">Đã khóa</option>
@@ -100,20 +100,41 @@
         let trListAccount = document.querySelectorAll(".trListAccount");
 
         
-        function locSp(select, list, classdk, view) {
-            select.onchange = function() {
+        // function locSp(select, list, classdk, view) {
+        //     select.onchange = function() {
+        //         let htmlText = '';
+        //         for (let i = 0; i < list.length; i++) {
+        //             let inp = list[i].querySelector(classdk).innerText;
+        //             if (inp == select.value || select.value == 0) {
+        //                 htmlText += list[i].outerHTML;
+        //             }
+        //         }
+        //         view.innerHTML = htmlText;
+        //     }
+        // }
+        
+        
+        // locSp(selectRole, trListAccount, ".roleId", bodyTable);
+        // locSp(selectStatus, trListAccount, ".statusId", bodyTable);
+
+
+        function locSp(selectRole, selectStatus, list, classRole, classStatus, view) {
+            selectRole.onchange = selectStatus.onchange = function() {
                 let htmlText = '';
                 for (let i = 0; i < list.length; i++) {
-                    let inp = list[i].querySelector(classdk).innerText;
-                    if (inp == select.value || select.value == 0) {
+                    let role = list[i].querySelector(classRole).innerText;
+                    let status = list[i].querySelector(classStatus).innerText;
+
+                    if ((role == selectRole.value || selectRole.value == 0) &&
+                        (status == selectStatus.value || selectStatus.value == 0)) {
                         htmlText += list[i].outerHTML;
                     }
                 }
                 view.innerHTML = htmlText;
             }
         }
-        
-        
-        locSp(selectRole, trListAccount, ".roleId", bodyTable);
-        locSp(selectStatus, trListAccount, ".statusId", bodyTable);
+
+        locSp(selectRole, selectStatus, trListAccount, ".roleId", ".statusId", bodyTable);
+
+
     </script>
