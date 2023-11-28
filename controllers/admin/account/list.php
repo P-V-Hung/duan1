@@ -27,5 +27,9 @@
             reUrl('account/list');
         }
     } 
+    if(isset($_POST['btn-search'])){
+        $keyword = $_POST['keyword'];
+        $listAccount = AccountAll(['*'],"u_username like '%".$keyword."%' OR u_email like '%".$keyword."%' ");
+    }
     require $views."account/list.php";
 ?>
