@@ -1,9 +1,9 @@
 <div class="right-sitebar container content-admin">
     <h2 class="py-4 title-admin">Danh sách tài khoản</h2>
     <form class="input-group mb-3" method="post">
-        <input type="text" class="form-control" name="keyword" placeholder="Nhập tên sản phẩm muốn tìm" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="submit" name="btn-all" id="button-addon2">Tất cả sản phẩm</button>
+        <input type="text" class="form-control" name="keyword" placeholder="Nhập tên tài khoản muốn tìm kiếm" aria-label="Recipient's username" aria-describedby="button-addon2">
         <button class="btn btn-outline-secondary" type="submit" name="btn-search" id="button-addon2">Tìm kiếm</button>
+        <button class="btn btn-outline-secondary" type="submit" name="btn-all" id="button-addon2">Tất cả tài khoản</button>
     </form>
     <form action="" method="post">
         <table class="table-hung table_account">
@@ -72,8 +72,8 @@
             </tbody>
         </table>
         <div class="btn_property d-flex justify-content-center mt-3 mb-4">
-            <input type="submit" name="btn-unlock-a" class="btn btn-outline-dark mx-2" value="Mở khóa tất cả tài khoản đã chọn">
-            <input type="submit" name="btn-lock-a" class="btn btn-outline-dark me-2" value="Khóa các tài khoản đã chọn">
+            <input type="submit" name="btn-unlock-a" class="btn btn-outline-dark mx-2" value="Mở khóa tất cả tài khoản đã chọn" onclick="return confirm('Bạn chắc chắn muốn mở khóa các tài khoản đã chọn ?')">
+            <input type="submit" name="btn-lock-a" class="btn btn-outline-dark me-2" value="Khóa các tài khoản đã chọn" onclick="return confirm('Bạn chắc chắn muốn khóa các tài khoản đã chọn ?')">
             <input type="submit" name="btn-deletes-a" class="btn btn-outline-dark" value="Xóa tất cả ô đã chọn" onclick="return confirm('Bạn chắc chắn muốn xóa các tài khoản đã chọn ?')">
         </div>
     </form>
