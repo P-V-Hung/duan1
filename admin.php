@@ -145,6 +145,15 @@
         require_once $controller."bill/deletebill.php";
         break;
       }
+      // Comment
+      case "comment/list":{
+        require_once $controller."comment/list.php";
+        break;
+      }
+      case "comment/delete":{
+        require_once $controller."comment/delete.php";
+        break;
+      }
 
     default: {
         echo "Loại";

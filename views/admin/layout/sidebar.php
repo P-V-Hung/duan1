@@ -101,7 +101,7 @@
                 >
                   <div class="accordion-body">
                     <ul>
-                      <li><a href="">Danh sách bình luận</a></li>
+                      <li><a href="<?=$adminUrl."comment/list"?>">Danh sách bình luận</a></li>
                     </ul>
                   </div>
                 </div>
@@ -158,7 +158,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button
@@ -185,7 +184,11 @@
                   </div>
                 </div>
               </div>
-              
+              <a style="text-decoration:none;" href="">
+              <div class="sidebar-menu-header">
+                <p>Thống kê</p>
+              </div>
+            </a>
             </div>
           </div>
         </div>

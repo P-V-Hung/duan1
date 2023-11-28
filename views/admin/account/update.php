@@ -66,8 +66,9 @@
                                 ?>
                             </select>
                         </div>
-                        <div class="input-group mb-3">
-                            <input type="submit" class="btn btn-success form-control" name="btn_update-acc" value="Cập nhật">
+                        <div class="mb-3">
+                            <input type="submit" class="btn btn-success" name="btn_update-acc" value="Cập nhật">
+                            <a onclick="return confirm('Bạn chắc chắn muốn quay lại trang danh sách tài khoản không ?')" style="z-index: 1000;" class="btn p-0" href="<?= $adminUrl . "account/list" ?>"><span class="btn btn-secondary">Hủy</span></a>
                         </div>
                     </div>
                 </div>
