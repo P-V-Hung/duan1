@@ -1,4 +1,3 @@
-
 <div class="box_editUserInfo box-userInfo">
   <div class="box-userInfo-header">
     <h3>Chỉnh sửa hồ sơ</h3>
@@ -10,23 +9,40 @@
         <table class="table">
           <tr>
             <td>Tên đăng nhập</td>
-            <td><input type="text" name="u_username" value="<?php if(isset($inforUser['u_username'])) echo $inforUser['u_username'] ?>"></td>
+            <td><input type="text" id="user" name="u_username" value="<?php if (isset($inforUser['u_username'])) echo $inforUser['u_username'] ?>"></td>
           </tr>
           <tr>
             <td>Email</td>
-            <td><input type="text" name="u_email" value="<?php if(isset($inforUser['u_email'])) echo $inforUser['u_email'] ?>" /></td>
+            <td><input type="text" id="email" name="u_email" value="<?php if (isset($inforUser['u_email'])) echo $inforUser['u_email'] ?>" /></td>
           </tr>
           <tr>
             <td>Họ và tên</td>
-            <td><input type="text" name="u_fullname" value="<?php if(isset($inforUser['u_fullname'])) echo $inforUser['u_fullname'] ?>"></td>
+            <td><input type="text" id="fullname" name="u_fullname" value="<?php if (isset($inforUser['u_fullname'])) echo $inforUser['u_fullname'] ?>"></td>
           </tr>
           <tr>
             <td>Số điện thoại</td>
-            <td><input type="text" name="u_tel" value="<?php if(isset($inforUser['u_tel'])) echo $inforUser['u_tel'] ?>"></td>
+            <td><input type="text" id="tel" name="u_tel" value="<?php if (isset($inforUser['u_tel'])) echo $inforUser['u_tel'] ?>"></td>
           </tr>
           <tr>
             <td>Địa chỉ</td>
-            <td><input type="text" name="u_address" value="<?php if(isset($inforUser['u_address'])) echo $inforUser['u_address'] ?>"></td>
+            <td>
+              <select id="tinh">
+                <option value="">Chọn tỉnh thành</option>
+              </select>
+              <input type="hidden" id="inputTinh" value="" name="tinh">
+              <select id="huyen">
+                <option value="">Chọn quận huyện</option>
+              </select>
+              <input type="hidden"  id="inputHuyen" value="" name="huyen">
+              <select id="xa">
+                <option value="">Chọn xã</option>
+              </select>
+              <input type="hidden"  id="inputXa" value="" name="xa">
+            </td>
+          </tr>
+          <tr>
+            <td>Chi tiết</td>
+            <td><input placeholder="địa chỉ chi tiết" type="text" id="address" name="u_address" value="<?php if (isset($inforUser['u_address'])) echo $inforUser['u_address'] ?>"></td>
           </tr>
           <!-- <tr>
             <td>Mật khẩu cũ</td>
@@ -41,20 +57,34 @@
             <td class="position-relative"><input type="password" /></td>
           </tr> -->
         </table>
-        <button type="submit" name="btn-editInfor" class="btn btn-success">Lưu thông tin</button>
-        <a href="<?=$clientUrl."userInfor"?>" class="btn"><button type="button" class="btn btn-secondary">Hủy</button></a>
+        <input type="hidden" id="iduser" value="<?= $inforUser['id'] ?>">
+        <button type="submit" name="btn-editInfor" id="btn-editInfor" class="btn btn-success">Lưu thông tin</button>
+        <a href="<?= $clientUrl . "userInfor" ?>" class="btn"><button type="button" class="btn btn-secondary">Hủy</button></a>
       </div>
       <div class="box-userInfo-content-right">
         <div class="box-userInfo-content-right-img">
-          <img
-            src="<?php if(isset($inforUser['u_img'])) echo $pathUpload.$inforUser['u_img']; else echo 'https://tse4.mm.bing.net/th?id=OIP.w105elCPL6VfL7OJqHcmjgHaE8&pid=Api&P=0&h=220'; ?>"
-            alt=""
-            id="userInfo-avatar"
-          />
+          <img src="<?php if (isset($inforUser['u_img'])) echo $pathUpload . $inforUser['u_img'];
+                    else echo 'https://tse4.mm.bing.net/th?id=OIP.w105elCPL6VfL7OJqHcmjgHaE8&pid=Api&P=0&h=220'; ?>" alt="" id="userInfo-avatar" />
           <label for="changeFile"><i class="fa-solid fa-pen-to-square"></i></label>
-          <input type="file" name="u_img" id="changeFile" onchange="chooseFile(this,'userInfo-avatar')">
+          <input type="file" class="imageUser" name="u_img" id="changeFile" onchange="chooseFile(this,'userInfo-avatar')">
         </div>
       </div>
     </form>
   </div>
 </div>
+<script>
+  $(document).ready(function() {
+    $("#tinh").on('change',function() {
+      tinh = $("#tinh").find("option:selected").text();
+      $('#inputTinh').val(tinh);
+    });
+    $("#huyen").on('change',function() {
+      huyen = $("#huyen").find("option:selected").text();
+      $('#inputHuyen').val(huyen);
+    });
+    $("#xa").on('change',function() {
+      xa = $("#xa").find("option:selected").text();
+      $('#inputXa').val(xa);
+    });
+  });
+</script>

@@ -21,7 +21,7 @@
           </div>
 
           <div class="sidebar-menu">
-            <a href="">
+            <a href="<?=$adminUrl."/"?>">
               <div class="sidebar-menu-header">
                 <p>Trang chủ</p>
               </div>

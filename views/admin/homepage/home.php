@@ -1,1 +1,6 @@
-<h1>Trang chủ</h1>
+<div class="right-sitebar container content-admin">
+  <h2 class="py-4 title-admin">Trang chủ</h2>
+
+  
+</div>
+</div>

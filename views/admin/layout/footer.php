@@ -1,6 +1,6 @@
-</div>
-<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
 <script>
+
     function chooseFile(fileInput, idImg) {
         if (fileInput.files && fileInput.files[0]) {
             var reader = new FileReader();
