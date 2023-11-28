@@ -15,7 +15,6 @@
                     <th>Tên đăng nhập</th>
                     <th>Email</th>
                     <th hidden>Mã cv</th>
-                    <!-- <th>Vai trò <label for="role"><i class="fa-solid fa-caret-down"></i></label></th> -->
                     <th style="position: relative;">
                         Chức vụ
                         <i class="fa-solid fa-caret-down"></i>
