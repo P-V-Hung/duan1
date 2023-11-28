@@ -94,6 +94,7 @@
         else inReNewPass.type = "password";
     }
 
+
     // let formChangePass = document.querySelector("#formChangePass");
     // formChangePass.onsubmit = function(e) {
     //     e.preventDefault();

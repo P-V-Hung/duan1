@@ -28,6 +28,9 @@
     function PPUpdateDown($id = 0, $truong = '',$count=1){
         return updateDown("pro_properties",$id,$truong,$count);
     }
+    function PPUpdateUp($id = 0, $truong = '',$count=1){
+        return updateUp("pro_properties",$id,$truong,$count);
+    }
     function PPFind($select = ['*'], $where = 1){
         return find("pro_properties",$select,$where);
     }

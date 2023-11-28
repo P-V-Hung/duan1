@@ -22,9 +22,10 @@
     $listStatus = BillStatusAll();
 
     if(isset($_POST['btn-update-sb'])){
-        if($_POST['status']==5){
+        if($_POST['status']==5 && $bill['bill_status'] != 5){
             foreach($listBillInfo as $bi){
                 PPUpdateDown($bi['pp_id'], "pp_count",$bi["pro_count"]);
+                PPUpdateUp($bi['pp_id'], "pp_buys");
             }
         }
         if($bill['bill_status'] == 5){
