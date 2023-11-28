@@ -1,5 +1,6 @@
 <?php
 $inforUser = AccountFind('id = '.$_SESSION['user']['id']);
+$inforUser['u_address'] = strstr($inforUser['u_address'],",",true);
 $id = $inforUser['id'];
 $account = AccountFind("id = ".$id);
     if(isset($_POST['btn-editInfor'])){
@@ -14,11 +15,11 @@ $account = AccountFind("id = ".$id);
             'u_fullname' => $_POST['u_fullname'],
             'u_img' => $imgPath,
             'u_email' => $_POST['u_email'],
-            'u_address' => $_POST['u_address'],
+            'u_address' => $_POST['u_address'].", ".$_POST['xa'].", ".$_POST['huyen'].", ".$_POST['tinh'],
             'u_tel' => $_POST['u_tel'],
             'u_role' => $account['u_role']
         ];
-        AccountUpdate(''.$id, $data);
+        AccountUpdate($id, $data);
         $_SESSION['user'] = $data;
         setcookie('editInfor',true,time()+ 1);
         reUrlClient('userInfor');
