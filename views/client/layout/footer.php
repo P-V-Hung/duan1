@@ -83,15 +83,15 @@
 
   // closs mesage
   let closeMessage = document.querySelector(".message-close");
-  closeMessage.onclick = function(){
+  closeMessage.onclick = function() {
     closeMessage.parentNode.remove()
   }
 
   function formatNumber(input) {
-      let value = input.value.replace(/\D/g, '');
-      value = new Intl.NumberFormat().format(value);
-      input.value = value;
-    }
+    let value = input.value.replace(/\D/g, '');
+    value = new Intl.NumberFormat().format(value);
+    input.value = value;
+  }
 </script>
 </body>
 
