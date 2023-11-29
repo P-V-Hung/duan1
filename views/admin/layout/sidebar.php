@@ -47,8 +47,7 @@
                 >
                   <div class="accordion-body">
                     <ul>
-                      <li><a href="<?=$adminUrl."category/list&recat=0"?>">Danh sách danh mục</a></li>
-                      <li><a href="<?=$adminUrl."category/add"?>">Thêm danh mục</a></li>
+                      <li><a href="<?=$adminUrl."category/list"?>">Danh sách danh mục</a></li>
                     </ul>
                   </div>
                 </div>

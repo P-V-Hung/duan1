@@ -25,7 +25,6 @@
   $controller = "./controllers/admin/";
 
   require_once $views . "layout/header.php";
-  // setcookie('a',true, time() + 1);
   $url = $_GET['url'] ?? '/';
   switch ($url) {
     case "/": {
