@@ -19,9 +19,11 @@
     }
 
     // closs mesage
-    let closeMessage = document.querySelector(".message-close");
-    closeMessage.onclick = function() {
-        closeMessage.parentNode.remove()
+    let closeMessage = document.querySelector(".message .message-close");
+    if(closeMessage){
+        closeMessage.onclick = function() {
+            closeMessage.parentNode.remove()
+        }
     }
 </script>
 </body>

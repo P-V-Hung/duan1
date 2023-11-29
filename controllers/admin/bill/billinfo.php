@@ -38,9 +38,7 @@
                 'bill_status' => $_POST['status']
             ];
             BillUpdate($idBill,$data);
-            // header("location: index.php");
-            setcookie('bill',true, time() + 1);
-            // reUrl('bill/list');
+            reUrl('bill/list');
         }
     }
     require $views."bill/billinfo.php";
