@@ -6,7 +6,7 @@
         foreach($_POST as $key => $val){
             if(strpos($key, 'idCart') !== false){
                 $listCartId[] = $val;
-                $count++;
+                $count += $_SESSION['cart'][$val]['count'];
             }
         }
         $dataBill = [

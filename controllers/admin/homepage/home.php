@@ -1,9 +1,5 @@
-<?php
-$hotProductId = ProductHotAll();
-$listHostProduct = [];
-$listProPP = PPAll(['pp_proid', 'MIN(pp_price) AS minprice', 'MAX(pp_price) AS maxprice', 'SUM(pp_count) AS total_count', 'SUM(pp_buys) AS total_buys'], "1 group by pp_proid");
-foreach ($hotProductId as $id) {
-    $pro = ProductFind("id = " . $id['idpro']);
-    $listHostProduct[] = $pro;
-}
-require_once $views . "homepage/home.php";
+
+<?php 
+    $listBill = BillAll(['bill_userid','SUM(bill_price) as total_price',"SUM(bill_count) as total_count"],"1 group by bill_userid order by total_price limit 5");
+    require_once $views."homepage/home.php";
+?>

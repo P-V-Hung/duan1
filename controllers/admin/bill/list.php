@@ -1,5 +1,5 @@
 <?php 
-    $listBill = BillAll(['*']);
+    $listBill = BillAll(['*'],"1 order by id desc");
     $echoBill = [];
     foreach($listBill as $bill){
         $billStatus = BillStatusFind(['sb_name'],"id = ".$bill['bill_status']);

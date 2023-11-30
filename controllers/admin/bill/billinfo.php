@@ -25,7 +25,7 @@
         if($_POST['status']==5 && $bill['bill_status'] != 5){
             foreach($listBillInfo as $bi){
                 PPUpdateDown($bi['pp_id'], "pp_count",$bi["pro_count"]);
-                PPUpdateUp($bi['pp_id'], "pp_buys");
+                PPUpdateUp($bi['pp_id'], "pp_buys",$bi["pro_count"]);   
             }
         }
         if($bill['bill_status'] == 5){

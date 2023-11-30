@@ -89,9 +89,9 @@
         $stmt->execute();
     }
 
-    function updateUp($table,$id,$truong){
+    function updateUp($table,$id,$truong,$count){
         $conn = connect();
-        $sql = "UPDATE `$table` SET `$truong` = `$truong` + 1 WHERE `$table`.`id` = $id";
+        $sql = "UPDATE `$table` SET `$truong` = `$truong` + $count WHERE `$table`.`id` = $id";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
     }
