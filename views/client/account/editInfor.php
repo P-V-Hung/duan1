@@ -8,7 +8,7 @@
       <div class="box-userInfo-content-left">
         <table class="table">
           <tr>
-            <td>Tên đăng nhập</td>
+            <td style="min-width: 150px;">Tên đăng nhập</td>
             <td><input type="text" id="user" name="u_username" value="<?php if (isset($inforUser['u_username'])) echo $inforUser['u_username'] ?>"></td>
           </tr>
           <tr>
@@ -25,16 +25,16 @@
           </tr>
           <tr>
             <td>Địa chỉ</td>
-            <td>
-              <select id="tinh">
+            <td class="api-tinh">
+              <select class="form-select" id="tinh">
                 <option value="">Chọn tỉnh thành</option>
               </select>
               <input type="hidden" id="inputTinh" value="" name="tinh">
-              <select id="huyen">
+              <select class="form-select my-1" id="huyen">
                 <option value="">Chọn quận huyện</option>
               </select>
               <input type="hidden"  id="inputHuyen" value="" name="huyen">
-              <select id="xa">
+              <select  class="form-select" id="xa">
                 <option value="">Chọn xã</option>
               </select>
               <input type="hidden"  id="inputXa" value="" name="xa">
