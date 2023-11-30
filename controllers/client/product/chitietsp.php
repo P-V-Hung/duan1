@@ -90,16 +90,18 @@ if(isset($_SESSION['user'])){
 }
 foreach($listComment as $cm){
     $us = AccountFind("id = ".$cm['com_userid'],['u_fullname','u_img','u_username']);
-    $com = [
-        'text' => $cm['com_content'],
-        'img' => $cm['com_img'],
-        'reating' => $cm['com_reating'],
-        'text' => $cm['com_content'],
-        'date' => $cm['com_date'],
-        'user' => empty($us['u_fullname'])?$us['u_username']:$us['u_fullname'],
-        'user_img' => $us['u_img'],
-    ]; 
-    $dsComment[] = $com;
+    if(!empty($us)){
+        $com = [
+            'text' => $cm['com_content'],
+            'img' => $cm['com_img'],
+            'reating' => $cm['com_reating'],
+            'text' => $cm['com_content'],
+            'date' => $cm['com_date'],
+            'user' => empty($us['u_fullname'])?$us['u_username']:$us['u_fullname'],
+            'user_img' => $us['u_img'],
+        ]; 
+        $dsComment[] = $com;
+    }
 }
 if(isset($_POST['btn-add-comment'])){
     $img = $_FILES['img'];
