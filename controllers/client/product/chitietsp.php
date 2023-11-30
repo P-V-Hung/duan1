@@ -25,12 +25,14 @@ $listSpLq = [];
 foreach ($proCat as $catId) {
     $cat = CategoryFind("id = " . $catId['pc_idcat']);
     $catAllLq = ProCatAll(['pc_idpro'], "pc_idcat = " . $catId['pc_idcat'] . " and pc_idpro != $idpro");
-    $catName = $cat['cat_name'];
-    foreach ($catAllLq as $catlq) {
-        $products = ProductFind("id = " . $catlq['pc_idpro']);
-        $listSpLq[$catName][] = $products;
+    if(!empty($catAllLq)){
+        $catName = $cat['cat_name'];
+        foreach ($catAllLq as $catlq) {
+            $products = ProductFind("id = " . $catlq['pc_idpro']);
+            $listSpLq[$catName][] = $products;
+        }
+        $listCat[] = $cat;
     }
-    $listCat[] = $cat;
 }
 
 $phanloai = PPAll(['pp_color'], "pp_proid = $idpro group by pp_color");
