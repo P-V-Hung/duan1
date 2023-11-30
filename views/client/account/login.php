@@ -4,7 +4,8 @@
         <div><input type="text" placeholder="Tên đăng nhập/Số điện thoại/Email" name="tendn" id="username" class="mb20">
             <p class="errUser"></p>
         </div>
-        <div><input class="password" type="password" name="pass" id="pass" placeholder="Mật khẩu">
+        <div>
+            <input class="password" type="password" name="pass" id="pass" placeholder="Mật khẩu">
             <div class="icon"><i class="fa-solid fa-eye"></i></div>
         </div>
         <a href="#">Quên mật khẩu</a>
@@ -20,3 +21,10 @@
     }
     ?>
 </div>
+<script>
+    let inPass = document.querySelector(".password");
+    document.querySelector(".icon").onclick = function() {
+        if (inPass.type == "password") inPass.type = "text";
+        else inPass.type = "password";
+    }
+</script>

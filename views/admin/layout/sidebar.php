@@ -21,7 +21,7 @@
           </div>
 
           <div class="sidebar-menu">
-            <a href="">
+            <a href="<?=$adminUrl."/"?>">
               <div class="sidebar-menu-header">
                 <p>Trang chủ</p>
               </div>
@@ -47,8 +47,7 @@
                 >
                   <div class="accordion-body">
                     <ul>
-                      <li><a href="<?=$adminUrl."category/list&recat=0"?>">Danh sách danh mục</a></li>
-                      <li><a href="<?=$adminUrl."category/add"?>">Thêm danh mục</a></li>
+                      <li><a href="<?=$adminUrl."category/list"?>">Danh sách danh mục</a></li>
                     </ul>
                   </div>
                 </div>
@@ -101,7 +100,7 @@
                 >
                   <div class="accordion-body">
                     <ul>
-                      <li><a href="">Danh sách bình luận</a></li>
+                      <li><a href="<?=$adminUrl."comment/list"?>">Danh sách bình luận</a></li>
                     </ul>
                   </div>
                 </div>
@@ -158,7 +157,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button
@@ -185,7 +183,11 @@
                   </div>
                 </div>
               </div>
-              
+              <a style="text-decoration:none;" href="">
+              <div class="sidebar-menu-header">
+                <p>Thống kê</p>
+              </div>
+            </a>
             </div>
           </div>
         </div>

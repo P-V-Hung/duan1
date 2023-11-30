@@ -11,7 +11,8 @@ if (isset($_POST['btn_signUp']) && ($_POST['btn_signUp'])) {
         $data = [
             'u_username' => $ten,
             'u_email' => $email,
-            'u_password' => $pass
+            'u_password' => $pass,
+            'u_create' => date('Y-m-d')
         ];
         AccountInsert($data);
         setcookie("logup", true, time() + 1);

@@ -51,6 +51,8 @@
         }
         $dataSql = implode(', ',$datas); 
         $sql = "UPDATE `$table` SET $dataSql WHERE `$table`.`id` = $id";
+        // echo $sql;
+        // die();
         $stmt = $conn->prepare($sql);
         $stmt->execute();
     }

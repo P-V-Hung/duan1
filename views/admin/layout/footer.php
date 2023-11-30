@@ -1,6 +1,6 @@
-</div>
-<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+
 <script>
+
     function chooseFile(fileInput, idImg) {
         if (fileInput.files && fileInput.files[0]) {
             var reader = new FileReader();
@@ -19,9 +19,11 @@
     }
 
     // closs mesage
-    let closeMessage = document.querySelector(".message-close");
-    closeMessage.onclick = function() {
-        closeMessage.parentNode.remove()
+    let closeMessage = document.querySelector(".message .message-close");
+    if(closeMessage){
+        closeMessage.onclick = function() {
+            closeMessage.parentNode.remove()
+        }
     }
 </script>
 </body>

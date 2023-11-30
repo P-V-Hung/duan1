@@ -11,4 +11,7 @@
     function CommentDelete($id){
         return delete("comments",$id);
     }
+    function CommentUpdate($id = 0,$data = []){
+        return update("comments",$id,$data);
+    }
 ?>

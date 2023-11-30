@@ -83,15 +83,65 @@
 
   // closs mesage
   let closeMessage = document.querySelector(".message-close");
-  closeMessage.onclick = function(){
-    closeMessage.parentNode.remove()
+  if (closeMessage) {
+    closeMessage.onclick = function() {
+      closeMessage.parentNode.remove()
+    }
   }
 
   function formatNumber(input) {
-      let value = input.value.replace(/\D/g, '');
-      value = new Intl.NumberFormat().format(value);
-      input.value = value;
-    }
+    let value = input.value.replace(/\D/g, '');
+    value = new Intl.NumberFormat().format(value);
+    input.value = value;
+  }
+
+
+
+  // api tinh
+
+  $(document).ready(function() {
+    $.ajax({
+      url: "https://provinces.open-api.vn/api/",
+      type: "GET",
+      success: function(reponse) {
+        var tinh = '';
+        for (i = 0; i < reponse.length; i++) {
+          tinh += '<option value="' + reponse[i].code + '">' + reponse[i].name + '</option>';
+        }
+        $("#tinh").html(tinh);
+      }
+    });
+    $('#tinh').change(function() {
+      var idTinh = $('#tinh').val();
+      $.ajax({
+        url: "https://provinces.open-api.vn/api/p/" + idTinh + "?depth=2",
+        type: "GET",
+        success: function(data) {
+          var huyen = '';
+          var listHuyen = data.districts;
+          for (var i = 0; i < listHuyen.length; i++) {
+            huyen += '<option value="' + listHuyen[i].code + '">' + listHuyen[i].name + '</option>';
+          }
+          $("#huyen").html(huyen);
+        }
+      });
+    });
+    $('#huyen').change(function() {
+      var idHuyen = $('#huyen').val();
+      $.ajax({
+        url: "https://provinces.open-api.vn/api/d/" + idHuyen + "?depth=2",
+        type: "GET",
+        success: function(data) {
+          var xa = '';
+          var listXa = data.wards;
+          for (var i = 0; i < listXa.length; i++) {
+            xa += '<option value="' + listXa[i].code + '">' + listXa[i].name + '</option>';
+          }
+          $("#xa").html(xa);
+        }
+      });
+    });
+  });
 </script>
 </body>
 
