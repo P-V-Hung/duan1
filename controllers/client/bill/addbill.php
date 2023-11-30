@@ -1,5 +1,8 @@
 <?php 
-    
+if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address']) || empty($_SESSION['user']['u_tel'])) {
+    logInfo("Vui lòng cập nhật thông tin tài khoản! <a href='" . $clientUrl . "userInfor'>tại đây</a>");
+    require_once $controllers."cart/cart.php";
+}else{
     if(isset($_POST['btn_muahang'])){
         $listCartId = [];
         $count = 0;
@@ -43,4 +46,5 @@
         setcookie('addbill',true, time()+1);
         reUrlClient("bill/list");
     }
+}
 ?>
