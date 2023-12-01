@@ -4,7 +4,7 @@
         <div class="addAcc row mt-5 px-5">
             <div class="col-5 addAcc-img">
                 <div>
-                    <label for="formFile"><img id="img-add-acc" alt="" class="width:100%;"></label>
+                    <label src="" for="formFile"><img id="img-add-acc" alt="" class="width:100%;"></label>
                 </div>
                 <div class="my-3">
                     <input class="form-control" type="file" name="u_img" onchange="chooseFile(this,'img-add-acc')" id="formFile">
