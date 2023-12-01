@@ -31,10 +31,9 @@ foreach ($proCat as $catId) {
             $products = ProductFind("id = " . $catlq['pc_idpro']);
             $listSpLq[$catName][] = $products;
         }
-        $listCat[] = $cat;
     }
+    $listCat[] = $cat;
 }
-
 $phanloai = PPAll(['pp_color'], "pp_proid = $idpro group by pp_color");
 $color = $_GET['color'] ?? null;
 $memory = $_GET['memory'] ?? null;

@@ -185,7 +185,11 @@
 
 </div>
 <div class="container mt-4 p-4">
-    <h3 class="p-4">Sản phẩm cùng danh mục</h3>
+    <?php 
+        if(!empty($listSpLq)){
+            echo '<h3 class="p-4">Sản phẩm cùng danh mục</h3>';
+        }
+    ?>
     <div class="new-product p-4">
         <?php
         foreach ($listSpLq as $key => $splq) :
