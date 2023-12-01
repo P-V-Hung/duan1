@@ -154,6 +154,11 @@
         require_once $controller."comment/delete.php";
         break;
       }
+      // Chart
+      case "chart/chart":{
+        require_once $controller."chart/chart.php";
+        break;
+      }
 
     default: {
         echo "Loại";

@@ -183,7 +183,7 @@
                   </div>
                 </div>
               </div>
-              <a style="text-decoration:none;" href="">
+              <a style="text-decoration:none;" href="<?=$adminUrl."chart/chart"?>">
               <div class="sidebar-menu-header">
                 <p>Thống kê</p>
               </div>
