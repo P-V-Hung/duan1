@@ -6,7 +6,6 @@
                 <tr class="table-hung-th">
                     <th><input type="checkbox" id="checkAll"></th>
                     <th>STT</th>
-                    <th>ID</th>
                     <th>Nội dung</th>
                     <th>Ảnh</th>
                     <th>Người bình luận</th>
@@ -44,7 +43,6 @@
                     <tr class="trListComment">
                         <td><input type="checkbox" name="checkVou<?= $com['id'] ?>" value="<?= $com['id'] ?>" class="checkbtn" id=""></td>
                         <td><?php echo $i++ ?></td>
-                        <td><?php echo $com['id'] ?></td>
                         <td><?php echo $com['com_content'] ?></td>
                         <td><img src="<?php if(isset($com['com_img'])) echo $pathUpload.$com['com_img'] ?>" alt="No Photo" style="height: 60px; max-width: 50px"></td>
                         <td>
@@ -78,7 +76,7 @@
                         </td>
                         </td>
                         <td>
-                            <a onclick="return confirm('Bạn chắc chắn muốn xóa bình luận này ?')" href="<?= $adminUrl . "comment/delete&id=" . $com['id'] ?>">Xóa</a>
+                            <a class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa bình luận này ?')" href="<?= $adminUrl . "comment/delete&id=" . $com['id'] ?>">Xóa</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

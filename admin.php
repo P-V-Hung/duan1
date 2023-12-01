@@ -132,6 +132,10 @@
         require_once $controller."account/update.php";
         break;
       }
+      case "account/accountInfo":{
+        require_once $controller."account/accountInfo.php";
+        break;
+      }
       // Bill
       case "bill/list":{
         require_once $controller."bill/list.php";
@@ -167,4 +171,3 @@
   }
   require_once $views . "layout/footer.php";
   ?>
-  

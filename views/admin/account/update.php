@@ -4,7 +4,10 @@
         <div class="addAcc row mt-5 px-5">
             <div class="col-5 addAcc-img">
                 <div>
-                    <label for="formFile"><img src="<?=$pathUpload.$account['u_img']?>" id="img-add-acc" alt="" class="width:100%;"></label>
+                    <label for="formFile"><img id="img-add-acc" src="<?php
+                        if((!isset($account['u_img']))||($account['u_img']=="")) echo $pathUpload.'user.jpg'; 
+                        else echo $pathUpload.$account['u_img']; 
+                    ?>" alt="" class="rounded-circle width:100%;"></label>
                 </div>
                 <div class="my-3">
                     <input class="form-control" type="file" name="u_img" onchange="chooseFile(this,'img-add-acc')" id="formFile">

@@ -16,16 +16,16 @@
             </tr>
             <?php $i=1; foreach ($listVouchers as $vou) : ?>
                 <tr>
-                  <td><input type="checkbox" name="checkVou<?= $vou['id'] ?>" value="<?= $vou['id'] ?>" class="checkbtn" id=""></td>
-                  <td><?php echo $i++ ?></td>
-                  <td><?php echo $vou['v_name'] ?></td>
-                  <td><?php echo number_format($vou['v_price']) ?></td>
-                  <td><?php echo $vou['v_count'] ?></td>
-                  <td><?php echo $vou['v_used'] ?></td>
-                  <td><?php echo $vou['v_create'] ?></td>
-                  <td><?php echo $vou['v_arrtive'] ?></td>
-                  <td><?php statusVou($vou['v_count'],$vou['v_used'],$vou["v_arrtive"]) ?></td>
-                  <td><a onclick="return confirm('Bạn chắc chắn muốn xóa chứ ?')" href="<?= $adminUrl . "voucher/delete&id=" . $vou['id'] ?>">Xóa</a></td>
+                    <td><input type="checkbox" name="checkVou<?= $vou['id'] ?>" value="<?= $vou['id'] ?>" class="checkbtn" id=""></td>
+                    <td><?php echo $i++ ?></td>
+                    <td><?php echo $vou['v_name'] ?></td>
+                    <td><?php echo number_format($vou['v_price']) ?></td>
+                    <td><?php echo $vou['v_count'] ?></td>
+                    <td><?php echo $vou['v_used'] ?></td>
+                    <td><?php echo $vou['v_create'] ?></td>
+                    <td><?php echo $vou['v_arrtive'] ?></td>
+                    <td><?php statusVou($vou['v_count'],$vou['v_used'],$vou["v_arrtive"]) ?></td>
+                    <td><a class="btn btn-danger" onclick="return confirm('Bạn chắc chắn muốn xóa chứ ?')" href="<?= $adminUrl . "voucher/delete&id=" . $vou['id'] ?>">Xóa</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>
