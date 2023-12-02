@@ -12,8 +12,8 @@
         <h3>Giới thiệu</h3>
         <p>Tin tức</p>
         <p>Nhà đầu tư</p>
-        <p>nghề nghiệp</p>
-        <p>sự vững bền</p>
+        <p>Nghề nghiệp</p>
+        <p>Sự vững bền</p>
       </div>
       <div class="footer-icon">
         <div class="footer-icon-items">

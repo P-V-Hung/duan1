@@ -33,7 +33,7 @@
           </div>
         </a>
         <form action="<?=$clientUrl."product"?>" class="search" method="post">
-          <input type="text" placeholder="sản phẩm bạn cần..." name="keyword" />
+          <input type="text" placeholder="Sản phẩm bạn cần..." name="keyword" />
           <button type="submit" name="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
         <div class="menu">

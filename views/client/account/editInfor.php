@@ -42,7 +42,7 @@
           </tr>
           <tr>
             <td>Chi tiết</td>
-            <td><input placeholder="địa chỉ chi tiết" type="text" id="address" name="u_address" value="<?php if (isset($inforUser['u_address'])) echo $inforUser['u_address'] ?>"></td>
+            <td><input placeholder="Địa chỉ chi tiết" type="text" id="address" name="u_address" value="<?php if (isset($inforUser['u_address'])) echo $inforUser['u_address'] ?>"></td>
           </tr>
           <!-- <tr>
             <td>Mật khẩu cũ</td>
@@ -63,8 +63,10 @@
       </div>
       <div class="box-userInfo-content-right">
         <div class="box-userInfo-content-right-img">
-          <img src="<?php if (isset($inforUser['u_img'])) echo $pathUpload . $inforUser['u_img'];
-                    else echo 'https://tse4.mm.bing.net/th?id=OIP.w105elCPL6VfL7OJqHcmjgHaE8&pid=Api&P=0&h=220'; ?>" alt="" id="userInfo-avatar" />
+          <img src="<?php
+                        if((!isset($inforUser['u_img']))||($inforUser['u_img']=="")) echo $pathUpload.'user.jpg'; 
+                        else echo $pathUpload.$inforUser['u_img']; 
+                    ?>?>" alt="" id="userInfo-avatar" />
           <label for="changeFile"><i class="fa-solid fa-pen-to-square"></i></label>
           <input type="file" class="imageUser" name="u_img" id="changeFile" onchange="chooseFile(this,'userInfo-avatar')">
         </div>
