@@ -14,13 +14,17 @@
     }
     $listPP = PPAll(['pp_proid', 'MIN(pp_price) AS minprice', 'MAX(pp_price) AS maxprice', 'SUM(pp_count) AS total_count', 'SUM(pp_buys) AS total_buys'],"1 group by pp_proid");
 
-    if($_SESSION['cate']!=0){
-        $listProducts = [];
-        $proCat = ProCatAll(['pc_idpro'],'pc_idcat = '.$_SESSION['cate']);
-        foreach($proCat as $pc){
-            $pro = ProductFind("id = ".$pc['pc_idpro']);
-            $listProducts[] = $pro;
+    if(isset($_SESSION['cate'])){
+        if($_SESSION['cate']!=0){
+            $listProducts = [];
+            $proCat = ProCatAll(['pc_idpro'],'pc_idcat = '.$_SESSION['cate']);
+            foreach($proCat as $pc){
+                $pro = ProductFind("id = ".$pc['pc_idpro']);
+                $listProducts[] = $pro;
+            }
         }
+    }else{
+        $_SESSION['cate'] = 0;
     }
 
     if(isset($_POST['btn-price'])){
