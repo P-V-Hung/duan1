@@ -78,7 +78,7 @@
     <!-- Đơn hàng liên quan -->
     <div class="mt-5">
         <hr class="border border-dark border-2 opacity-50">
-        <h3 class="modal-title">Đơn hàng liên quan</h3>
+        <h4 class="modal-title">Đơn hàng liên quan</h4>
         <table style="width:100%;" class="table-hung">
             <tr>
                 <th>
@@ -121,7 +121,7 @@
     <!-- Bình luận đã gửi -->
     <div class="mt-5">
         <hr class="border border-dark border-2 opacity-50">
-        <h3 class="modal-title">Bình luận đã gửi</h3>
+        <h4 class="modal-title">Bình luận đã gửi</h4>
         <table style="width:100%;" class="table-hung">
             <tr class="table-hung-th">
                 <th>STT</th>

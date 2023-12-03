@@ -87,8 +87,7 @@ foreach($commentCountByDate as $key => $date){
 }
 
 ?>
-[
-]
+
 
 <div class="chartCategory p2-5 mt-5">
     <div id="chartContainer" style="height: 370px; width: 100%;"></div>

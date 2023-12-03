@@ -1,10 +1,15 @@
+<?php 
+    if(isset($_COOKIE['addSucces'])){
+        echoSuccess("Thêm tài khoản thành công");
+    }
+?>
 <div class="right-sitebar container-xxl">
     <h2 class="py-4 title-admin">Thêm tài khoản</h2>
     <form action="" method="post" enctype="multipart/form-data">
         <div class="addAcc row mt-5 px-5">
             <div class="col-5 addAcc-img">
                 <div>
-                    <label src="" for="formFile"><img id="img-add-acc" alt="" class="width:100%;"></label>
+                    <label src="" for="formFile"><img src="<?php echo $pathUpload.'user.jpg' ?>" id="img-add-acc" alt="" class="rounded-circle width:100%;"></label>
                 </div>
                 <div class="my-3">
                     <input class="form-control" type="file" name="u_img" onchange="chooseFile(this,'img-add-acc')" id="formFile">

@@ -10,7 +10,6 @@ if(isset($_POST['btn_add-vou'])){
         'v_arrtive' => $_POST['v_arrtive']
     ];
     VoucherInsert($data);
-    $thongbao = "Thêm thành công";
 }
 
 require_once $views."voucher/add.php";

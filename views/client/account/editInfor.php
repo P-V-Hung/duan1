@@ -44,18 +44,6 @@
             <td>Chi tiết</td>
             <td><input placeholder="Địa chỉ chi tiết" type="text" id="address" name="u_address" value="<?php if (isset($inforUser['u_address'])) echo $inforUser['u_address'] ?>"></td>
           </tr>
-          <!-- <tr>
-            <td>Mật khẩu cũ</td>
-            <td class="position-relative"><input type="password" /></td>
-          </tr>
-          <tr>
-            <td>Mật khẩu mới</td>
-            <td class="position-relative"><input type="password" /></td>
-          </tr>
-          <tr>
-            <td>Nhập lại mật khẩu mới</td>
-            <td class="position-relative"><input type="password" /></td>
-          </tr> -->
         </table>
         <input type="hidden" id="iduser" value="<?= $inforUser['id'] ?>">
         <button type="submit" name="btn-editInfor" id="btn-editInfor" class="btn btn-success">Lưu thông tin</button>

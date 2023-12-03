@@ -19,7 +19,8 @@ if(isset($_POST['btn_add-acc'])){
         'u_create' => date('Y-m-d')
     ];
     AccountInsert($data);
-    reUrl('account/list');
+    setcookie("addSucces", true, time() + 1);
+    reUrl('account/add');
 }
 
 require_once $views."account/add.php";

@@ -3,7 +3,9 @@ if (isset($_COOKIE['addbill'])) {
     logSuccess("Chờ xác nhận đơn hàng");
 }
     if(empty($echoBill)){
-        echo "<h3 class='pt-5' style='text-align: center;'>Không có đơn hàng nào</h3>";
+        echo "<div class='p-4 mt-1'></div>";
+        echo "<h3 class='pt-5 mt-5 pb-5 mb-5' style='text-align: center;'>Không có đơn hàng nào</h3>";
+        echo "<div class='p-5 mb-5 mt-5'></div>";
     }else{
 ?>
 <main class="container-xxl mt-5">

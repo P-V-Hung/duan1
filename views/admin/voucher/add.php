@@ -42,9 +42,6 @@
             </table>
             <input type="date" name="v_create" value="<?php echo date("Y-m-d") ?>" hidden>
             <input type="submit" class="addVou" name="btn_add-vou" value="Thêm">
-            <p style="padding:10px; color: green;"><?php
-                echo $thongbao??'';
-            ?></p>
         </form>
 
     </div>
