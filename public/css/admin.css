@@ -18,7 +18,10 @@ body {
   scroll-behavior: smooth;
   transition: 0.5s;
 }
-
+.togger{
+  background-color:#b36e6e;
+  color: white;
+}
 ul {
   list-style: none;
   margin: 0;
