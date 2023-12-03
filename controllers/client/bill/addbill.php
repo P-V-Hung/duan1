@@ -1,13 +1,14 @@
-<?php 
-if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address']) || empty($_SESSION['user']['u_tel'])) {
-    logInfo("Vui lòng cập nhật thông tin tài khoản! <a href='" . $clientUrl . "userInfor'>tại đây</a>");
-    require_once $controllers."cart/cart.php";
-}else{
-    if(isset($_POST['btn_muahang'])){
+<?php
+
+if (isset($_POST['btn_muahang'])) {
+    if (empty($_POST['address']) || empty($_POST['fullname']) || empty($_POST['tel'])) {
+        setcookie('billloi',true, time()+1);
+        reUrlClient("cart");
+    } else {
         $listCartId = [];
         $count = 0;
-        foreach($_POST as $key => $val){
-            if(strpos($key, 'idCart') !== false){
+        foreach ($_POST as $key => $val) {
+            if (strpos($key, 'idCart') !== false) {
                 $listCartId[] = $val;
                 $count += $_SESSION['cart'][$val]['count'];
             }
@@ -18,7 +19,7 @@ if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address
             'bill_tel' => $_POST['tel'],
             'bill_username' => $_SESSION['user']['u_username'],
             'bill_fullname' => $_POST['fullname'],
-            'bill_price' => str_replace('.','',$_POST['total_bill']),
+            'bill_price' => str_replace('.', '', $_POST['total_bill']),
             'bill_count' => $count,
             'bill_pttt' => $_POST['pttt'],
             'bill_status' => 1,
@@ -26,12 +27,12 @@ if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address
         ];
 
         $idVoucher = $_POST['voucher'] ?? 0;
-        VoucherUpdateUp($idVoucher,"v_used");
+        VoucherUpdateUp($idVoucher, "v_used");
 
         $idBill = BillInsertId($dataBill);
 
-        foreach($listCartId as $idCart){
-            $proPP = PPFind(['*'],"id = ".$_SESSION['cart'][$idCart]['ppid']);
+        foreach ($listCartId as $idCart) {
+            $proPP = PPFind(['*'], "id = " . $_SESSION['cart'][$idCart]['ppid']);
             $dataBillInfor = [
                 'bill_id' => $idBill,
                 'proid' => $_SESSION['cart'][$idCart]['proid'],
@@ -43,8 +44,7 @@ if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address
             BillInfoInsert($dataBillInfor);
             unset($_SESSION['cart'][$idCart]);
         }
-        setcookie('addbill',true, time()+1);
+        setcookie('addbill', true, time() + 1);
         reUrlClient("bill/list");
     }
 }
-?>

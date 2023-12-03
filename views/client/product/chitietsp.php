@@ -2,11 +2,11 @@
     <div class="collections row mt-5 px-5">
         <div class="col-7 collections-img">
             <div class="">
-                <img src="<?= $pathUpload . $pro['pro_img'] ?>" alt="" class="width:100%;">
+                <img src="<?= $pathUpload . $pro['pro_img'] ?>" alt="" id="ImgAnh" class="width:100%;">
                 <div class="border img-child-client filtering">
                     <?php foreach ($listImg as $img) : ?>
                         <div class="img-con">
-                            <img src="<?= $pathUpload . $img['img'] ?>" style="width: 100%;height: auto;" alt="">
+                            <img src="<?= $pathUpload . $img['img'] ?>" class="imgChildToggel" style="width: 100%;height: auto;" alt="">
                         </div>
                     <?php endforeach ?>
 
@@ -147,12 +147,12 @@
                     <form action="<?= $clientUrl . "cart" ?>" class="form_count my-3" method="post">
                         <div class="cate-count">
                             <p>Số lượng : <b class="soluongsanpham"><?= $soluongOne ?? $proPP['total_count'] ?></b></p>
-                            <div class="range">
+                            <div class="rangee">
                                 <div class="field">
                                     <div class=" value left">
                                         1
                                     </div>
-                                    <input type="range" name="count" class="span-input" min="1" max="<?= $proOne['pp_count'] ?? $proPP['total_count'] ?>" value="1" steps="1">
+                                    <input type="number" name="count" class="span-input" min="1" max="<?= $proOne['pp_count'] ?? $proPP['total_count'] ?>" value="1" steps="1">
                                     <div class=" value right">
                                         <?= $proOne['pp_count'] ?? $proPP['total_count'] ?>
                                     </div>
@@ -230,11 +230,16 @@
     </div>
 </div>
 <script type="text/javascript">
-    // ranger
-    const inputSlider = document.querySelector(".span-input");
-    inputSlider.oninput = (() => {
-        let value = inputSlider.value;
-        document.querySelector(".soluongsanpham").innerHTML = value;
+    $(document).ready(function(){
+        img = $("#ImgAnh");
+        listImg = $(".imgChildToggel");
+        for(i = 0;i< listImg.length;i++){
+            (function (index) {
+                $(listImg[index]).on("click", function () {
+                    img.attr('src', $(this).attr('src'));
+                });
+            })(i);
+        }
     });
 
     // reating

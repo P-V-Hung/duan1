@@ -4,7 +4,7 @@ if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address
 }
 ?>
 <main class="container-xxl mt-5">
-    <form action="<?=$clientUrl."bill/add"?>" method="post">
+    <form action="<?= $clientUrl . "bill/add" ?>" method="post">
         <div class="location border p-3">
             <div class="title_ship mb-1">
                 <p><i class="fa-sharp fa-solid fa-location-dot"></i> Địa chỉ nhận hàng</p>
@@ -56,7 +56,7 @@ if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address
             <hr>
             <!-- Danh sách -->
             <?php foreach ($dataBill as $key => $bill) : ?>
-                <input type="hidden" name="idCart<?=$listCatId[$key]?>" value="<?=$listCatId[$key]?>">
+                <input type="hidden" name="idCart<?= $listCatId[$key] ?>" value="<?= $listCatId[$key] ?>">
                 <div class="cart d-flex align-items-center justify-content-between px-3">
                     <div class="cart_image">
                         <img src="<?= $pathUpload . $bill['img'] ?>" width="100px" alt="">
@@ -168,6 +168,7 @@ if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address
                 </table>
             </div>
             <hr>
+            <input type="hidden" name="" value="0" id="priceVoucher">
             <div class="cart_btn d-flex justify-content-end">
                 <button type="submit" name="btn_muahang" class="btn btn-outline-danger">Đặt hàng</button>
             </div>
@@ -179,30 +180,12 @@ if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address
                         <span>Chọn Voucher</span>
                         <a href="#">Hỗ trợ <i class="fa-solid fa-headphones-simple"></i></a>
                     </div>
-                    <!-- list voucher -->
-                    <div class="div-list-voucher">
-                        <?php foreach ($listVoucher as $vou) : ?>
-                            <div class="voucher_content-main d-flex py-2 px-4 justify-content-between align-items-center border my-4">
-                                <div class="img d-flex justify-content-center align-items-center">Voucher</div>
-                                <div class="title">
-                                    Giảm: <span class="priceVoucher"><?= number_format($vou['v_price']) ?></span>
-                                    <br>
-                                    <span class="free">
-                                        #giảm trên toàn bộ đơn hàng
-                                    </span>
-                                    <br>
-                                    Số lượng còn lại: <?= $vou['v_count'] - $vou['v_used'] ?>
-                                </div>
-                                <div class="voucher_content-time">
-                                    <p>Từ: <?= $vou['v_create'] ?></p>
-                                    <p>Đến: <?= $vou['v_arrtive'] ?></p>
-                                </div>
-                                <div class="voucher_content-btn">
-                                    <input type="radio" name="voucher" value="<?=$vou['id']?>" id="">
-                                </div>
-                            </div>
-                        <?php endforeach ?>
+                    <div style="flex-wrap: nowrap;" class="input-group mb-3">
+                        <input type="text" class="form-control" id="text-voucher" placeholder="Nhập mã voucher" aria-label="Nhập mã voucher" aria-describedby="button-addon2">
+                        <button style="width:200px" class="btn btn-outline-secondary" type="button" id="btn-queryvoucher">Tìm Voucher</button>
                     </div>
+                    <!-- list voucher -->
+                    <div id="listVou" class="div-list-voucher"></div>
                     <div class="footer_voucher d-flex justify-content-end align-items-center">
                         <input type="button" id="voucher_back" value="Xác Nhận" class="px-5 btn btn-outline-danger">
                     </div>
@@ -212,6 +195,49 @@ if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address
     </form>
 </main>
 <script>
+    $(document).ready(function() {
+        $("#btn-queryvoucher").on('click', function() {
+            text = $("#text-voucher").val();
+            $.ajax({
+                url: './ajax/ajaxVoucher.php',
+                method: 'POST',
+                data: {
+                    queryVoucher: true,
+                    text: text,
+                },
+                success: function(data) {
+                    $("#listVou").html(data);
+                }
+            });
+        });
+        $("#voucher_back").on('click', function() {
+            price = $("#priceVoucher").val();
+            $(".voucher_down").html(price.toLocaleString());
+            total = $("#total_cart").val();
+            total = total.replace(/\./g, '');  
+            carPrice = parseInt(total) - parseInt(price);
+            $("#total_cart").val(carPrice.toLocaleString());
+        });
+
+
+        $(document).on('click', '.voucherRadio', function() {
+            id = $(this).val();
+            $.ajax({
+                url: './ajax/ajaxVoucher.php',
+                method: 'POST',
+                data: {
+                    appVoucher: true,
+                    id: id,
+                },
+                success: function(price) {
+                    $("#priceVoucher").val(price);
+                },
+            });
+        });
+    });
+
+
+
     function blockIn(idForm, block, none) {
         let locationShip = document.querySelector(idForm);
         document.getElementById(block).onclick = function() {
@@ -250,21 +276,8 @@ if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address
     totalPro = totalPro.replace(/,/g, '');
     let priceShip = document.querySelector(".total_ship").innerText;
     priceShip = priceShip.replace(/,/g, '');
-    let voucherDown = document.querySelector(".voucher_down");
     let tongBill = parseFloat(totalPro) + parseFloat(priceShip);
-    let voucher = document.getElementsByName("voucher");
-    let priceVouchers = document.querySelectorAll(".priceVoucher");
     totalCart.value = tongBill.toLocaleString();
-    for (let i = 0; i < voucher.length; i++) {
-        voucher[i].addEventListener('change', function() {
-            if (voucher[i].checked) {
-                priceVoucher = priceVouchers[i].innerText;
-                voucherDown.innerText = priceVoucher;
-                priceVoucher = priceVoucher.replace(/,/g, '');
-                totalCart.value = (tongBill - priceVoucher).toLocaleString();
-            }
-        });
-    }
 
     // Thông tin
     let fullname = document.getElementById('fullname');

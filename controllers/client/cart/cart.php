@@ -2,6 +2,9 @@
 if (!isset($_SESSION['user'])) {
     reUrlClient('login');
 }
+if(isset($_COOKIE['billloi'])){
+    logInfo("Vui lòng cập nhật thông tin tài khoản! <a href='" . $clientUrl . "userInfor'>tại đây</a>");
+}
 $dataCart = [];
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];

@@ -2,11 +2,21 @@
     <h2 class="py-4 title-admin">Danh sách sản phẩm</h2>
     <form class="input-group mb-3" method="post">
         <input type="text" class="form-control" name="keyword" placeholder="Nhập tên sản phẩm muốn tìm" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <select class="form-select" name="cat" aria-label="Default select example">
+            <option selected value="0">Tất cả danh mục</option>
+            <?php 
+                foreach($listCat as $cat):
+            ?>
+            <option value="<?=$cat['id']?>"><?=$cat['cat_name']?></option>
+            <?php 
+                endforeach;
+            ?>
+        </select>
         <button class="btn btn-outline-secondary" type="submit" name="btn-all" id="button-addon2">Tất cả sản phẩm</button>
         <button class="btn btn-outline-secondary" type="submit" name="btn-search" id="button-addon2">Tìm kiếm</button>
     </form>
-    <?= 
-        isset($keyword) ? "<p style='font-size: 1.1rem;'>Kết quả tìm kiếm của: <span style='color:red;font-weight: 500;'>$keyword</span></p>" : '';
+    <?=
+    isset($keyword) ? "<p style='font-size: 1.1rem;'>Kết quả tìm kiếm của: <span style='color:red;font-weight: 500;'>$keyword</span></p>" : '';
     ?>
     <div class="box-product-right-content new-product">
         <?php

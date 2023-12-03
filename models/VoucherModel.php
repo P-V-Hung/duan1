@@ -2,6 +2,9 @@
     function VoucherAll($select = ['*'], $where = 1){
         return all("vouchers",$select,$where);
     }
+    function VoucherFind($select = ['*'], $where = 1){
+        return find("vouchers",$select,$where);
+    }
     function VoucherDelete($id = 0){
         return delete("vouchers",$id);
     }

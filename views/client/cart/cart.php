@@ -36,7 +36,7 @@
                     </div>
                     <div class="cart_title">
                         <a href="<?= $clientUrl . "chitietsp&id=" . $cart['id'] ?>">
-                            <h6><?= $cart['name'] ?></h6>
+                            <h6 style="max-width: 230px;"><?= $cart['name'] ?></h6>
                         </a>
                     </div>
                     <div class="cart_proinfor">

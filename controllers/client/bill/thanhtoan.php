@@ -26,12 +26,5 @@
         $totalAll += $proPP['pp_price'] * $cart['count'];
     }
     
-    $listVouchers = VoucherAll();
-    $listVoucher = [];
-    foreach($listVouchers as $vc){
-        if($vc['v_used'] < $vc['v_count']){
-            $listVoucher[] = $vc;
-        }
-    }
     require_once $views . "bill/thanhtoan.php";
 ?>

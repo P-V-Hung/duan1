@@ -23,6 +23,7 @@ for ($i = 0; $i < 7; $i++) {
         }
     }
 }
+
 for ($i = 0; $i < 7; $i++) {
     $date = date('Y-m-d', strtotime("-$i days", strtotime($currentDate)));
     if (!array_key_exists($date, $commentCountByDate)) {
@@ -103,6 +104,7 @@ window.onload = function() {
     var sao3Data = <?php echo json_encode(array_values($sao3)); ?>;
     var sao4Data = <?php echo json_encode(array_values($sao4)); ?>;
     var sao5Data = <?php echo json_encode(array_values($sao5)); ?>;
+
 
 
     var chart = new CanvasJS.Chart("chartContainer", {

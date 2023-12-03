@@ -1,12 +1,12 @@
 <?php 
     $keyword = $_POST['keyword'] ?? '';
-    $_SESSION['cate'] = 0;
 
     $cate = [];
     if(isset($_POST['btn-cate'])){
         $_SESSION['cate'] = $_POST['btn-cate'];
         $cate = CategoryFind("id = ".$_POST['btn-cate']);
     }
+
 
     $listProducts = ProductAll(['*'],"pro_status = 0");
     if(!empty($keyword)){
