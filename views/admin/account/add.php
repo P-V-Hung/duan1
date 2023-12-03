@@ -1,8 +1,3 @@
-<?php 
-    if(isset($_COOKIE['addSucces'])){
-        echoSuccess("Thêm tài khoản thành công");
-    }
-?>
 <div class="right-sitebar container-xxl">
     <h2 class="py-4 title-admin">Thêm tài khoản</h2>
     <form action="" method="post" enctype="multipart/form-data">

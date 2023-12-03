@@ -1,5 +1,4 @@
 <?php
-
 $listAccount = AccountAll();
 if(isset($_POST['btn_add-acc'])){
     $img = $_FILES['u_img'];
@@ -19,7 +18,6 @@ if(isset($_POST['btn_add-acc'])){
         'u_create' => date('Y-m-d')
     ];
     AccountInsert($data);
-    setcookie("addSucces", true, time() + 1);
     reUrl('account/add');
 }
 
