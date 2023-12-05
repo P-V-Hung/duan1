@@ -37,6 +37,7 @@
             $data = [
                 'bill_status' => $_POST['status']
             ];
+            $_SESSION['thongbao'] = true;
             BillUpdate($idBill,$data);
             reUrl('bill/list');
         }

@@ -1,4 +1,8 @@
 <?php 
+    $page_size = $_GET['size'] ?? 4;
+    $page_current = $_GET['page'] ?? 1;
+    $offset = ($page_current - 1) * $page_size;
+
     $keyword = $_POST['keyword'] ?? '';
 
     $cate = [];
@@ -8,11 +12,15 @@
     }
 
 
-    $listProducts = ProductAll(['*'],"pro_status = 0");
+    $listProducts = ProductAll(['*'],"pro_status = 0 LIMIT $page_size OFFSET $offset");
     if(!empty($keyword)){
-        $listProducts = ProductAll(['*'],"pro_status = 0 and pro_name like '%$keyword%'");
+        $listProducts = ProductAll(['*'],"pro_status = 0 and pro_name like '%$keyword%' LIMIT $page_size OFFSET $offset");
     }
     $listPP = PPAll(['pp_proid', 'MIN(pp_price) AS minprice', 'MAX(pp_price) AS maxprice', 'SUM(pp_count) AS total_count', 'SUM(pp_buys) AS total_buys'],"1 group by pp_proid");
+    
+    $sosanpham = ProductAll(['COUNT(*) AS total_products']);
+    $sotrang = ceil($sosanpham[0]['total_products'] / $page_size);
+    
 
     if(isset($_SESSION['cate'])){
         if($_SESSION['cate']!=0){
@@ -22,10 +30,13 @@
                 $pro = ProductFind("id = ".$pc['pc_idpro']);
                 $listProducts[] = $pro;
             }
+            $sotrang = count($listProducts);
+            $listProducts = array_splice($listProducts, $offset, $page_size);
         }
     }else{
         $_SESSION['cate'] = 0;
     }
+
 
     if(isset($_POST['btn-price'])){
         $dk = 1;
@@ -65,6 +76,8 @@
         }
         $listPP = PPAll(['pp_proid', 'MIN(pp_price) AS minprice', 'MAX(pp_price) AS maxprice', 'SUM(pp_count) AS total_count', 'SUM(pp_buys) AS total_buys'],"$dk group by pp_proid");
     }
+
+
 
     $listCats = CategoryAll(['*'],"cat_idparent = ".$_SESSION['cate']);
     require $views."product/product.php";

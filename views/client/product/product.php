@@ -63,6 +63,21 @@
           ?>
         </div>
       </div>
+      <div class="page mt-2 mb-1 d-flex justify-content-end align-items-center pe-4">
+          <?php 
+            if($page_current>1){
+              echo '<a href="'.$clientUrl."product&size=$page_size&page=".($page_current-1).'" class=" mx-1 btn btn-outline-dark">Pre</a>';
+            }
+          ?>
+        <?php for($i = 0; $i < $sotrang; $i++): ?>
+          <a href="<?=$clientUrl."product&size=$page_size&page=".$i+1?>" class="<?= $page_current==($i+1)?'togger':'' ?> mx-1 btn btn-outline-dark"><?=$i+1?></a>
+          <?php endfor; ?>
+          <?php 
+            if($page_current<$sotrang){
+              echo '<a href="'.$clientUrl."product&size=$page_size&page=".($page_current+1).'" class=" mx-1 btn btn-outline-dark">Next</a>';
+            }
+          ?>
+      </div>
       <div class="box-product-right-content">
         <?php
         foreach ($listProducts as $pro) :
