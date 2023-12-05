@@ -1,7 +1,7 @@
 <div class="signIn">
     <h2>Đăng nhập</h2>
     <form action="" id="form_logup" method="Post">
-        <div><input type="text" placeholder="Tên đăng nhập/Số điện thoại/Email" name="tendn" id="username" class="mb20">
+        <div><input type="text" placeholder="Tên đăng nhập/Email" name="tendn" id="username" class="mb20">
             <p class="errUser"></p>
         </div>
         <div>
