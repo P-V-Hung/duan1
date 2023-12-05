@@ -31,5 +31,13 @@
         $keyword = $_POST['keyword'];
         $listAccount = AccountAll(['*'],"u_username like '%".$keyword."%' OR u_email like '%".$keyword."%' ");
     }
+    if(isset($_SESSION['delAcc'])){
+        logSuccess('Xóa tài khoản thành công');
+        unset($_SESSION['delAcc']);
+    }
+    if(isset($_SESSION['updateAcc'])){
+        logSuccess('Cập nhật thông tin tài khoản thành công');
+        unset($_SESSION['updateAcc']);
+    }
     require $views."account/list.php";
 ?>

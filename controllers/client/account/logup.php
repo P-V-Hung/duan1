@@ -3,7 +3,6 @@ if (isset($_POST['btn_signUp']) && ($_POST['btn_signUp'])) {
     $ten = $_POST['ten'];
     $email = $_POST['email'];
     $pass = $_POST['pass'];
-
     $user = AccountFind("u_email like '%$email%' OR u_username like '%$ten%'");
     if (!empty($user)) {
         logError("Tên đăng nhập hoặc email đã tồn tại!");

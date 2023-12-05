@@ -46,7 +46,6 @@
 
     </div>
 </div>
-
 <script>
     function generateVoucherCode(length) {
     const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -64,7 +63,6 @@
 
     function create(){
         const voucher = generateVoucherCode(16);
-        // console.log(voucher);
         vou.value = voucher;
     }
 
