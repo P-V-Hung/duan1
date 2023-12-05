@@ -4,12 +4,12 @@
         <input type="text" class="form-control" name="keyword" placeholder="Nhập tên sản phẩm muốn tìm" aria-label="Recipient's username" aria-describedby="button-addon2">
         <select class="form-select" name="cat" aria-label="Default select example">
             <option selected value="0">Tất cả danh mục</option>
-            <?php 
-                foreach($listCat as $cat):
+            <?php
+            foreach ($listCat as $cat) :
             ?>
-            <option value="<?=$cat['id']?>"><?=$cat['cat_name']?></option>
-            <?php 
-                endforeach;
+                <option value="<?= $cat['id'] ?>"><?= $cat['cat_name'] ?></option>
+            <?php
+            endforeach;
             ?>
         </select>
         <button class="btn btn-outline-secondary" type="submit" name="btn-all" id="button-addon2">Tất cả sản phẩm</button>
@@ -18,6 +18,21 @@
     <?=
     isset($keyword) ? "<p style='font-size: 1.1rem;'>Kết quả tìm kiếm của: <span style='color:red;font-weight: 500;'>$keyword</span></p>" : '';
     ?>
+    <div class="page mt-2 mb-1 d-flex justify-content-end align-items-center pe-4">
+        <?php
+        if ($page_current > 1) {
+            echo '<a href="' . $adminUrl . "product/list&size=$page_size&page=" . ($page_current - 1) . '" class=" mx-1 btn btn-outline-dark">Pre</a>';
+        }
+        ?>
+        <?php for ($i = 0; $i < $sotrang; $i++) : ?>
+            <a href="<?= $adminUrl . "product/list&size=$page_size&page=" . $i + 1 ?>" class="<?= $page_current == ($i + 1) ? 'togger' : '' ?> mx-1 btn btn-outline-dark"><?= $i + 1 ?></a>
+        <?php endfor; ?>
+        <?php
+        if ($page_current < $sotrang) {
+            echo '<a href="' . $adminUrl . "product/list&size=$page_size&page=" . ($page_current + 1) . '" class=" mx-1 btn btn-outline-dark">Next</a>';
+        }
+        ?>
+    </div>
     <div class="box-product-right-content new-product">
         <?php
         foreach ($listProducts as $pro) :
