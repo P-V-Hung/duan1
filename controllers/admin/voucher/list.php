@@ -7,5 +7,9 @@
             reUrl('voucher/list');
         }
     } 
+    if(isset($_SESSION['delVou'])){
+        logSuccess('Xóa mã giảm giá thành công');
+        unset($_SESSION['delVou']);
+    }
     require $views."voucher/list.php";
 ?>

@@ -3,7 +3,9 @@ if (isset($_COOKIE['login'])) {
   if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address']) || empty($_SESSION['user']['u_tel'])) {
     logInfo("Vui lòng cập nhật thông tin tài khoản! <a href='".$clientUrl."userInfor'>tại đây</a>");
   }else{
-    logSuccess('Chào mừng quay trở lại!','Xin chào');
+    $name = $_SESSION['user']['u_username'];
+    if (isset($_SESSION["user"]["u_fullname"])) $name = $_SESSION["user"]["u_fullname"];
+    logSuccess('Chào mừng quay trở lại!','Xin chào, <b>'.$name.'</b>');
   }
 }
 if (isset($_COOKIE['addcart'])) {

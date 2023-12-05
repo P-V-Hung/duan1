@@ -70,7 +70,7 @@
                         <td hidden class="statusId"><?php echo $com['com_status'] ?></td>
                         <td>
                             <?php
-                            if ($com['com_status'] == 1) echo "Đang hiển thị";
+                            if ($com['com_status'] == 1) echo "<span style='color:green;'>Đang hiển thị</span>";
                             else if ($com['com_status'] == 2) echo "<span style='color:red;'>Đã ẩn</span>";
                             ?>
                         </td>

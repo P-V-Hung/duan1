@@ -23,7 +23,7 @@
     <hr>
     <!-- Danh sách cart -->
     <form action="" method="post" class="">
-        <?= empty($_SESSION['cart']) ? "<h3 class='pt-3' style='text-align: center;'>Không có sản phẩm nào</h3>" : '' ?>
+        <?= empty($_SESSION['cart']) ? "<h3 class='pt-5 pb-5' style='text-align: center;'>Không có sản phẩm nào</h3>" : '' ?>
 
         <div class="listcart">
             <?php foreach ($dataCart as $key => $cart) : ?>
@@ -59,7 +59,7 @@
                 <hr>
             <?php endforeach ?>
         </div>
-        <div class="cart_footer mt-5 p-4 position-sticky">
+        <div class="cart_footer mt-5 mb-3 p-4 position-sticky">
             <div class="cart_btn d-flex justify-content-between">
                 <div class="cart_btn_thaotac d-flex align-items-center">
                     <div class="cart_all me-5">

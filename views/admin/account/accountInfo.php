@@ -62,7 +62,8 @@
                             <span class="input-group-text" id="basic-addon3">Ngày tạo</span>
                             <input readonly type="text" class="form-control" value="<?php echo $account['u_create'] ?>" require name="u_address" id="basic-url" aria-describedby="basic-addon3">
                         </div>
-                        <a class="btn btn-info input-group mb-3" href="<?= $adminUrl . "account/update&id=".$account['id'] ?>">Sửa thông tin tài khoản</a>
+                        <a class="btn btn-info mb-3" href="<?= $adminUrl . "account/update&id=".$account['id'] ?>">Sửa thông tin tài khoản</a>
+                        <a onclick="return confirm('Bạn chắc chắn muốn xóa tài khoản này ?')" class="btn btn-danger mb-3" href="<?= $adminUrl . "account/delete&id=".$account['id'] ?>">Xóa tài khoản</a>
                         <div class="input-group mb-3">
                             <!-- <input type="submit" class="btn btn-success" name="btn_update-acc" value="Cập nhật">
                             <a onclick="return confirm('Bạn chắc chắn muốn quay lại trang danh sách tài khoản không ?')"
@@ -78,7 +79,7 @@
     <!-- Đơn hàng liên quan -->
     <div class="mt-5">
         <hr class="border border-dark border-2 opacity-50">
-        <h3 class="modal-title">Đơn hàng liên quan</h3>
+        <h4 class="modal-title">Đơn hàng liên quan</h4>
         <table style="width:100%;" class="table-hung">
             <tr>
                 <th>
@@ -121,7 +122,7 @@
     <!-- Bình luận đã gửi -->
     <div class="mt-5">
         <hr class="border border-dark border-2 opacity-50">
-        <h3 class="modal-title">Bình luận đã gửi</h3>
+        <h4 class="modal-title">Bình luận đã gửi</h4>
         <table style="width:100%;" class="table-hung">
             <tr class="table-hung-th">
                 <th>STT</th>

@@ -42,14 +42,10 @@
             </table>
             <input type="date" name="v_create" value="<?php echo date("Y-m-d") ?>" hidden>
             <input type="submit" class="addVou" name="btn_add-vou" value="Thêm">
-            <p style="padding:10px; color: green;"><?php
-                echo $thongbao??'';
-            ?></p>
         </form>
 
     </div>
 </div>
-
 <script>
     function generateVoucherCode(length) {
     const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -67,7 +63,6 @@
 
     function create(){
         const voucher = generateVoucherCode(16);
-        // console.log(voucher);
         vou.value = voucher;
     }
 

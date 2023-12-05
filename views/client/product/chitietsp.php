@@ -108,7 +108,7 @@
                             </div>
                         </div>
                         <div class="comment-show-item-text">
-                            <p class="pb-1"><?=$cm['reating']?> <i class="fa-solid fa-star"></i></p>
+                            <p class="pb-1"><?=$cm['reating']?> <i style="color: #DCD641;" class="fa-solid fa-star"></i></p>
                             <p class="pb-1"><?=$cm['text']?></p>
                             <img style="width:100px;height:auto" src="<?=$pathUpload.$cm['img']?>" alt="">
                         </div>

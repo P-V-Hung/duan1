@@ -4,7 +4,7 @@
         <div class="addAcc row mt-5 px-5">
             <div class="col-5 addAcc-img">
                 <div>
-                    <label src="" for="formFile"><img id="img-add-acc" alt="" class="width:100%;"></label>
+                    <label src="" for="formFile"><img src="<?php echo $pathUpload.'user.jpg' ?>" id="img-add-acc" alt="" class="rounded-circle width:100%;"></label>
                 </div>
                 <div class="my-3">
                     <input class="form-control" type="file" name="u_img" onchange="chooseFile(this,'img-add-acc')" id="formFile">
@@ -14,8 +14,9 @@
                 <div class="addAcc-acc-show">
                     <div class="title">
                         <h2>Thông tin tài khoản: </h2>
+                        <h6>(<span style="color:red">*</span>)Trường thông tin bắt buộc.</h6>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon3">Tên đăng nhập</span>
+                            <span class="input-group-text" id="basic-addon3">Tên đăng nhập<span style="color:red">*</span></span>
                             <input type="text" class="form-control user" placeholder="abc123" require name="u_username" aria-describedby="basic-addon3">
                         </div>
                         <div class="input-group mb-3">
@@ -23,7 +24,7 @@
                             <input type="text" class="form-control name" placeholder="Nguyễn Văn A" require name="u_fullname" aria-describedby="basic-addon3">
                         </div>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon3">Email</span>
+                            <span class="input-group-text" id="basic-addon3">Email<span style="color:red">*</span></span>
                             <input type="text" class="form-control email" placeholder="nguyenvana@gmail.com" require name="u_email" aria-describedby="basic-addon3" >
                         </div>
                         <div class="input-group mb-3">
@@ -31,7 +32,7 @@
                             <input type="text" class="form-control tel" placeholder="0123456789" require name="u_tel" aria-describedby="basic-addon3">
                         </div>
                         <div class="input-group mb-3" style="position: relative;">
-                            <span class="input-group-text" id="basic-addon3">Mật khẩu</span>
+                            <span class="input-group-text" id="basic-addon3">Mật khẩu<span style="color:red">*</span></span>
                             <input type="password" class="form-control pass" min="0" step="5" placeholder="Chứa 8-16 kí tự gồm chữ cái, kí tự đặc biệt và số" require name="u_password" aria-describedby="basic-addon3">
                             <div class="iconPass"><i class="fa-solid fa-eye"></i></div>
                         </div>
@@ -40,7 +41,7 @@
                             <input type="text" class="form-control address" min="0" step="5" placeholder="Nhập địa chỉ người dùng" require name="u_address" aria-describedby="basic-addon3">
                         </div>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon3">Vai trò</span>
+                            <span class="input-group-text" id="basic-addon3">Vai trò<span style="color:red">*</span></span>
                             <select name="u_role" class="form-control role" aria-describedby="basic-addon3">
                                 <option value="0" hidden>Chọn</option>
                                 <option value="1"><?php echo "Quản trị viên" ?></option>

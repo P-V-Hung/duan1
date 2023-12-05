@@ -19,6 +19,7 @@
             'u_role' => $_POST['u_role']
         ];
         AccountUpdate(''.$idacc, $data);
+        $_SESSION['updateAcc'] = true;
         reUrl('account/list');
     }
     require $views.'account/update.php';

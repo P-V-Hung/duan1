@@ -54,10 +54,16 @@ li {
 .sidebar::-webkit-scrollbar {
   width: 0;
 }
-
+.sidebar-end{
+  height: 55px;
+}
+.sidebar-end ul{
+  height: 100%;
+}
 .sidebar-end ul li {
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   cursor: pointer;
+  height: 100%;
 }
 .sidebar-end ul li:hover {
   background-color: rgba(241, 241, 241, 0.588);
