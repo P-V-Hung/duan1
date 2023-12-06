@@ -71,15 +71,17 @@
                 <?php
                 if (!empty($_SESSION['cart'])) {
                 ?>
-                    <button name="btn_buy" type="submit" class="btn btn-outline-danger">Mua hàng</button>
+                    <button name="btn_buy" type="submit" id="muahang" class="btn btn-outline-danger">Mua hàng</button>
                 <?php
                 }
                 ?>
             </div>
         </div>
     </form>
+    <div id="log"></div>
 </main>
 <script>
+
     let listInput = document.querySelectorAll(".cart_sp_id");
     let inputAll = document.getElementById("cart_all");
     inputAll.addEventListener("change", function() {
@@ -91,6 +93,34 @@
             for (let i = 0; i < listInput.length; i++) {
                 listInput[i].checked = false;
             }
+        }
+    });
+    $("#muahang").on("click",function(){
+        let check = false;
+        for (let i = 0; i < listInput.length; i++) {
+            if(listInput[i].checked == true){
+                check = true;
+            }
+        }
+        if(check){
+            $("#muahang").attr("type", "submit");
+        }else{
+            $("#muahang").attr("type", "button");
+            text = `
+                <div class='message message-error'>
+                <div class='message-icon'>
+                <i class='fa-solid fa-circle-check'></i>
+                </div>
+                <div class='message-title'>
+                <h3>Error</h3>
+                <p>Vui lòng chọn sản phẩm</p>
+                </div>
+                <div class='message-close'>
+                <i class='fa-solid fa-x'></i>
+                </div>
+                </div>
+            `;
+            $("#log").html(text);
         }
     });
 </script>

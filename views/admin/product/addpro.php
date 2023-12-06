@@ -13,7 +13,7 @@
                     <div class="comment-title">
                         <h5>Mô tả: </h5>
                         <textarea name="pro_desc" id="text-mota" class="border" rows="10">
-                            
+
                         </textarea>
                     </div>
 
@@ -29,17 +29,17 @@
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">Giá</span>
-                            <input type="text" class="form-control" placeholder="Giá sản phẩm"  require name="pp_price" id="basic-url" aria-describedby="basic-addon3">
+                            <input type="text" class="form-control" placeholder="Giá sản phẩm" require name="pp_price" id="basic-url" aria-describedby="basic-addon3">
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon3">Phân loại</span>
                             <input type="text" class="form-control" placeholder="Màu sắc" require name="pp_color" id="basic-url" aria-describedby="basic-addon3" list="colors">
                             <datalist id="colors">
-                            <option value="Đỏ">
-                            <option value="Vàng">
-                            <option value="Xanh">
-                            <option value="Đen">
-                            <option value="Trắng">
+                                <option value="Đỏ">
+                                <option value="Vàng">
+                                <option value="Xanh">
+                                <option value="Đen">
+                                <option value="Trắng">
                             </datalist>
                         </div>
                         <div class="input-group mb-3">
@@ -55,20 +55,7 @@
                     <div class="cate">
                         <div class="cate-size">
                             <p>Danh mục </p>
-                            <div class="cate-checkbox">
-                                <?php
-                                foreach ($listCategory as $cat) :
-                                ?>
-                                    <div class="input-group">
-                                        <div class="input-group-text">
-                                            <input class="form-check-input mt-0"  name="checkCat<?=$cat['id']?>" value="<?=$cat['id']?>" type="checkbox" name="<?= $cat['id'] ?>">
-                                        </div>
-                                        <label class="form-control"><?= $cat['cat_name'] ?></label>
-                                    </div>
-                                <?php
-                                endforeach;
-                                ?>
-                            </div>
+                            <div class="cate-checkbox"></div>
 
                         </div>
                         <div class="input-group mt-3">
@@ -88,10 +75,10 @@
                             foreach ($properties as $proper) :
                             ?>
                                 <tr>
-                                    <td><input class="form-check-input mt-0" name="checkProperty<?=$proper['id']?>" value="<?=$proper['id']?>" type="checkbox"></td>
+                                    <td><input class="form-check-input mt-0" name="checkProperty<?= $proper['id'] ?>" value="<?= $proper['id'] ?>" type="checkbox"></td>
                                     <td><label><?= $proper['p_name'] ?>:</label></td>
                                     <td class="iput_properted">
-                                        <input type="text" class="form-control" name="checkValue<?=$proper['id']?>" id="basic-url" aria-describedby="basic-addon3">
+                                        <input type="text" class="form-control" name="checkValue<?= $proper['id'] ?>" id="basic-url" aria-describedby="basic-addon3">
                                     </td>
                                 </tr>
                             <?php
@@ -104,3 +91,29 @@
         </div>
     </form>
 </div>
+<script>
+    $(document).ready(function() {
+        function list_cat(iddm = 0) {
+            $.ajax({
+                url: "./ajax/ajaxCatAdd.php",
+                method: "POST",
+                data: {
+                    selectCat: true,
+                    id_parent: iddm
+                },
+                success: function(data) {
+                    $(".cate-checkbox").html(data)
+                }
+            });
+        }
+        list_cat();
+        $(document).on("click", ".checkCatChild", function() {
+            if ($(this).prop("checked")) {
+                list_cat($(this).val());
+            }
+        });
+        $(document).on("click", ".checkCatParent", function() {
+            
+        });
+    });
+</script>

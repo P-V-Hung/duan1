@@ -1,6 +1,6 @@
 <?php
 $properties = PropertyAll();
-$listCategory = CategoryAll();
+$_SESSION['output'] = "";
 if (isset($_POST['btn_add-pro'])) {
     $img = $_FILES['img'];
     $imgPath = basename($img['name']);
