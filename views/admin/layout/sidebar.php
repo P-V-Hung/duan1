@@ -193,7 +193,7 @@
         </div>
         <div class="sidebar-end p-0">
           <ul>
-            <li class="p-0"><a class="btn py-3 ps-0" style="width:100%;height:100%" href="/duan1/"><- Trang web</a></li>
+            <li class="p-0"><a class="btn py-3 ps-0" style="width:100%;height:100%" href="/"><- Trang web</a></li>
           </ul>
         </div>
       </div>

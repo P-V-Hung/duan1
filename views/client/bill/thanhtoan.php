@@ -210,13 +210,16 @@ if (empty($_SESSION['user']['u_fullname']) || empty($_SESSION['user']['u_address
                 }
             });
         });
-        $("#voucher_back").on('click', function() {
+       $("#voucher_back").on('click', function() {
             price = $("#priceVoucher").val();
             $(".voucher_down").html(price.toLocaleString());
             total = $("#total_cart").val();
             total = total.replace(/\./g, '');  
+            total = total.replace(/\,/g, '');  
             carPrice = parseInt(total) - parseInt(price);
-            $("#total_cart").val(carPrice.toLocaleString());
+            carPrice = carPrice.toLocaleString();
+            carPrice = carPrice.replace(/\,/g, '.');
+            $("#total_cart").val(carPrice);
         });
 
 

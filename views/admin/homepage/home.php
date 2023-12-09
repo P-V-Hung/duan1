@@ -27,7 +27,7 @@
                     var data = {
                         labels: username,
                         datasets: [{
-                            label: 'Biểu đồ danh thu top 10 khách hàng tiềm năng',
+                            label: 'Top 10 khách hàng chi tiêu nhiều nhất',
                             backgroundColor: 'rgba(75, 192, 192, 0.2)',
                             borderColor: 'rgba(75, 192, 192, 1)',
                             borderWidth: 1,

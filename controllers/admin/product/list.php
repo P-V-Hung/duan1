@@ -1,5 +1,5 @@
 <?php
-    $page_size = $_GET['size'] ?? 4;
+    $page_size = $_GET['size'] ?? 8;
     $page_current = $_GET['page'] ?? 1;
     $offset = ($page_current - 1) * $page_size;
 
@@ -36,7 +36,7 @@
                     $keyword = "$keyword của danh mục ".$category['cat_name'];
                 }
             }
-            $sotrang = count($listProducts);
+            $sotrang = ceil(count($listProducts)/$page_size); 
             $listProducts = array_splice($listProducts, $offset, $page_size);
         }
     }

@@ -1,5 +1,5 @@
 <?php 
-    $page_size = $_GET['size'] ?? 4;
+    $page_size = $_GET['size'] ?? 8;
     $page_current = $_GET['page'] ?? 1;
     $offset = ($page_current - 1) * $page_size;
 
@@ -30,13 +30,12 @@
                 $pro = ProductFind("id = ".$pc['pc_idpro']);
                 $listProducts[] = $pro;
             }
-            $sotrang = count($listProducts);
+            $sotrang = ceil(count($listProducts) / $page_size);
             $listProducts = array_splice($listProducts, $offset, $page_size);
         }
     }else{
         $_SESSION['cate'] = 0;
     }
-
 
     if(isset($_POST['btn-price'])){
         $dk = 1;

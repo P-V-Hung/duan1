@@ -16,7 +16,7 @@
 
 
     // router
-    $clientUrl = '/duan1/?url=';
+    $clientUrl = '/?url=';
     $pathUpload = "./public/uploads/";
     $views = "./views/client/";
     $controllers = "./controllers/client/";

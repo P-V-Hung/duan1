@@ -20,7 +20,7 @@
   
   // Điều hướng
   $pathUpload = "./public/uploads/";
-  $adminUrl = "/duan1/admin.php?url=";
+  $adminUrl = "/admin.php?url=";
   $views = "./views/admin/";
   $controller = "./controllers/admin/";
 

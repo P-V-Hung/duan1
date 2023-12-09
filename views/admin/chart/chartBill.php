@@ -52,7 +52,7 @@ new Chart("myChartBill", {
     legend: {display: false},
     title: {
       display: true,
-      text: "Số lượng đơn đặt hàng trong 7 ngày gần nhất (Tổng:"+totalBill+")"
+      text: "Số lượng đơn đặt hàng mới trong 7 ngày gần nhất (Tổng:"+totalBill+")"
     },
     scales: {
             yAxes: [{ ticks: { min: 0, precision: 0 } }],
